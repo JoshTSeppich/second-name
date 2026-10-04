@@ -1,0 +1,14 @@
+{
+  "name": "second-name",
+  "private": true,
+  "description": "Second Name: a phone-first poetry submission desk (tests only; the app itself has no build step)",
+  "scripts": {
+    "serve": "node tests/server.mjs",
+    "test": "npm run test:venuefold && npm run test:app",
+    "test:app": "playwright test",
+    "test:venuefold": "npm --prefix venuefold test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}
