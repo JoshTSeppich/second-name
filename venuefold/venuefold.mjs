@@ -9,7 +9,7 @@
 //   node venuefold.mjs status              what's stale, what changed, what failed
 //
 // Needs ANTHROPIC_API_KEY for crawl (not for --dry-run). Data lives in data/venues.json.
-// Env overrides: VENUEFOLD_MODEL, VENUEFOLD_CONTACT, VENUEFOLD_STORE (data file), VENUEFOLD_DELAY_MS.
+// Env overrides: ANTHROPIC_WORKSPACE_ID (multi-workspace keys), VENUEFOLD_MODEL, VENUEFOLD_CONTACT, VENUEFOLD_STORE (data file), VENUEFOLD_DELAY_MS.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -160,7 +160,8 @@ ${page.text.slice(0, MAX_PAGE_CHARS)}`;
 let client;
 export function setClient(c) { client = c; }
 async function extract(venue, url, page) {
-  client ||= new Anthropic();
+  // A key that spans several workspaces needs the workspace named on every request.
+  client ||= new Anthropic(process.env.ANTHROPIC_WORKSPACE_ID ? { defaultHeaders: { "anthropic-workspace-id": process.env.ANTHROPIC_WORKSPACE_ID } } : {});
   const req = {
     model: MODEL, max_tokens: 2000,
     tools: [{ name: "record_venue", description: "Record the structured submission facts for this venue.", input_schema: SCHEMA }],

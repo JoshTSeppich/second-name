@@ -89,6 +89,7 @@ const failures = [
   ["anthropic", "no credit (400 credit balance)", { status: 400, body: { type: "error", error: { type: "invalid_request_error", message: "Your credit balance is too low to access the Anthropic API." } } }, "no_credit", /no credit left/],
   ["anthropic", "billing error (402)", { status: 402, body: { type: "error", error: { type: "billing_error", message: "billing" } } }, "no_credit", /no credit left/],
   ["openai", "no credit (429 credit_balance_exhausted)", { status: 429, body: { error: { type: "insufficient_quota", code: "credit_balance_exhausted", message: "no credits" } } }, "no_credit", /no credit left/],
+  ["anthropic", "key not scoped to a workspace (400)", { status: 400, body: { type: "error", error: { type: "invalid_request_error", message: "This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use." } } }, "needs_workspace", /inside one workspace/],
   ["anthropic", "rate limited (429)", { status: 429, body: { type: "error", error: { type: "rate_limit_error", message: "slow down" } } }, "rate_limited", /rate or spending limit/],
   ["openai", "network error", "abort", "network", /Couldn't reach OpenAI/],
 ];

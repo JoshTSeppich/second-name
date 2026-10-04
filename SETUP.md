@@ -25,6 +25,8 @@ in Safari. Use You > "Copy everything as text" to move a desk over (the AI key i
 
 1. Repo Settings > Secrets and variables > Actions > New repository secret.
    Name `ANTHROPIC_API_KEY`, value your key. (Or: `gh secret set ANTHROPIC_API_KEY` and paste it.)
+   Use a key created inside one workspace. If your key spans several workspaces, Anthropic requires the
+   workspace ID on every request: add it as a repository variable `ANTHROPIC_WORKSPACE_ID`.
 2. Optional: in `venuefold/sources.json`, `contact` goes in VenueFold's user-agent so a venue's webmaster
    can reach you. It defaults to the repo URL. To use an email without committing it, set a repository
    variable `VENUEFOLD_CONTACT` (Settings > Secrets and variables > Actions > Variables).
