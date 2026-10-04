@@ -140,7 +140,7 @@
         "maxPages": null,
         "maxPoems": null,
         "minPoems": null,
-        "pays": "Yes—pay rates available on request",
+        "pays": "Yes\u2014pay rates available on request",
         "responseTime": null,
         "simultaneous": null,
         "waiver": null,
@@ -258,7 +258,7 @@
       "name": "Allium, A Journal of Poetry & Prose",
       "url": "https://allium.colum.edu/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Allium, A Journal of Poetry & Prose / Due: November 15 – January 31 / Poetry, Fiction, Nonfiction / Fee: $3",
+      "listing": "Allium, A Journal of Poetry & Prose / Due: November 15 \u2013 January 31 / Poetry, Fiction, Nonfiction / Fee: $3",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -312,7 +312,7 @@
       "name": "Always Crashing",
       "url": "https://www.alwayscrashing.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Always Crashing / Due: July 15 – September 15 / Fiction, Poetry, Audio, Video, Hybrid, Other / No Fee",
+      "listing": "Always Crashing / Due: July 15 \u2013 September 15 / Fiction, Poetry, Audio, Video, Hybrid, Other / No Fee",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -440,7 +440,7 @@
       "name": "ANMLY",
       "url": "http://anmly.submittable.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "ANMLY / Due: October 1 – February 1 / Poetry, Fiction, Nonfiction, Translation, Comics / Fee: $0 – $3 (Fee Waivers Available, No Fee for Comics)",
+      "listing": "ANMLY / Due: October 1 \u2013 February 1 / Poetry, Fiction, Nonfiction, Translation, Comics / Fee: $0 \u2013 $3 (Fee Waivers Available, No Fee for Comics)",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -888,7 +888,7 @@
         "minPoems": 4,
         "pays": null,
         "simultaneous": true,
-        "notes": "Submit translated poetry (about 4 poems) with source language versions included in a single .doc/.docx file. Include cover letter and bios (translator, any co-translators, poet—each ~200 words). Provide assurance of translation rights. One submission per issue only; notify immediately if accepted elsewhere.",
+        "notes": "Submit translated poetry (about 4 poems) with source language versions included in a single .doc/.docx file. Include cover letter and bios (translator, any co-translators, poet\u2014each ~200 words). Provide assurance of translation rights. One submission per issue only; notify immediately if accepted elsewhere.",
         "evidence": [
           "Submissions are welcomed over email to contact@azonaltranslation.com",
           "Send about 4 poems you have translated into English",
@@ -910,13 +910,14 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Bagazine / Due: September 2 / Poetry, Fiction, Nonfiction, Cross-genre",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 401"
+      "lastError": null,
+      "manual": "Submissions go through a Google Form that requires sign-in (HTTP 401); no public guidelines page to read (checked 2026-10-04). Keep its desk entry by hand."
     },
     "baltimore-review": {
       "name": "Baltimore Review",
       "url": "https://www.baltimorereview.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Baltimore Review / Due: February 1 – May 31 and August 1 – November 30 / Poetry, Fiction, Creative Nonfiction",
+      "listing": "Baltimore Review / Due: February 1 \u2013 May 31 and August 1 \u2013 November 30 / Poetry, Fiction, Creative Nonfiction",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -1068,7 +1069,7 @@
       "name": "Berkeley Poetry Review",
       "url": "https://www.ocf.berkeley.edu/~bpr/submission-guidelines/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Berkeley Poetry Review / Due: November 1 – November 22 / Poetry, Experimental, Multimedia / No Fee",
+      "listing": "Berkeley Poetry Review / Due: November 1 \u2013 November 22 / Poetry, Experimental, Multimedia / No Fee",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -1254,7 +1255,7 @@
       "name": "Birmingham Poetry Review",
       "url": "https://www.uab.edu/cas/englishpublications/bpr/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Birmingham Poetry Review / Due: September 1 – May 15 / Poetry / All Submissions Considered for the Collins Prize of $500 / Mail-only Submissions",
+      "listing": "Birmingham Poetry Review / Due: September 1 \u2013 May 15 / Poetry / All Submissions Considered for the Collins Prize of $500 / Mail-only Submissions",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -1336,14 +1337,14 @@
       "changedOn": "2026-10-04"
     },
     "black-sun-lit-digital-vestiges": {
-      "name": "Black Sun Lit — digital vestiges",
+      "name": "Black Sun Lit \u2014 digital vestiges",
       "url": "https://blacksunlit.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Black Sun Lit — digital vestiges / Now / Poetry, Fiction, Nonfiction, Hybrid, Translation, Drama, Art, Fragments, Ephemera",
+      "listing": "Black Sun Lit \u2014 digital vestiges / Now / Poetry, Fiction, Nonfiction, Hybrid, Translation, Drama, Art, Fragments, Ephemera",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
-        "name": "Black Sun Lit — digital vestiges",
+        "name": "Black Sun Lit \u2014 digital vestiges",
         "acceptsPoetry": true,
         "submitMethod": "submittable",
         "submitUrl": "https://blacksunlit.submittable.com/submit",
@@ -1354,7 +1355,7 @@
         "cap": "100 per month",
         "maxPoems": 5,
         "maxPages": 10,
-        "responseTime": "3–6 months",
+        "responseTime": "3\u20136 months",
         "simultaneous": true,
         "aiPolicy": "We do not accept unsolicited book manuscripts or tolerate AI-generated work.",
         "notes": "Submit up to 5 poems (no more than 10 pages) in one .doc or .docx file. For past contributors, wait at least 2 years (online) or 2 issues (print) after work last appeared before resubmitting. Notify immediately via Submittable if work is accepted elsewhere or to withdraw part of a submission.",
@@ -1364,7 +1365,7 @@
           "Black Sun Lit (generally) reads and remains open to submissions year-round",
           "We allow simultaneous submissions",
           "We do not accept unsolicited book manuscripts or tolerate AI-generated work",
-          "We aim to respond to all submissions within 3–6 months"
+          "We aim to respond to all submissions within 3\u20136 months"
         ],
         "confidence": "high",
         "waiver": null
@@ -1403,7 +1404,7 @@
         ],
         "yearRound": false,
         "feeUSD": 3,
-        "freeOption": "Free from September 22 – October 13; paid ($3) window October 14 – November 3",
+        "freeOption": "Free from September 22 \u2013 October 13; paid ($3) window October 14 \u2013 November 3",
         "waiver": {
           "kind": "email",
           "note": "Waiver available for writers if submission fee presents a financial burden",
@@ -1413,7 +1414,7 @@
         "aiPolicy": "Bloodletter is staunchly opposed to AI in the creative process. Does not accept work written or edited with generative AI; work will be pulled and submitters barred from future submissions.",
         "notes": "Previously unpublished work only. Past contributors must wait one calendar year (two submission cycles) before submitting new work. Biannual themed issues; length and style determined by piece needs. Women, trans, and non-binary writers encouraged to submit.",
         "evidence": [
-          "Free from September 22 – October 13, and cost $3 from October 14 – November 3",
+          "Free from September 22 \u2013 October 13, and cost $3 from October 14 \u2013 November 3",
           "If this submission fee presents a financial burden, feel free to email sophia.bloodlettermag@gmail.com for a waiver",
           "Previously unpublished work only",
           "Past Bloodletter contributors should wait one calendar year (two submission cycles) to submit new work",
@@ -1521,7 +1522,7 @@
       "name": "The Boiler",
       "url": "https://theboilerjournal.com/guidelines/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Boiler / Due: November 15 – December 15 / Poetry (3-5 Poems), Fiction, Essays up to 1,500 Words",
+      "listing": "The Boiler / Due: November 15 \u2013 December 15 / Poetry (3-5 Poems), Fiction, Essays up to 1,500 Words",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -1550,8 +1551,8 @@
         "waiver": null,
         "notes": "Submit 3-5 poems in one document with cover letter via Submittable (no email submissions). One submission per genre per submission period. Place all work in one document; do not include cover letter or bio on file.",
         "evidence": [
-          "Submission window: Nov 15 – Dec 15.",
-          "Send us 3 – 5 poems of your best work in one document",
+          "Submission window: Nov 15 \u2013 Dec 15.",
+          "Send us 3 \u2013 5 poems of your best work in one document",
           "Submit no more than once per submission period.",
           "NO EMAIL SUBMISSIONS. PLEASE USE OUR ONLINE SUBMISSION MANAGER.",
           "We're not able to compensate our writers"
@@ -1600,7 +1601,7 @@
       "name": "Border Crossing",
       "url": "https://bcrossing.org/submission-guidelines/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Border Crossing / Due: October 15 – February 1 / Poetry, Flash Fiction",
+      "listing": "Border Crossing / Due: October 15 \u2013 February 1 / Poetry, Flash Fiction",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -1887,7 +1888,7 @@
         "simultaneous": true,
         "submitUrl": "https://www.thecallcentercollective.com/submit",
         "waiver": null,
-        "notes": "Submit up to 5 poems in one file (Word DOC preferred or PDF). Simultaneous submissions allowed but notify immediately if work is accepted elsewhere. Sliding scale fee of $3–$10; editorial decisions unaffected by amount paid.",
+        "notes": "Submit up to 5 poems in one file (Word DOC preferred or PDF). Simultaneous submissions allowed but notify immediately if work is accepted elsewhere. Sliding scale fee of $3\u2013$10; editorial decisions unaffected by amount paid.",
         "evidence": [
           "Send us up to 5 poems in one file",
           "12 pages maximum",
@@ -1907,7 +1908,7 @@
       "name": "Call Me [Brackets]",
       "url": "https://callmebrackets.net/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Call Me [Brackets] / Due: January 15 – April 1 & August 20 – November 1 / Poetry, Fiction, Nonfiction, Visual Art / No Fee",
+      "listing": "Call Me [Brackets] / Due: January 15 \u2013 April 1 & August 20 \u2013 November 1 / Poetry, Fiction, Nonfiction, Visual Art / No Fee",
       "addedOn": "2026-10-04",
       "lastError": null,
       "manual": "callmebrackets.net answers automated requests with 403 and no other public guidelines page was found (checked 2026-10-04). Keep its desk entry by hand."
@@ -1947,7 +1948,7 @@
         },
         "notes": "Submit up to 6 pages of poetry, prose, or experimental forms (PDF or Word). Work must be original and previously unpublished. Simultaneous submissions accepted; notify immediately if accepted elsewhere. International entries accepted. Fee includes one-year complimentary digital subscription.",
         "evidence": [
-          "Submissions are open November 11 – December 12, 2025",
+          "Submissions are open November 11 \u2013 December 12, 2025",
           "$25 submission fee for all entries",
           "Submit up to 6 pages of poetry, prose, or other short experimental forms",
           "Simultaneous submissions are accepted",
@@ -2024,7 +2025,7 @@
         "responseTime": "As quickly as they can manage; appreciation for patience given small volunteer staff",
         "notes": "Send up to 5 poems per submission. No previously published or plagiarized work. Simultaneous submissions encouraged but notify if accepted elsewhere. Acquires First North American Serial Rights; copyright reverts to author on publication.",
         "evidence": [
-          "We like it short—2,000 words or fewer—and lyrical. Fiction, essays, and/or poetry (traditional or prose)... If you're writing poems, send up to five.",
+          "We like it short\u20142,000 words or fewer\u2014and lyrical. Fiction, essays, and/or poetry (traditional or prose)... If you're writing poems, send up to five.",
           "Simultaneous submissions are encouraged. Just let us know if we should be congratulating you on having your work accepted elsewhere.",
           "There are no fees, and there is no pay. This goes for all submissions and everything we will publish.",
           "No previously published material, please. New work only.",
@@ -2051,7 +2052,7 @@
       "name": "Cherry Tree",
       "url": "https://cherrytree.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Cherry Tree / Due: August 1 – October 1 / Fiction, Poetry, Creative Nonfiction / Payment: $20 and 2 contributor copies / Fee: $3",
+      "listing": "Cherry Tree / Due: August 1 \u2013 October 1 / Fiction, Poetry, Creative Nonfiction / Payment: $20 and 2 contributor copies / Fee: $3",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -2186,7 +2187,7 @@
         "responseTime": null,
         "aiPolicy": "Chewers by Masticadores does not allow Generative Artificial Intelligence (GenAI). All content is produced by humans.",
         "waiver": null,
-        "notes": "Submit up to 5 pieces including poetry via email in Word document or email body. Word count limit: 1,200 words per piece. Include 2-3 line bio (max 50 words) and website link. Simultaneous submissions allowed. Subject line: \"Submission – your full name\".",
+        "notes": "Submit up to 5 pieces including poetry via email in Word document or email body. Word count limit: 1,200 words per piece. Include 2-3 line bio (max 50 words) and website link. Simultaneous submissions allowed. Subject line: \"Submission \u2013 your full name\".",
         "evidence": [
           "Submissions are always open and free.",
           "Submit up to five pieces of poetry",
@@ -2203,16 +2204,16 @@
       "changedOn": "2026-10-04"
     },
     "cincinnati-review-micro": {
-      "name": "The Cincinnati Review — miCRo",
+      "name": "The Cincinnati Review \u2014 miCRo",
       "url": "https://www.cincinnatireview.com/submission_guidelines-2/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Cincinnati Review — miCRo / Year-Round / Poetry, Flash Fiction, Flash Nonfiction",
+      "listing": "The Cincinnati Review \u2014 miCRo / Year-Round / Poetry, Flash Fiction, Flash Nonfiction",
       "addedOn": "2026-10-04",
       "lastError": null,
       "guidelinesUrl": "https://www.cincinnatireview.com/submission-guidelines-2021/",
       "history": [],
       "record": {
-        "name": "The Cincinnati Review — miCRo",
+        "name": "The Cincinnati Review \u2014 miCRo",
         "acceptsPoetry": true,
         "submitMethod": "submittable",
         "windows": [
@@ -2355,7 +2356,7 @@
       "name": "Clockhouse Literary Journal",
       "url": "https://www.clockhouse.net/submit.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Clockhouse Literary Journal / Due: September 1 – November 15 / Short Stories, Flash Fiction, Creative Nonfiction, Poetry, Drama, and Cover Art / No Fee",
+      "listing": "Clockhouse Literary Journal / Due: September 1 \u2013 November 15 / Short Stories, Flash Fiction, Creative Nonfiction, Poetry, Drama, and Cover Art / No Fee",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -2508,7 +2509,7 @@
       "name": "The Colby Review",
       "url": "https://colbyreview.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Colby Review / Due: Dec 1 – March 1 / Poetry, Fiction, CNF, Translation, Criticism",
+      "listing": "The Colby Review / Due: Dec 1 \u2013 March 1 / Poetry, Fiction, CNF, Translation, Criticism",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -2540,14 +2541,14 @@
       "changedOn": "2026-10-04"
     },
     "columbus-review-ouroborealis-poetry-prize": {
-      "name": "The Columbus Review – Ouroborealis Poetry Prize",
+      "name": "The Columbus Review \u2013 Ouroborealis Poetry Prize",
       "url": "https://www.thecolumbusreview.com/contests",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Columbus Review – Ouroborealis Poetry Prize / Due: January 1, 2027, 11:59 p.m. EST. / Fee: $10 / Theme: Metamorphic Outliers / North America, Unpublished, Simultaneous OK / Live Growing Pot Seeded $50",
+      "listing": "The Columbus Review \u2013 Ouroborealis Poetry Prize / Due: January 1, 2027, 11:59 p.m. EST. / Fee: $10 / Theme: Metamorphic Outliers / North America, Unpublished, Simultaneous OK / Live Growing Pot Seeded $50",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
-        "name": "The Columbus Review – Ouroborealis Poetry Prize",
+        "name": "The Columbus Review \u2013 Ouroborealis Poetry Prize",
         "acceptsPoetry": true,
         "submitMethod": "other",
         "windows": [
@@ -2660,7 +2661,7 @@
       "name": "The Concrete Desert Review",
       "url": "https://www.theconcretedesertreview.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Concrete Desert Review / Year-Round / Poetry, Fiction, Nonfiction, Children’s Poetry and Stories, Art",
+      "listing": "The Concrete Desert Review / Year-Round / Poetry, Fiction, Nonfiction, Children\u2019s Poetry and Stories, Art",
       "addedOn": "2026-10-04",
       "lastError": null,
       "guidelinesUrl": "https://theconcretedesertreview.submittable.com/submit",
@@ -2711,7 +2712,7 @@
         "yearRound": false,
         "notes": "Page content appears to be a spam/SEO injection website (EVOSTOTO gambling site) unrelated to The Continental Review literary venue. No submission information for poetry or any literary content found.",
         "evidence": [
-          "Page titled 'EVOSTOTO 🌀 Destinasi Situs Slot Dana Dengan Jackpot Paling Spektakuler'",
+          "Page titled 'EVOSTOTO \ud83c\udf00 Destinasi Situs Slot Dana Dengan Jackpot Paling Spektakuler'",
           "Content is entirely about online gambling/slot games, not literary submissions",
           "No mention of poetry, fiction, submissions, fees, or reading periods",
           "Samsung product listings and e-commerce interface visible"
@@ -2760,7 +2761,7 @@
           "We accept simultaneous submissions, but kindly ask that you notify us as soon as possible when you have placed submitted work elsewhere.",
           "All submissions must be previously unpublished.",
           "The Cortland Review does its best respond to all submissions within 3-4 months.",
-          "We will be open for submissions from October 2026 – December 2026 and again in Spring 2027."
+          "We will be open for submissions from October 2026 \u2013 December 2026 and again in Spring 2027."
         ],
         "confidence": "high"
       },
@@ -2862,14 +2863,14 @@
       "changedOn": "2026-10-04"
     },
     "cutthroat-prizes": {
-      "name": "Cutthroat — Prizes",
+      "name": "Cutthroat \u2014 Prizes",
       "url": "http://www.cutthroatmag.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Cutthroat — Prizes / Due: August 31 – November 1 Each Year / Poetry, Fiction, Nonfiction / Fee: $25 / Prize: $1500 First Place/$300 Second Place/Honorable Mention in Each Genre / Joy Harjo Poetry Prize, Rick DeMarinis Short Story Prize, Barry Lopez Nonfiction Prize",
+      "listing": "Cutthroat \u2014 Prizes / Due: August 31 \u2013 November 1 Each Year / Poetry, Fiction, Nonfiction / Fee: $25 / Prize: $1500 First Place/$300 Second Place/Honorable Mention in Each Genre / Joy Harjo Poetry Prize, Rick DeMarinis Short Story Prize, Barry Lopez Nonfiction Prize",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
-        "name": "Cutthroat — A Journal of the Arts",
+        "name": "Cutthroat \u2014 A Journal of the Arts",
         "acceptsPoetry": true,
         "submitMethod": "submittable",
         "windows": [],
@@ -2926,7 +2927,7 @@
       "name": "december magazine",
       "url": "http://decembermag.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "december magazine / Due: Oct 1 – May 1 / Prose, Poetry, Art / Fee: $2.50",
+      "listing": "december magazine / Due: Oct 1 \u2013 May 1 / Prose, Poetry, Art / Fee: $2.50",
       "addedOn": "2026-10-04"
     },
     "diacritics": {
@@ -2989,7 +2990,7 @@
       "name": "The Drift & Dribble Miscellany",
       "url": "http://www.augustdriftanddribble.com/submit.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Drift & Dribble Miscellany / Year-Round and Themed Calls / Literary Fiction, Short Fiction, Dribbles, Nonfiction, Occasional Poetry, Narrative Photography, and Art / Fee: $2 – $3",
+      "listing": "The Drift & Dribble Miscellany / Year-Round and Themed Calls / Literary Fiction, Short Fiction, Dribbles, Nonfiction, Occasional Poetry, Narrative Photography, and Art / Fee: $2 \u2013 $3",
       "addedOn": "2026-10-04"
     },
     "driftwood-press": {
@@ -3094,7 +3095,7 @@
       "name": "Folio Magazine",
       "url": "https://www.foliomagazine.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Folio Magazine / Due: November 1 – March 15 / Fiction and Nonfiction, Poetry, Artwork / Specializing in Undergraduate Writing / No Fee",
+      "listing": "Folio Magazine / Due: November 1 \u2013 March 15 / Fiction and Nonfiction, Poetry, Artwork / Specializing in Undergraduate Writing / No Fee",
       "addedOn": "2026-10-04"
     },
     "fowl-feathered-review": {
@@ -3129,7 +3130,7 @@
       "name": "The Georgia Review",
       "url": "https://thegeorgiareview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Georgia Review / Due: August 15 – May 15 / Poetry, Fiction, Essays, Book Reviews / Fee: $3",
+      "listing": "The Georgia Review / Due: August 15 \u2013 May 15 / Poetry, Fiction, Essays, Book Reviews / Fee: $3",
       "addedOn": "2026-10-04"
     },
     "gertrude-press": {
@@ -3143,7 +3144,7 @@
       "name": "Ghost Proposal",
       "url": "https://ghostproposal.com/Submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Ghost Proposal / Journal Submissions / Due: September 1 – September 30 / Poetry, Visual Poetry, Intermedia Work, Essay, Translation, Video, Sound, Poetry in the Expanded Field",
+      "listing": "Ghost Proposal / Journal Submissions / Due: September 1 \u2013 September 30 / Poetry, Visual Poetry, Intermedia Work, Essay, Translation, Video, Sound, Poetry in the Expanded Field",
       "addedOn": "2026-10-04"
     },
     "glacier": {
@@ -3185,14 +3186,14 @@
       "name": "The Gravity of the Thing",
       "url": "https://thegravityofthething.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Gravity of the Thing / Due: October – November and March – April / Defamiliarized Fiction, Nonfiction, and Poetry; Cross-Genre, Hybrid, Multimedia, Experimental, Translated, and Collaborative Writing; Short, Flash, and Micro / No Fee",
+      "listing": "The Gravity of the Thing / Due: October \u2013 November and March \u2013 April / Defamiliarized Fiction, Nonfiction, and Poetry; Cross-Genre, Hybrid, Multimedia, Experimental, Translated, and Collaborative Writing; Short, Flash, and Micro / No Fee",
       "addedOn": "2026-10-04"
     },
     "grimoire-magazine": {
       "name": "Grimoire Magazine",
       "url": "http://www.wearegrimoire.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Grimoire Magazine / Year-Round / Poetry, Fiction, Nonfiction, Art, Interviews, Dreams, Dead Letters, Séances",
+      "listing": "Grimoire Magazine / Year-Round / Poetry, Fiction, Nonfiction, Art, Interviews, Dreams, Dead Letters, S\u00e9ances",
       "addedOn": "2026-10-04"
     },
     "guernica": {
@@ -3220,7 +3221,7 @@
       "name": "Harpur Palate",
       "url": "https://harpurpalate.binghamton.edu/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Harpur Palate / Due: Jan 1 – Mar 15 & Aug 19 – Oct 15 / Fiction, Flash, Nonfiction, Poetry, Art / No Fee",
+      "listing": "Harpur Palate / Due: Jan 1 \u2013 Mar 15 & Aug 19 \u2013 Oct 15 / Fiction, Flash, Nonfiction, Poetry, Art / No Fee",
       "addedOn": "2026-10-04"
     },
     "harvard-review": {
@@ -3231,10 +3232,10 @@
       "addedOn": "2026-10-04"
     },
     "heavy-feather-review-online-features": {
-      "name": "Heavy Feather Review – Online Features",
+      "name": "Heavy Feather Review \u2013 Online Features",
       "url": "https://heavyfeatherreview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Heavy Feather Review – Online Features / Year-Round / Poetry, Fiction, Nonfiction, Comics, Hybrid / Topics: l’Hôtel Dauphin, The Last Word, Side A, Haunted Passages, Bad Survivalist, The Future, Flavor Town USA",
+      "listing": "Heavy Feather Review \u2013 Online Features / Year-Round / Poetry, Fiction, Nonfiction, Comics, Hybrid / Topics: l\u2019H\u00f4tel Dauphin, The Last Word, Side A, Haunted Passages, Bad Survivalist, The Future, Flavor Town USA",
       "addedOn": "2026-10-04"
     },
     "hex-literary": {
@@ -3245,10 +3246,10 @@
       "addedOn": "2026-10-04"
     },
     "hinchas-de-poes-a": {
-      "name": "Hinchas de Poesía",
+      "name": "Hinchas de Poes\u00eda",
       "url": "https://hinchasdepoesia.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Hinchas de Poesía / Now / Poetry, Prose, Translations, Reviews, Art",
+      "listing": "Hinchas de Poes\u00eda / Now / Poetry, Prose, Translations, Reviews, Art",
       "addedOn": "2026-10-04"
     },
     "hindsight-magazine": {
@@ -3304,7 +3305,7 @@
       "name": "Impostor",
       "url": "http://www.impostorlit.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Impostor / Due: October 7 – November 4 / Poetry / No Fee",
+      "listing": "Impostor / Due: October 7 \u2013 November 4 / Poetry / No Fee",
       "addedOn": "2026-10-04"
     },
     "in-conversation": {
@@ -3315,17 +3316,17 @@
       "addedOn": "2026-10-04"
     },
     "ink-ribbon-press-the-lemonlight-prize": {
-      "name": "Ink & Ribbon Press — The LemonLight Prize",
+      "name": "Ink & Ribbon Press \u2014 The LemonLight Prize",
       "url": "https://inkandribbon.org/lemonlight-prize",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Ink & Ribbon Press — The LemonLight Prize / March 1 – May 30 / Poetry / Prize: $2,000 Winner + $250 Honorable Mentions (x4)",
+      "listing": "Ink & Ribbon Press \u2014 The LemonLight Prize / March 1 \u2013 May 30 / Poetry / Prize: $2,000 Winner + $250 Honorable Mentions (x4)",
       "addedOn": "2026-10-04"
     },
     "indianapolis-review": {
       "name": "The Indianapolis Review",
       "url": "https://theindianapolisreview.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Indianapolis Review / Due: September 1, 2026 – December 1, 2026 / Indiana Themed Poetry & Art ONLY for a Special Issue / No Fee",
+      "listing": "The Indianapolis Review / Due: September 1, 2026 \u2013 December 1, 2026 / Indiana Themed Poetry & Art ONLY for a Special Issue / No Fee",
       "addedOn": "2026-10-04"
     },
     "indicia": {
@@ -3339,7 +3340,7 @@
       "name": "Ink & Marrow",
       "url": "https://inkandmarrow.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Ink & Marrow / Due: April 1 – 30 / Poetry / No Fee / Reading Time 2-4 Weeks",
+      "listing": "Ink & Marrow / Due: April 1 \u2013 30 / Poetry / No Fee / Reading Time 2-4 Weeks",
       "addedOn": "2026-10-04"
     },
     "interpret-magazine": {
@@ -3402,14 +3403,14 @@
       "name": "Kenyon Review",
       "url": "https://kenyonreview.org/submission/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Kenyon Review / Due: September 1 – September 30 / Fiction, Poetry, Nonfiction, Drama / No Fee",
+      "listing": "Kenyon Review / Due: September 1 \u2013 September 30 / Fiction, Poetry, Nonfiction, Drama / No Fee",
       "addedOn": "2026-10-04"
     },
     "kitchen-table-quarterly": {
       "name": "Kitchen Table Quarterly",
       "url": "https://kitchentablequarterly.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Kitchen Table Quarterly / Due: July 1 – August 1 / Poetry, Creative Nonfiction, Art",
+      "listing": "Kitchen Table Quarterly / Due: July 1 \u2013 August 1 / Poetry, Creative Nonfiction, Art",
       "addedOn": "2026-10-04"
     },
     "kithe": {
@@ -3553,10 +3554,10 @@
       "addedOn": "2026-10-04"
     },
     "metatron-micrometa": {
-      "name": "Metatron – #MicroMeta",
+      "name": "Metatron \u2013 #MicroMeta",
       "url": "https://metatron.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Metatron – #MicroMeta / Now / Micro-Poetry, Video Poetry",
+      "listing": "Metatron \u2013 #MicroMeta / Now / Micro-Poetry, Video Poetry",
       "addedOn": "2026-10-04",
       "history": [],
       "record": {
@@ -3585,7 +3586,7 @@
       "name": "Midwest Review",
       "url": "https://midwestreview.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Midwest Review / Due: Jan 15 – May 15 / Poetry, Fiction, Nonfiction, Art by Writers with Midwest Connections",
+      "listing": "Midwest Review / Due: Jan 15 \u2013 May 15 / Poetry, Fiction, Nonfiction, Art by Writers with Midwest Connections",
       "addedOn": "2026-10-04"
     },
     "missouri-review": {
@@ -3641,7 +3642,7 @@
       "name": "The Nassau Review",
       "url": "https://ncc.edu/programsandcourses/academic_departments/english/nassau_review/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "The Nassau Review / Due: September 1 – December 1 / Visual Art, Fiction, Nonfiction (CNF and Personal Essays), Poetry / Doyle Awards $125 to Each Genre per Issue / No Fee / 3 Month Max Reading Period",
+      "listing": "The Nassau Review / Due: September 1 \u2013 December 1 / Visual Art, Fiction, Nonfiction (CNF and Personal Essays), Poetry / Doyle Awards $125 to Each Genre per Issue / No Fee / 3 Month Max Reading Period",
       "addedOn": "2026-10-04"
     },
     "nelligan-review": {
@@ -3711,7 +3712,7 @@
       "name": "P-QUEUE",
       "url": "https://pqueue.wordpress.com/volume-21-call-for-papers/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "P-QUEUE / Due: September 1 – February 1 / Online and Print / Poetry and Prose, Interdisciplinary and Cross-Genre, Essays, Articles, Criticism, Hybrid, Philosophy, Theory, Experimental and Visual Poetry / No Fee / Pays: One Contributor Copy (Print)",
+      "listing": "P-QUEUE / Due: September 1 \u2013 February 1 / Online and Print / Poetry and Prose, Interdisciplinary and Cross-Genre, Essays, Articles, Criticism, Hybrid, Philosophy, Theory, Experimental and Visual Poetry / No Fee / Pays: One Contributor Copy (Print)",
       "addedOn": "2026-10-04"
     },
     "pacifica-literary-review": {
@@ -3771,10 +3772,10 @@
       "addedOn": "2026-10-04"
     },
     "pirene-s-fountain": {
-      "name": "Pirene’s Fountain",
+      "name": "Pirene\u2019s Fountain",
       "url": "http://glasslyrepress.com/pf.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Pirene’s Fountain / Due: May 15 – June 30 / Poetry",
+      "listing": "Pirene\u2019s Fountain / Due: May 15 \u2013 June 30 / Poetry",
       "addedOn": "2026-10-04"
     },
     "pithead-chapel": {
@@ -3788,7 +3789,7 @@
       "name": "Pleiades",
       "url": "https://pleiadesmag.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Pleiades / Due: June 1 – June 30 / Poetry, Fiction, Nonfiction, Translations, Book Reviews",
+      "listing": "Pleiades / Due: June 1 \u2013 June 30 / Poetry, Fiction, Nonfiction, Translations, Book Reviews",
       "addedOn": "2026-10-04"
     },
     "plothound-press": {
@@ -3883,17 +3884,17 @@
       "addedOn": "2026-10-04"
     },
     "puerto-del-sol-black-voices-series": {
-      "name": "Puerto del Sol – Black Voices Series",
+      "name": "Puerto del Sol \u2013 Black Voices Series",
       "url": "https://puertodelsol.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Puerto del Sol – Black Voices Series / Now / Poetry, Fiction, Nonfiction, Multimedia",
+      "listing": "Puerto del Sol \u2013 Black Voices Series / Now / Poetry, Fiction, Nonfiction, Multimedia",
       "addedOn": "2026-10-04"
     },
     "puerto-del-sol-voz-series": {
-      "name": "Puerto del Sol — Voz Series",
+      "name": "Puerto del Sol \u2014 Voz Series",
       "url": "https://puertodelsol.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Puerto del Sol — Voz Series / Now / Poetry and Prose in Spanish",
+      "listing": "Puerto del Sol \u2014 Voz Series / Now / Poetry and Prose in Spanish",
       "addedOn": "2026-10-04"
     },
     "punk-monk-magazine": {
@@ -3918,10 +3919,10 @@
       "addedOn": "2026-10-04"
     },
     "uartet": {
-      "name": "൪uartet",
+      "name": "\u0d6auartet",
       "url": "https://www.quartetjournal.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "൪uartet / Due: January 1 – February 1, May 1 – June 1, September 1 – October 1 / Poetry by Women Fifty Years and Over",
+      "listing": "\u0d6auartet / Due: January 1 \u2013 February 1, May 1 \u2013 June 1, September 1 \u2013 October 1 / Poetry by Women Fifty Years and Over",
       "addedOn": "2026-10-04"
     },
     "rabid-oak": {
@@ -3942,14 +3943,14 @@
       "name": "Radar Poetry",
       "url": "http://www.radarpoetry.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Radar Poetry / Due: November 1 – January 1, March 1 – May 1 / Poetry, Art / Free or Fee: $3",
+      "listing": "Radar Poetry / Due: November 1 \u2013 January 1, March 1 \u2013 May 1 / Poetry, Art / Free or Fee: $3",
       "addedOn": "2026-10-04"
     },
     "radon-journal": {
       "name": "Radon Journal",
       "url": "http://www.radonjournal.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Radon Journal / Year-Round / Science Fiction Poetry and Fiction up to 3K Words / No Fee / Paid: $20/Poem, 2¢/Word",
+      "listing": "Radon Journal / Year-Round / Science Fiction Poetry and Fiction up to 3K Words / No Fee / Paid: $20/Poem, 2\u00a2/Word",
       "addedOn": "2026-10-04"
     },
     "random-sample-review": {
@@ -3984,7 +3985,7 @@
       "name": "RHINO Poetry",
       "url": "https://rhinopoetry.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "RHINO Poetry / General Submissions March – June with Caps; Founders’ Prize August – September with Caps / Poetry, Flash Prose / Free",
+      "listing": "RHINO Poetry / General Submissions March \u2013 June with Caps; Founders\u2019 Prize August \u2013 September with Caps / Poetry, Flash Prose / Free",
       "addedOn": "2026-10-04"
     },
     "rise-up-review": {
@@ -4005,7 +4006,7 @@
       "name": "Salt Hill Journal",
       "url": "https://salthilljournal.net/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Salt Hill Journal / For Fiction and Poetry: December – January, July – August / For Nonfiction and Art: Year-Round",
+      "listing": "Salt Hill Journal / For Fiction and Poetry: December \u2013 January, July \u2013 August / For Nonfiction and Art: Year-Round",
       "addedOn": "2026-10-04"
     },
     "sarka": {
@@ -4051,10 +4052,10 @@
       "addedOn": "2026-10-04"
     },
     "sh-poetry-journal": {
-      "name": "Shō Poetry Journal",
+      "name": "Sh\u014d Poetry Journal",
       "url": "https://shopoetryjournal.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Shō Poetry Journal / Open: July 1 – September 30 & January 1 – March 31 / Poetry / Fee: $3 (Free for Native American Poets; 1 Free Pop-up Window for BIPOC Writers During Every Submission Period / Pays: 1 Contributor Copy (Print)",
+      "listing": "Sh\u014d Poetry Journal / Open: July 1 \u2013 September 30 & January 1 \u2013 March 31 / Poetry / Fee: $3 (Free for Native American Poets; 1 Free Pop-up Window for BIPOC Writers During Every Submission Period / Pays: 1 Contributor Copy (Print)",
       "addedOn": "2026-10-04"
     },
     "sinister-wisdom": {
@@ -4086,10 +4087,10 @@
       "addedOn": "2026-10-04"
     },
     "so-to-speak-blog": {
-      "name": "So to Speak — Blog",
+      "name": "So to Speak \u2014 Blog",
       "url": "https://sotospeak.submittable.com/Submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "So to Speak — Blog / Year-Round / Poetry, Fiction, Nonfiction, Hybrid, Reviews, Interviews, Videos, Podcasts, Art",
+      "listing": "So to Speak \u2014 Blog / Year-Round / Poetry, Fiction, Nonfiction, Hybrid, Reviews, Interviews, Videos, Podcasts, Art",
       "addedOn": "2026-10-04"
     },
     "solstice": {
@@ -4110,7 +4111,7 @@
       "name": "Southern Indiana Review",
       "url": "https://www.usi.edu/sir/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Southern Indiana Review / Due: September 15 – December 15 and February 1 – May 15 / Fiction, Nonfiction, Poetry / Fee: $3 / Paid: $75-$150",
+      "listing": "Southern Indiana Review / Due: September 15 \u2013 December 15 and February 1 \u2013 May 15 / Fiction, Nonfiction, Poetry / Fee: $3 / Paid: $75-$150",
       "addedOn": "2026-10-04"
     },
     "southeast-review": {
@@ -4135,10 +4136,10 @@
       "addedOn": "2026-10-04"
     },
     "srprs-editors-prize-contest": {
-      "name": "SRPRs Editors’ Prize Contest",
+      "name": "SRPRs Editors\u2019 Prize Contest",
       "url": "https://srpr.org/ep_contest.php",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "SRPRs Editors’ Prize Contest / Due: April 24 / Poetry / Fee: $25",
+      "listing": "SRPRs Editors\u2019 Prize Contest / Due: April 24 / Poetry / Fee: $25",
       "addedOn": "2026-10-04"
     },
     "stellium": {
@@ -4226,10 +4227,10 @@
       "addedOn": "2026-10-04"
     },
     "thin-air-magazine-online": {
-      "name": "Thin Air Magazine — Online",
+      "name": "Thin Air Magazine \u2014 Online",
       "url": "https://thinair.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Thin Air Magazine — Online / Now / Poetry, Fiction, Nonfiction, Hybrid, Art",
+      "listing": "Thin Air Magazine \u2014 Online / Now / Poetry, Fiction, Nonfiction, Hybrid, Art",
       "addedOn": "2026-10-04"
     },
     "thought-erotic": {
@@ -4285,14 +4286,14 @@
       "name": "Two Cardinals Literary",
       "url": "https://twocardinalsliterary.wordpress.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Two Cardinals Literary / Due: September 1 – October 31 / Poetry / No Fee / Payment: Custom Handmade Print Version of Issue",
+      "listing": "Two Cardinals Literary / Due: September 1 \u2013 October 31 / Poetry / No Fee / Payment: Custom Handmade Print Version of Issue",
       "addedOn": "2026-10-04"
     },
     "twisted-river-review": {
       "name": "Twisted River Review",
       "url": "https://twistedriverreview.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Twisted River Review / Due: March 1 – August 1 Every Year / Fiction, Nonfiction, Poetry, Alternative Genre / No Fees",
+      "listing": "Twisted River Review / Due: March 1 \u2013 August 1 Every Year / Fiction, Nonfiction, Poetry, Alternative Genre / No Fees",
       "addedOn": "2026-10-04"
     },
     "twisted-tongue": {
@@ -4338,10 +4339,10 @@
       "addedOn": "2026-10-04"
     },
     "ursus-americanus-press-landfill": {
-      "name": "Ursus Americanus Press – Landfill",
+      "name": "Ursus Americanus Press \u2013 Landfill",
       "url": "https://ursusamericanuslit.squarespace.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Ursus Americanus Press – Landfill / Now / Poetry",
+      "listing": "Ursus Americanus Press \u2013 Landfill / Now / Poetry",
       "addedOn": "2026-10-04"
     },
     "vagabond-city": {
@@ -4352,10 +4353,10 @@
       "addedOn": "2026-10-04"
     },
     "vida-women-in-the-literary-arts-the-vida-review": {
-      "name": "VIDA: Women in the Literary Arts — The VIDA Review",
+      "name": "VIDA: Women in the Literary Arts \u2014 The VIDA Review",
       "url": "https://www.vidaweb.org/vida-review/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "VIDA: Women in the Literary Arts — The VIDA Review / Year-Round / Poetry, Fiction, Nonfiction, Interviews and Reviews",
+      "listing": "VIDA: Women in the Literary Arts \u2014 The VIDA Review / Year-Round / Poetry, Fiction, Nonfiction, Interviews and Reviews",
       "addedOn": "2026-10-04"
     },
     "virgo-venus-press": {
@@ -4376,7 +4377,7 @@
       "name": "Watershed Review",
       "url": "https://watershedreview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Watershed Review / Due: August 15 – September 30 / Poetry, Fiction, Creative Nonfiction, Art / Fee: $3 (Free for Students & Financial Hardship)",
+      "listing": "Watershed Review / Due: August 15 \u2013 September 30 / Poetry, Fiction, Creative Nonfiction, Art / Fee: $3 (Free for Students & Financial Hardship)",
       "addedOn": "2026-10-04"
     },
     "wax-nine": {
@@ -4390,14 +4391,14 @@
       "name": "Waxwing",
       "url": "https://waxwing.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "Waxwing / Due: May 1 – April 30 / Poetry / No Fee but Cap at 300 Submissions",
+      "listing": "Waxwing / Due: May 1 \u2013 April 30 / Poetry / No Fee but Cap at 300 Submissions",
       "addedOn": "2026-10-04"
     },
     "west-trade-review": {
       "name": "West Trade Review",
       "url": "https://www.westtradereview.com/submissionguidelines20.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
-      "listing": "West Trade Review / Due: April 1 – December 15 / Poetry, Fiction, Creative Nonfiction, and Novel Excerpts",
+      "listing": "West Trade Review / Due: April 1 \u2013 December 15 / Poetry, Fiction, Creative Nonfiction, and Novel Excerpts",
       "addedOn": "2026-10-04"
     },
     "westchester-review": {
