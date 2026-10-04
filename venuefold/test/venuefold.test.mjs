@@ -90,12 +90,15 @@ test("toDeskVenues maps records to the desk format", () => {
       windows: [{ start: "01-01", end: "01-31", free: false }, { start: "07-01", end: "07-31", free: false }], yearRound: false,
       cap: null, minPoems: null, maxPoems: 4, pays: "$40 per poem", aiPolicy: "No generative AI", notes: "One document.", evidence: [], confidence: "high" } },
     "email-only": { name: "Email Only", url: "https://e.example.org", checkedOn: "2026-10-01", record: { name: "Email Only", acceptsPoetry: true, submitMethod: "email", submitEmail: "poems@e.example.org", feeUSD: null, windows: [], yearRound: true, notes: "", evidence: [], confidence: "medium" } },
+    "student-route": { name: "Student Route", url: "https://s.example.edu", checkedOn: "2026-10-01", record: { name: "Student Route", acceptsPoetry: true, submitMethod: "submittable", feeUSD: 3,
+      waiver: { kind: "identity", contactEmail: "journal@s.example.edu", who: "Students of the college", note: "Students may submit free by email", requestWindow: null },
+      windows: [{ start: "11-13", end: "02-28", free: false }, { start: "05-01", end: "06-01", free: true }], yearRound: false, notes: "", evidence: [], confidence: "high" } },
     "low": { name: "Low", url: "https://low.example.org", record: { name: "Low", acceptsPoetry: true, confidence: "low", windows: [], yearRound: true, notes: "" } },
     "fiction": { name: "Fiction Only", url: "https://f.example.org", record: { name: "Fiction Only", acceptsPoetry: false, confidence: "high", windows: [], yearRound: true, notes: "" } },
     "unextracted": { name: "Not yet", url: "https://n.example.org" }
   } };
   const out = vf.toDeskVenues(db);
-  assert.deepEqual(out.map((v) => v.id).sort(), ["vf-email-only", "vf-lantern-street-review"], "drops low confidence, non-poetry and unextracted");
+  assert.deepEqual(out.map((v) => v.id).sort(), ["vf-email-only", "vf-lantern-street-review", "vf-student-route"], "drops low confidence, non-poetry and unextracted");
   const l = out.find((v) => v.id === "vf-lantern-street-review");
   assert.equal(l.url, "https://lanternstreet.submittable.com/submit");
   assert.equal(l.fee, 3);
@@ -105,6 +108,10 @@ test("toDeskVenues maps records to the desk format", () => {
   assert.ok(["01-01", "07-01"].includes(l.start));
   assert.deepEqual({ kind: l.waiver.kind, email: l.waiver.email }, { kind: "email", email: "waivers@lanternstreet.org" });
   assert.match(l.waiver.note, /hardship/);
+  const s = out.find((v) => v.id === "vf-student-route");
+  assert.equal(s.waiver.kind, "identity", "identity-only free routes are not turned into open free windows");
+  assert.equal(s.waiver.start, undefined);
+  assert.match(s.waiver.note, /Students of the college/);
   const e = out.find((v) => v.id === "vf-email-only");
   assert.equal(e.submitEmail, "poems@e.example.org");
   assert.equal(e.fee, 0);

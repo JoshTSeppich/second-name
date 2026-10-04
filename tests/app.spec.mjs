@@ -230,6 +230,24 @@ test("venue import merges venues without touching poems", async ({ page }) => {
   expect(after.venues.find((v) => v.name === "Rattle").notes).toBe("updated by test");
 });
 
+test("a waiver limited to certain writers is not shown as a free window", async ({ page }) => {
+  await mockProvider(page, ANTHROPIC);
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await nav(page, "You");
+  const file = { venuefold: 1, exportedOn: "2026-10-04T20:00:00Z", venues: [
+    { id: "vf-student", name: "Student Route Review", url: "https://s.example.edu", fee: 3, start: "11-13", end: "02-28", maxPoems: 5,
+      waiver: { kind: "identity", email: "journal@s.example.edu", note: "Students of the college. Students may submit free by email" } },
+  ] };
+  await page.locator('input[type="file"]').setInputFiles({ name: "desk-venues.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(file)) });
+  await expect(page.locator("#toast")).toContainText("1 added");
+  await nav(page, "Dates");
+  await page.getByRole("tab", { name: "List" }).click();
+  const card = page.locator(".card").filter({ has: page.getByRole("heading", { name: "Student Route Review" }) });
+  await expect(card.locator(".chips").first()).toHaveText("Waiver for some writers");
+  await expect(card).not.toContainText("Free windows");
+});
+
 test("starts with zero poems and no seeded poem data", async ({ page }) => {
   await mockProvider(page, ANTHROPIC);
   await page.goto("/");

@@ -1,6 +1,6 @@
 {
  "venuefold": 1,
- "exportedOn": "2026-10-04",
+ "exportedOn": "2026-10-04T19:07:42.788Z",
  "venues": [
   {
    "id": "vf-change",
@@ -89,7 +89,7 @@
    "checked": "2026-10-04",
    "notes": "Maximum five poems (up to seven total pages) with no more than one poem per page. Do not submit more than once per genre per reading cycle. Simultaneous submissions accepted; notify immediately if accepted elsewhere. Previously published work and AI-generated work not considered.",
    "waiver": {
-    "kind": "window",
+    "kind": "identity",
     "email": "allium@colum.edu",
     "note": "Columbia College Chicago students. Columbia College Chicago students only are encouraged to submit via email using their Columbia College email address, bypassing the Submittable fee"
    },
@@ -236,7 +236,7 @@
    "checked": "2026-10-04",
    "notes": "Poetry submissions should be up to 10 pages of translated work; if originals are included, the entire document may reach 20 pages maximum. Simultaneous submissions permitted but the journal must be notified of acceptances elsewhere. All submissions must be unpublished translations (source text may have been previously published). Rolling deadline year-round. Response: One month guaranteed from March 1, 2021 onwards",
    "waiver": {
-    "kind": "window",
+    "kind": "identity",
     "note": "Writers based in sub-Saharan Africa or translating work from this region. Submissions are kept free for those based in sub-Saharan Africa or translating work from this region. The journal may offer exemptions for other regions in future."
    },
    "source": "venuefold"

@@ -251,9 +251,10 @@ export function toDeskVenues(db) {
     const w = r.yearRound ? null : nextWindow(r.windows || []);
     const freeW = (r.windows || []).length > 1 ? nextWindow(r.windows, true) : null;
     let waiver = null;
-    if (r.waiver) waiver = { kind: r.waiver.kind === "form" || r.waiver.kind === "identity" ? "window" : r.waiver.kind, email: r.waiver.contactEmail || undefined, note: [r.waiver.who, r.waiver.note, r.waiver.requestWindow && "Requests: " + r.waiver.requestWindow].filter(Boolean).join(". ") };
+    if (r.waiver) waiver = { // "identity" stays as is: those routes are only for certain writers, so they must not read as open free windows.
+    kind: r.waiver.kind === "form" ? "window" : r.waiver.kind, email: r.waiver.contactEmail || undefined, note: [r.waiver.who, r.waiver.note, r.waiver.requestWindow && "Requests: " + r.waiver.requestWindow].filter(Boolean).join(". ") };
     else if (r.freeOption && r.feeUSD) waiver = { kind: "option", note: r.freeOption };
-    if (waiver && freeW && w !== freeW) Object.assign(waiver, { kind: "window", start: freeW.start, end: freeW.end });
+    if (waiver && waiver.kind !== "identity" && freeW && w !== freeW) Object.assign(waiver, { kind: "window", start: freeW.start, end: freeW.end });
     out.push({
       id: "vf-" + k, name: r.name || v.name, url: r.submitUrl || v.guidelinesUrl || v.url,
       submitEmail: r.submitMethod === "email" ? r.submitEmail || undefined : undefined,
@@ -269,7 +270,7 @@ export function toDeskVenues(db) {
 export function exportDesk() {
   const out = toDeskVenues(load());
   const file = path.join(DIR, "desk-venues.json");
-  fs.writeFileSync(file, JSON.stringify({ venuefold: 1, exportedOn: today(), venues: out }, null, 1));
+  fs.writeFileSync(file, JSON.stringify({ venuefold: 1, exportedOn: new Date().toISOString(), venues: out }, null, 1));
   console.log(`export: ${out.length} venues -> ${file}\nIn the desk: You tab -> Import venues -> pick this file.`);
 }
 function status() {

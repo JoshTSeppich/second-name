@@ -470,7 +470,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   function failing(q){ return checksFor(q).filter(function(c){ return !c[0]; }); }
 
   function costTier(v){ if(!(+v.fee)) return 0; if(v.waiver && (v.waiver.kind === "email" || v.waiver.kind === "option")) return 1; return 2; }
-  function waiverLabel(v){ if(!(+v.fee)) return null; if(!v.waiver) return null; return v.waiver.kind === "email" ? "Waiver by email" : v.waiver.kind === "option" ? "Free option" : "Free windows"; }
+  function waiverLabel(v){ if(!(+v.fee)) return null; if(!v.waiver) return null; return v.waiver.kind === "email" ? "Waiver by email" : v.waiver.kind === "option" ? "Free option" : v.waiver.kind === "window" ? "Free windows" : v.waiver.kind === "identity" ? "Waiver for some writers" : "Waiver policy"; }
   function runAutopilot(){
     var miss = setupMissing();
     if(miss.length){ toast("Finish setup first: " + miss.map(function(m){return m.t.toLowerCase();}).join(", ") + "."); return; }
@@ -585,7 +585,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       var wst = q.waiver === "granted" ? ["ok","Waived"] : q.waiver === "requested" ? ["warn","Requested" + (q.waiverAt ? " " + new Date(q.waiverAt).toLocaleDateString(undefined,{month:"short",day:"numeric"}) : "")] : q.waiver === "denied" ? ["bad","Denied"] : v.waiver ? ["warn", waiverLabel(v)] : ["plain","None known"];
       cw.appendChild(h("div", {class:"between"}, h("h2", {text:"Reading fee " + money(v.fee)}), h("span", {class:"chip " + wst[0], text:wst[1]})));
       cw.appendChild(h("div", {class:"line", text: v.waiver && v.waiver.note ? v.waiver.note : "No waiver policy found for this venue. Check their page; many waive on request if you ask by email."}));
-      if(v.waiver && v.waiver.email && q.waiver !== "granted"){
+      if(v.waiver && v.waiver.kind === "email" && v.waiver.email && q.waiver !== "granted"){
         var em = waiverEmail(q), href = "mailto:" + em.to + "?subject=" + encodeURIComponent(em.subject) + "&body=" + encodeURIComponent(em.body);
         var rw = h("div", {class:"row", style:"margin-top:10px"});
         rw.appendChild(h("a", {class:"btn primary", style:"display:inline-flex;align-items:center;text-decoration:none", href:href, text:"Request a waiver by email", onclick:function(){ if(q.waiver === "none" || !q.waiver){ q.waiver = "requested"; q.waiverAt = new Date().toISOString(); save(); setTimeout(render, 300); } }}));
@@ -748,7 +748,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     sorted.forEach(function(v){
       var w = winStatus(v), c = h("div", {class:"card"});
       c.appendChild(h("div", {class:"between"}, h("h2", {text:v.name}), h("span", {class:"chip " + w.chip, text:w.short})));
-      if(waiverLabel(v)) c.appendChild(h("div", {class:"chips", style:"margin-top:4px"}, h("span", {class:"chip ok", text:waiverLabel(v)})));
+      if(waiverLabel(v)) c.appendChild(h("div", {class:"chips", style:"margin-top:4px"}, h("span", {class:"chip " + (v.waiver.kind === "identity" ? "plain" : "ok"), text:waiverLabel(v)})));
       c.appendChild(h("div", {class:"line", text: money(v.fee) + (v.start ? " · " + fmtMD(v.start) + " to " + fmtMD(v.end) : " · rolling") + (v.maxPoems ? " · up to " + plural(v.maxPoems,"poem") : "")}));
       if(v.submitEmail) c.appendChild(h("div", {class:"line", text:"Submits by email: " + v.submitEmail}));
       if(v.pays) c.appendChild(h("div", {class:"line", text:"Pays " + v.pays}));
@@ -849,7 +849,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       if(!t) return; var d; try { d = JSON.parse(t); } catch(e){ return; }
       if(!d.exportedOn || d.exportedOn === S.venuesSyncedOn || !Array.isArray(d.venues) || !d.venues.length) return;
       importVenues(t, true); S.venuesSyncedOn = d.exportedOn; save();
-      toast("Venues refreshed (checked " + d.exportedOn + ").");
+      toast("Venues refreshed (checked " + String(d.exportedOn).slice(0,10) + ").");
     }, function(){});
   }
   function importVenues(text, quiet){
