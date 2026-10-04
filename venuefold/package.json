@@ -12,7 +12,7 @@
     "crawl": "node venuefold.mjs crawl --limit 25",
     "export": "node venuefold.mjs export",
     "status": "node venuefold.mjs status",
-    "test": "node --test test/"
+    "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",

@@ -186,8 +186,11 @@ test("copilot tool loop stops after 4 model calls", async ({ page }) => {
   await nav(page, "Copilot");
   await page.locator("#chatbox").fill("loop forever");
   await page.getByRole("button", { name: "Send" }).click();
-  await expect(page.locator(".msg.assistant").last()).toContainText("Looking.");
+  // Wait for the loop to finish (Send returns and the reply is saved), not just the first streamed text.
+  await expect(page.getByRole("button", { name: "Send" })).toBeVisible();
+  await expect(page.locator(".msg.assistant:not(#live)").last()).toContainText("Looking.");
   expect(log.chat).toHaveLength(4);
+  expect((await desk(page)).chat.at(-1).role).toBe("assistant");
 });
 
 test("copilot errors use the same plain messages as onboarding", async ({ page }) => {
