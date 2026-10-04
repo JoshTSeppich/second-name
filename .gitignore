@@ -1,0 +1,5 @@
+node_modules/
+venuefold/desk-venues.json
+.DS_Store
+test-results/
+playwright-report/

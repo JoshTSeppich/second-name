@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Second Name</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#172033">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Second Name">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#172033; --mute:#5b6478; --line:#dde3ec; --soft:#f4f6f9;
+  --accent:#2d5c8c; --accent-ink:#ffffff; --pay:#a9324e; --pay-ink:#ffffff; --ok:#1f7a5c; --ok-bg:#e3f2ec; --warn:#8a5a00; --warn-bg:#fbf0d6; --bad:#a9324e; --bad-bg:#f9e4e9;
+  --k-mem:#dbe6f6; --k-self:#e6def3; --k-body:#d3ece6; --k-threat:#f4dbe0; --k-reason:#f5e8cc;
+  --nav-h:64px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#111622; --card:#1a2131; --ink:#e8ecf4; --mute:#9ba6bb; --line:#2b3448; --soft:#202839;
+    --accent:#7fb0e0; --accent-ink:#0f1a28; --pay:#e0617d; --pay-ink:#1a0d12; --ok:#5fc7a0; --ok-bg:#15372c; --warn:#e3a94a; --warn-bg:#3b2e12; --bad:#ec7f98; --bad-bg:#4a1f2b;
+    --k-mem:#233556; --k-self:#35295a; --k-body:#1c4a40; --k-threat:#582636; --k-reason:#54431b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111622; --card:#1a2131; --ink:#e8ecf4; --mute:#9ba6bb; --line:#2b3448; --soft:#202839;
+  --accent:#7fb0e0; --accent-ink:#0f1a28; --pay:#e0617d; --pay-ink:#1a0d12; --ok:#5fc7a0; --ok-bg:#15372c; --warn:#e3a94a; --warn-bg:#3b2e12; --bad:#ec7f98; --bad-bg:#4a1f2b;
+  --k-mem:#233556; --k-self:#35295a; --k-body:#1c4a40; --k-threat:#582636; --k-reason:#54431b;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:16px/1.5 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:620px;margin:0 auto;padding:14px 16px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom,0px))}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:6px 0 14px}
+h1{font:600 30px/1.1 "Newsreader",Georgia,serif;margin:0;letter-spacing:-.01em}
+.top .meta{font-size:13px;color:var(--mute);text-align:right;line-height:1.35}
+h2{font:600 22px/1.2 "Newsreader",Georgia,serif;margin:0}
+h3{font:500 13px/1.3 "Instrument Sans",sans-serif;color:var(--mute);margin:18px 0 8px;letter-spacing:.01em}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:10px}
+.card.tap{width:100%;text-align:left;color:var(--ink);display:block}
+.card.tap:active{background:var(--soft)}
+.sub{font:italic 400 15px/1.35 "Newsreader",Georgia,serif;color:var(--mute);margin:3px 0 0}
+.line{font-size:14px;color:var(--mute);margin-top:6px}
+.between{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.chip.ok{background:var(--ok-bg);color:var(--ok)} .chip.warn{background:var(--warn-bg);color:var(--warn)} .chip.bad{background:var(--bad-bg);color:var(--bad)} .chip.plain{background:var(--soft);color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.toggle{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:14px;min-height:40px}
+.toggle[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:15px;font-weight:500;padding:0 14px;min-height:44px;border-radius:12px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--mute)}
+.btn.wide{width:100%}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.back{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:var(--accent);font-size:15px;min-height:44px;padding:0 4px;margin:0 0 4px -4px}
+a{color:var(--accent)}
+
+label.f{display:block;font-size:13px;color:var(--mute);margin:12px 0 5px}
+input.f,textarea.f{width:100%;font:16px/1.4 "Instrument Sans",sans-serif;background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px}
+textarea.f{min-height:120px;resize:vertical}
+textarea.f.poem{font:17px/1.5 "Newsreader",Georgia,serif;min-height:260px}
+.help{font-size:13px;color:var(--mute);margin-top:6px}
+
+.steps{list-style:none;padding:0;margin:8px 0 0}
+.steps li{display:flex;gap:10px;align-items:flex-start;font-size:15px;padding:7px 0}
+.steps .n{flex:none;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;background:var(--soft);color:var(--mute);border:1px solid var(--line)}
+.steps li.done .n{background:var(--ok);color:#fff;border-color:var(--ok)}
+.steps li.done span.t{color:var(--mute);text-decoration:line-through}
+
+.checks{list-style:none;padding:0;margin:8px 0 0}
+.checks li{display:flex;gap:10px;font-size:14px;padding:4px 0;align-items:flex-start}
+.checks .i{flex:none;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px}
+.checks li.good .i{background:var(--ok-bg);color:var(--ok)} .checks li.bad .i{background:var(--bad-bg);color:var(--bad)}
+
+.packet{margin-top:8px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.packet summary{list-style:none;cursor:pointer;padding:12px 14px;font-size:15px;font-weight:500;display:flex;justify-content:space-between;align-items:center;background:var(--soft);min-height:44px}
+.packet summary::-webkit-details-marker{display:none}
+.packet pre{margin:0;padding:14px;white-space:pre-wrap;word-wrap:break-word;font:15.5px/1.5 "Newsreader",Georgia,serif;max-height:60vh;overflow:auto;border-top:1px solid var(--line)}
+
+.approve{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4;min-height:44px;padding:8px 0;color:var(--ink)}
+.approve input{width:24px;height:24px;margin:1px 0 0;flex:none;accent-color:var(--accent)}
+.pay{width:100%;margin-top:8px;border:0;border-radius:14px;background:var(--pay);color:var(--pay-ink);font-size:18px;font-weight:600;min-height:56px}
+.pay:disabled{opacity:.4;cursor:not-allowed}
+.finish{border:2px solid var(--pay);border-radius:16px;padding:16px;margin-top:12px;background:var(--card)}
+
+.path{list-style:none;margin:8px 0 0;padding:0}
+.path li{border-radius:12px;padding:10px 12px;margin-bottom:6px;color:var(--ink)}
+.path li strong{display:block;font-weight:600;font-size:15px}
+.path li span{font-size:14px;opacity:.85}
+.path li[data-k="mem"]{background:var(--k-mem)} .path li[data-k="self"]{background:var(--k-self)}
+.path li[data-k="body"]{background:var(--k-body)} .path li[data-k="threat"]{background:var(--k-threat)}
+.path li[data-k="reason"]{background:var(--k-reason)}
+
+.empty{color:var(--mute);text-align:center;padding:22px 12px;font-size:15px}
+.gauge{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:8px}
+.gauge b{display:block;height:100%;background:var(--ok)}
+
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;z-index:5}
+nav[hidden]{display:none}
+nav .in{display:flex;width:100%;max-width:620px}
+nav button{flex:1;border:0;background:transparent;color:var(--mute);font-size:12.5px;font-weight:500;min-height:52px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav button[aria-selected="true"]{color:var(--accent);background:var(--soft)}
+nav .dot{position:absolute;margin:-2px 0 0 26px;width:8px;height:8px;border-radius:50%;background:var(--pay)}
+
+.chat{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.msg{max-width:92%;padding:12px 14px;border-radius:16px;font-size:15.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.msg.user{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:6px}
+.msg.assistant{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px;font-family:"Newsreader",Georgia,serif;font-size:17px}
+.composer{position:sticky;bottom:calc(var(--nav-h) + 8px + env(safe-area-inset-bottom,0px));background:var(--bg);padding-top:8px}
+.composer textarea.f{min-height:64px}
+.seg{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin:-4px 0 14px}
+.seg button{flex:1;border:0;background:transparent;color:var(--mute);font-size:15px;font-weight:500;min-height:40px;border-radius:9px}
+.seg button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:10px 0 8px;margin:6px 0 4px;font:600 17px/1.2 "Newsreader",Georgia,serif;color:var(--ink);z-index:2}
+.ev{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:8px}
+.ev.past{opacity:.55}
+.ev .day{flex:none;width:52px;text-align:center;border-radius:10px;padding:6px 0;background:var(--soft)}
+.ev .day b{display:block;font:600 22px/1 "Newsreader",Georgia,serif}
+.ev .day span{font-size:11px;color:var(--mute)}
+.ev.opens .day{background:var(--ok-bg)} .ev.opens .day b{color:var(--ok)}
+.ev.closes .day{background:var(--bad-bg)} .ev.closes .day b{color:var(--bad)}
+.ev.free .day{background:var(--warn-bg)} .ev.free .day b{color:var(--warn)}
+.evb{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.evt{font-size:16px;font-weight:600}
+.addcal{font-size:13px;margin-top:8px;min-height:32px;display:inline-flex;align-items:center}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);font-size:14px;padding:10px 14px;border-radius:12px;max-width:min(92vw,560px);opacity:0;pointer-events:none;transition:opacity .2s;z-index:6}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+<main id="main"></main>
+<nav aria-label="Sections"><div class="in" id="nav"></div></nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var KEY = "second-name-desk-v2";
+  var KINDS = {mem:"Memory", self:"Self", body:"Body", threat:"Threat", reason:"Reasoning"};
+  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  var seed = {
+    tab:"desk", budget:25, maxQueue:5, lead:60, name:"", bio:"",
+    pitch:"",
+    poems:[],
+    // Verified Oct 4, 2026 against each venue's own submission page unless the note says otherwise. Re-check before paying.
+    venues:[
+      {id:"v11", name:"Rattle", url:"https://rattle.submittable.com/submit", fee:0, start:"", end:"", tags:"general", maxPoems:4, pays:"$200 print, $100 online", ai:"No AI-generated work", checked:"2026-10-04", notes:"Free year-round. Up to 4 poems. Every free submission is also considered for the $2,000 Neil Postman Award. Wants a personal note about who you are."},
+      {id:"v12", name:"Palette Poetry (Featured)", url:"https://palettepoetry.submittable.com/submit", fee:0, start:"", end:"", tags:"general", maxPoems:3, pays:"$50 per poem", ai:"No AI-produced work", checked:"2026-10-04", notes:"Featured Poetry is always free and open year-round. Quick-response option for writers of historically marginalized identities."},
+      {id:"v13", name:"Frontier Poetry (New Voices)", url:"https://frontier.submittable.com/submit/79694/new-voices-free", fee:0, start:"", end:"", tags:"general", maxPoems:5, pays:"$50 per poem, up to $150", checked:"2026-10-04", notes:"Free, year-round, for poets with no more than one full-length collection. Up to 5 poems in one document, 10 pages max. Free fast-response option for BIPOC poets."},
+      {id:"v14", name:"Waxwing", url:"https://waxwing.submittable.com/submit", fee:0, start:"10-01", end:"11-30", tags:"general, experimental", maxPoems:3, checked:"2026-10-04", notes:"Free, but capped at 300 submissions a month across all genres, so submit on the 1st. Poetry opens in set months (their page currently lists October, November, April and May). Does not pay."},
+      {id:"v15", name:"Beloit Poetry Journal", url:"https://www.bpj.org/submit/regular-guidelines", fee:0, start:"01-01", end:"01-31", tags:"general", maxPoems:3, checked:"2026-10-04", notes:"Free open reading periods Jan 1-31 and Jul 1-31, capped at 800 per period. One submission per period. Enjoys long poems."},
+      {id:"v16", name:"Litmosphere", url:"https://litmosphere.charlottelit.org/submissions", fee:0, start:"01-01", end:"01-31", tags:"general", maxPoems:5, pays:"Pays (amount on their page)", checked:"2026-10-04", notes:"Free, January for the spring issue and July for fall. Up to 5 poems. Describes itself as 'for lovers of image and metaphor, as curious about inner experience as driving narrative'."},
+      {id:"v17", name:"Sugar House Review", url:"https://sugarhousereview.submittable.com/submit", fee:3.75, start:"01-31", end:"07-31", tags:"general", maxPoems:5, checked:"2026-10-04", notes:"Utah's independent poetry journal (Cedar City). Fast-track $3.75 Jan 31 to Jul 31 with a 60-day response. Subscribers can submit any time.", waiver:{kind:"window", start:"08-31", end:"09-30", note:"Free regular submissions Aug 31 to Sep 30 each year, capped at 300 a month (about 6-month response)."}},
+      {id:"v1", name:"P-QUEUE", url:"https://pqueue.wordpress.com/volume-21-call-for-papers/", fee:0, start:"09-01", end:"02-01", tags:"experimental, interdisciplinary, general", maxPoems:3, checked:"2026-09-30", notes:"Poetry and prose, cross-genre, theory, experimental. Pays one print copy. Window per Heavy Feather Review's list; confirm on their page."},
+      {id:"v2", name:"ANMLY", url:"https://anmly.submittable.com/submit", fee:3, start:"10-01", end:"02-01", tags:"experimental, general", maxPoems:5, ai:"No AI-generated or AI-assisted writing", checked:"2026-10-04", notes:"Up to 5 poems in one document, bio in the cover letter field. Over 1,000 poetry submissions a period.", waiver:{kind:"email", email:"editor@anomalouspress.org", note:"Waives the $3 fee for hardship on request, and for Black, Indigenous and Palestinian writers. Email any time during the reading period."}},
+      {id:"v6", name:"Allium", url:"https://allium.colum.edu/", fee:3, start:"11-15", end:"01-31", tags:"general", maxPoems:3, checked:"2026-09-30", notes:"Columbia College Chicago. Window and fee per Heavy Feather Review's list; confirm on their page."},
+      {id:"v9", name:"Harpur Palate", url:"https://harpurpalate.submittable.com/submit", fee:0, start:"01-01", end:"03-15", tags:"general", maxPoems:3, checked:"2026-10-04", notes:"Free. 1 to 3 poems, 5 pages max, one submission per period. Closes early at 750 poetry submissions, so go on Jan 1. Also open Jul 1 to Oct 15."},
+      {id:"v5", name:"Radar Poetry", url:"http://www.radarpoetry.com/", fee:3, start:"11-01", end:"01-01", tags:"experimental, general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list: free or $3 option. Confirm on their page.", waiver:{kind:"option", note:"A free submission option exists on their form. Pick it instead of the paid one."}},
+      {id:"v7", name:"The Colby Review", url:"https://colbyreview.org/", fee:0, start:"12-01", end:"03-01", tags:"general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list. Confirm on their page."},
+      {id:"v8", name:"Shō Poetry Journal", url:"https://shopoetryjournal.com/submissions/", fee:3, start:"12-15", end:"03-24", tags:"general", maxPoems:3, checked:"2026-10-04", notes:"30-day response. Reads groups of poems and standalones. One print copy as payment. Dates vary year to year.", waiver:{kind:"window", note:"Always free for U.S. Indigenous poets. Free pop-up windows for BIPOC poets each period, announced on their Substack and Instagram."}},
+      {id:"v10", name:"Call Me [Brackets]", url:"https://callmebrackets.net/", fee:0, start:"01-15", end:"04-01", tags:"experimental, general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list. Confirm on their page."},
+      {id:"v18", name:"Nashville Review", url:"https://as.vanderbilt.edu/nashvillereview/contact/submit", fee:0, start:"01-01", end:"01-31", tags:"general", maxPoems:3, pays:"$25 per poem", checked:"2026-09-30", notes:"Vanderbilt. Opens January and August, pays $25 a poem. Per Heavy Feather Review's list; confirm fee and dates on their page."},
+      {id:"v3", name:"december magazine", url:"http://decembermag.org/", fee:2.5, start:"10-01", end:"05-01", tags:"general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list. Confirm on their page."},
+      {id:"v4", name:"Poetry International Online", url:"https://poetryinternational.submittable.com/submit", fee:3, start:"", end:"", tags:"general", minPoems:3, maxPoems:5, checked:"2026-10-04", notes:"3 to 5 poems per submission, open until further notice."}
+    ],
+    queue:[]
+  };
+
+  // ---------- state ----------
+  var S;
+  function migrate(){
+    S.tab = S.tab || "desk"; if(["queue","profile"].indexOf(S.tab) > -1) S.tab = S.tab === "queue" ? "desk" : "you";
+    S.chat = S.chat || []; S.queue = S.queue || []; S.venues = S.venues || []; S.poems = S.poems || [];
+    seed.venues.forEach(function(sv){
+      var i = -1; S.venues.forEach(function(v, k){ if(v.id === sv.id) i = k; });
+      if(i < 0) S.venues.push(JSON.parse(JSON.stringify(sv)));
+      else if(!S.venues[i].userEdited && S.venues[i].source !== "venuefold") S.venues[i] = JSON.parse(JSON.stringify(sv));
+    });
+    S.poems.forEach(function(p){ p.revs = p.revs || []; p.tags = p.tags || ""; p.author = p.author || ""; p.second = p.second || ""; });
+  }
+  function load(){
+    try { var raw = localStorage.getItem(KEY); if(raw){ S = JSON.parse(raw); migrate(); return; } } catch(e){}
+    S = JSON.parse(JSON.stringify(seed));
+  }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+  load();
+
+  // ---------- AI provider (bring your own key) ----------
+  // The key lives in its own localStorage entry, never inside S, so "Copy everything" can't include it.
+  // It is sent only to the provider's own API, straight from this device.
+  var AKEY = "second-name-ai-key", MKEY = "second-name-ai-model";
+  var PROVIDERS = {
+    anthropic: {
+      label:"Anthropic (Claude)", short:"Anthropic", defaultModel:"claude-haiku-4-5-20251001",
+      keysUrl:"https://platform.claude.com/settings/keys", billingUrl:"https://platform.claude.com/settings/billing",
+      keyHint:"Starts with sk-ant-",
+      headers:function(key){ return {"x-api-key":key, "anthropic-version":"2023-06-01", "anthropic-dangerous-direct-browser-access":"true", "content-type":"application/json"}; },
+      verifyUrl:"https://api.anthropic.com/v1/models?limit=1",
+      // One round: returns {text, calls:[{id,name,input}], stop, assistant} in a common shape.
+      call:function(key, model, st, signal){
+        var body = {model:model, max_tokens:2000, messages:st.msgs};
+        if(st.system) body.system = st.system;
+        if(st.tools.length) body.tools = st.tools.map(function(t){ return {name:t.name, description:t.description, input_schema:t.inputSchema}; });
+        return aiFetch(this, "https://api.anthropic.com/v1/messages", key, body, signal).then(function(d){
+          var c = d.content || [];
+          return {text: c.filter(function(b){ return b.type === "text"; }).map(function(b){ return b.text; }).join(""),
+            calls: c.filter(function(b){ return b.type === "tool_use"; }).map(function(b){ return {id:b.id, name:b.name, input:b.input || {}}; }),
+            stop: d.stop_reason === "tool_use" ? "tools" : d.stop_reason === "max_tokens" ? "length" : "end",
+            assistant: {role:"assistant", content:c}};
+        });
+      },
+      start:function(turns){
+        var msgs = [];
+        turns.forEach(function(t){ var last = msgs[msgs.length-1]; if(last && last.role === t.role) last.content += "\n\n" + t.content; else msgs.push({role:t.role, content:t.content}); });
+        return msgs;
+      },
+      results:function(st, out){ st.msgs.push({role:"user", content: out.map(function(r){ return {type:"tool_result", tool_use_id:r.id, content:r.content, is_error: r.error || undefined}; })}); },
+      classify:function(status, err){
+        var type = err && err.type || "", msg = (err && err.message || "").toLowerCase();
+        if(status === 401 || type === "authentication_error") return "invalid_key";
+        if(status === 402 || type === "billing_error" || /credit balance|spend limit|billing/.test(msg)) return "no_credit";
+        if(status === 403 || type === "permission_error") return "forbidden";
+        if(status === 429) return "rate_limited";
+        if(status === 404 || /model/.test(msg) && status === 400) return "bad_model";
+        return "provider_error";
+      }
+    },
+    openai: {
+      label:"OpenAI", short:"OpenAI", defaultModel:"gpt-6-luna",
+      keysUrl:"https://platform.openai.com/account/api-keys", billingUrl:"https://platform.openai.com/settings/organization/billing",
+      keyHint:"Starts with sk-",
+      headers:function(key){ return {"authorization":"Bearer " + key, "content-type":"application/json"}; },
+      verifyUrl:"https://api.openai.com/v1/models",
+      call:function(key, model, st, signal){
+        var body = {model:model, max_completion_tokens:2000, messages:st.msgs};
+        // GPT-6 models only allow function calling on Chat Completions with reasoning_effort "none".
+        if(/^gpt-6/.test(model)) body.reasoning_effort = "none";
+        if(st.tools.length) body.tools = st.tools.map(function(t){ return {type:"function", "function":{name:t.name, description:t.description, parameters:t.inputSchema}}; });
+        return aiFetch(this, "https://api.openai.com/v1/chat/completions", key, body, signal).then(function(d){
+          var ch = (d.choices || [])[0] || {}, m = ch.message || {};
+          return {text: typeof m.content === "string" ? m.content : "",
+            calls: (m.tool_calls || []).map(function(c){ var a = {}; try { a = JSON.parse(c["function"].arguments || "{}"); } catch(e){} return {id:c.id, name:c["function"].name, input:a}; }),
+            stop: ch.finish_reason === "tool_calls" ? "tools" : ch.finish_reason === "length" ? "length" : "end",
+            assistant: m};
+        });
+      },
+      start:function(turns, system){
+        return (system ? [{role:"system", content:system}] : []).concat(turns.map(function(t){ return {role:t.role, content:t.content}; }));
+      },
+      results:function(st, out){ out.forEach(function(r){ st.msgs.push({role:"tool", tool_call_id:r.id, content:r.content}); }); },
+      classify:function(status, err){
+        var code = err && (err.code || err.type) || "";
+        if(status === 401 || code === "invalid_api_key") return "invalid_key";
+        if(code === "credit_balance_exhausted" || code === "insufficient_quota" || status === 402) return "no_credit";
+        if(status === 403) return "forbidden";
+        if(status === 429) return "rate_limited";
+        if(status === 404 || code === "model_not_found") return "bad_model";
+        return "provider_error";
+      }
+    }
+  };
+  // Plain-language outcomes, shared by onboarding and the copilot.
+  function aiMessage(code, prov){
+    var P = PROVIDERS[prov] || PROVIDERS.anthropic;
+    return {
+      invalid_key: P.short + " didn't accept that key. Check you copied all of it (no spaces), or create a new key and paste that.",
+      no_credit: "The key works, but the " + P.short + " account has no credit left. Add credit on their billing page, then try again.",
+      rate_limited: P.short + " says you've hit a rate or spending limit. Wait a minute and try again, or raise the limit in your " + P.short + " account.",
+      forbidden: P.short + " refused this key for this request (key permissions or region). Check the key's settings in your " + P.short + " account.",
+      bad_model: P.short + " doesn't recognise the model set in You > Advanced. Clear that field to use the default.",
+      network: "Couldn't reach " + P.short + ". Check you're online and try again.",
+      provider_error: P.short + " had a problem answering. Try again in a few minutes.",
+      cancelled: "Stopped."
+    }[code] || "Something went wrong. Try again.";
+  }
+  function aiFetch(P, url, key, body, signal){
+    return fetch(url, {method:"POST", headers:P.headers(key), body:JSON.stringify(body), signal:signal}).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(d){
+        if(!r.ok) throw {code:P.classify(r.status, d && d.error), status:r.status};
+        return d;
+      });
+    }, function(e){ throw {code: e && e.name === "AbortError" ? "cancelled" : "network"}; });
+  }
+  function aiConf(){ try { var c = JSON.parse(localStorage.getItem(AKEY)); return c && c.key && PROVIDERS[c.provider] ? c : null; } catch(e){ return null; } }
+  function setAiConf(c){ try { if(c) localStorage.setItem(AKEY, JSON.stringify(c)); else localStorage.removeItem(AKEY); } catch(e){} }
+  function modelOverrides(){ try { return JSON.parse(localStorage.getItem(MKEY)) || {}; } catch(e){ return {}; } }
+  function aiModel(prov){ return (modelOverrides()[prov] || "").trim() || PROVIDERS[prov].defaultModel; }
+  function maskKey(k){ return "••••" + String(k||"").slice(-4); }
+  // Checks a key with the provider's list-models endpoint: authenticated, but costs nothing.
+  function verifyKey(prov, key){
+    var P = PROVIDERS[prov];
+    return fetch(P.verifyUrl, {headers:P.headers(key)}).then(function(r){
+      if(r.ok) return {code:"ok"};
+      return r.json().catch(function(){ return {}; }).then(function(d){ return {code:P.classify(r.status, d && d.error)}; });
+    }, function(){ return {code:"network"}; });
+  }
+  // The copilot's one entry point. turns: string or [{role, content}]. opts: system, tools, signal, onText.
+  // Runs the tool loop for at most 4 model calls. Resolves {text, truncated}; rejects {code, text}.
+  var MAX_ROUNDS = 4;
+  function aiSample(turns, opts){
+    opts = opts || {};
+    var conf = aiConf(); if(!conf) return Promise.reject({code:"invalid_key"});
+    var P = PROVIDERS[conf.provider], model = aiModel(conf.provider);
+    if(typeof turns === "string") turns = [{role:"user", content:turns}];
+    var tools = (opts.tools || []).map(function(t){ return {name:t.name, description:t.description, inputSchema:t.inputSchema || {type:"object", properties:{}}, execute:t.execute}; });
+    var byName = {}; tools.forEach(function(t){ byName[t.name] = t; });
+    var st = {system:opts.system || "", tools:tools, msgs:P.start(turns, opts.system)}, all = "";
+    function round(n){
+      return P.call(conf.key, model, st, opts.signal).then(function(res){
+        if(res.text){ all = all ? all + "\n\n" + res.text : res.text; if(opts.onText) opts.onText({text:all, delta:res.text}); }
+        if(res.stop !== "tools" || !res.calls.length || n >= MAX_ROUNDS) return {text: all || "(no reply)", truncated: res.stop === "length"};
+        st.msgs.push(res.assistant);
+        return Promise.all(res.calls.map(function(c){
+          return Promise.resolve().then(function(){ var t = byName[c.name]; if(!t) throw new Error("unknown tool " + c.name); return t.execute(c.input, {signal:opts.signal}); })
+            .then(function(out){ return {id:c.id, content: typeof out === "string" ? out : JSON.stringify(out)}; },
+                  function(err){ return {id:c.id, error:true, content:"Error: " + (err && err.message || err)}; });
+        })).then(function(out){ P.results(st, out); return round(n + 1); });
+      }, function(e){ throw {code:e.code, text: all || undefined}; });
+    }
+    return round(1);
+  }
+  function aiReady(){ return !!aiConf(); }
+  // Onboarding screen state (not saved)
+  var OB = {provider:null, key:"", busy:false, result:null, changing:false};
+
+  // UI state (not saved): which screen is open inside the current tab
+  var U = {calView:true, screen:null, id:null, seen:{}, ticks:{}, finishing:null, busy:false, addVenue:false, pathOpen:{}};
+
+  // ---------- helpers ----------
+  function h(tag, attrs){
+    var e = document.createElement(tag); attrs = attrs || {};
+    Object.keys(attrs).forEach(function(k){
+      if(k === "text") e.textContent = attrs[k];
+      else if(k === "html") e.innerHTML = attrs[k];
+      else if(k.indexOf("on") === 0) e.addEventListener(k.slice(2), attrs[k]);
+      else if(k === "class") e.className = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    });
+    for(var i=2;i<arguments.length;i++){ var c = arguments[i]; if(c==null||c===false) continue; e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }
+    return e;
+  }
+  function uid(){ return "x" + Math.random().toString(36).slice(2,9); }
+  function byId(list, id){ return list.filter(function(x){ return x.id === id; })[0]; }
+  function tagsOf(s){ return (s||"").toLowerCase().split(",").map(function(t){return t.trim();}).filter(Boolean); }
+  function money(n){ n = +n||0; return n === 0 ? "Free" : "$" + n.toFixed(2); }
+  function fmtMD(md){ var p = md.split("-"); return MON[+p[0]-1] + " " + (+p[1]); }
+  function plural(n, s){ return n + " " + s + (n === 1 ? "" : "s"); }
+  function field(label, value, onchange, opts){
+    opts = opts || {};
+    var input = opts.area ? h("textarea", {class:"f" + (opts.poem ? " poem" : "")}) : h("input", {class:"f", type: opts.type || "text"});
+    if(opts.placeholder) input.setAttribute("placeholder", opts.placeholder);
+    if(opts.inputmode) input.setAttribute("inputmode", opts.inputmode);
+    input.value = value == null ? "" : value;
+    input.addEventListener("change", function(){ onchange(input.value); save(); if(opts.rerender !== false) render(); });
+    var id = uid(); input.id = id;
+    var wrap = h("div"); wrap.appendChild(h("label", {class:"f", for:id, text:label})); wrap.appendChild(input);
+    if(opts.help) wrap.appendChild(h("div", {class:"help", text:opts.help}));
+    return wrap;
+  }
+  var toastT;
+  function toast(msg){ var t = document.getElementById("toast"); t.textContent = msg; t.className = "show"; clearTimeout(toastT); toastT = setTimeout(function(){ t.className = ""; }, 3200); }
+  function copyText(text){
+    return new Promise(function(res){
+      try { navigator.clipboard.writeText(text).then(function(){ res(true); }, function(){ res(fallback()); }); } catch(e){ res(fallback()); }
+      function fallback(){
+        try { var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly",""); ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); var ok = document.execCommand("copy"); document.body.removeChild(ta); return !!ok; } catch(e){ return false; }
+      }
+    });
+  }
+
+  // ---------- windows ----------
+  function winStatus(v){
+    if(!v.start || !v.end) return {open:true, days:0, left:9999, text:"Open year-round", chip:"ok", short:"Open"};
+    var now = new Date(), sp = v.start.split("-"), ep = v.end.split("-");
+    var sm = +sp[0], sd = +sp[1], em = +ep[0], ed = +ep[1], wrap = (em*100+ed) < (sm*100+sd);
+    var best = null;
+    for(var y = now.getFullYear()-1; y <= now.getFullYear()+1; y++){
+      var s = new Date(y, sm-1, sd), e = new Date(y + (wrap?1:0), em-1, ed, 23, 59, 59);
+      if(now >= s && now <= e){ var l = Math.ceil((e - now)/86400000); return {open:true, days:0, left:l, text:"Open, closes " + fmtMD(v.end) + " (" + plural(l,"day") + " left)", chip: l <= 10 ? "warn" : "ok", short:"Closes in " + plural(l,"day")}; }
+      if(s > now && (best === null || s < best)) best = s;
+    }
+    var d = Math.ceil((best - now) / 86400000);
+    return {open:false, days:d, left:0, text:"Opens " + fmtMD(v.start) + " (in " + plural(d,"day") + ")", chip:"warn", short:"Opens in " + plural(d,"day")};
+  }
+
+  // ---------- derived ----------
+  function poemHasText(p){ return p && (p.text||"").trim().length > 0; }
+  function weekRevs(){ var cutoff = Date.now() - 7*24*3600*1000, n = 0; S.poems.forEach(function(p){ p.revs.forEach(function(t){ if(new Date(t).getTime() >= cutoff) n++; }); }); return n; }
+  function feeFor(q){ var v = byId(S.venues, q.vid); if(!v) return 0; return q.waiver === "granted" ? 0 : (+v.fee||0); }
+  function spent(){ return S.queue.reduce(function(a,q){ return a + (q.status === "sent" ? feeFor(q) : 0); }, 0); }
+  function waiverEmail(q){
+    var v = byId(S.venues, q.vid), w = winStatus(v), titles = q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? p.title : ""; }).filter(Boolean);
+    var subj = "Fee waiver request: poetry submission";
+    var body = "Dear editors of " + v.name + ",\n\nI would like to submit " + plural(titles.length,"poem") + (titles.length ? " (" + titles.join(", ") + ")" : "") + " for your " + (w.open ? "current" : "upcoming") + " reading period. The " + money(v.fee) + " reading fee is a barrier for me right now. Would you be willing to waive it? I am glad to submit by whatever method you prefer.\n\nThank you for your time and for reading.\n\n" + ((S.name||"").trim() || "[your name]");
+    return {to:(v.waiver && v.waiver.email) || "", subject:subj, body:body};
+  }
+  function left(){ return (+S.budget||0) - spent(); }
+  function setupMissing(){
+    var m = [];
+    if(!(S.name||"").trim()) m.push({t:"Your name", tab:"you"});
+    if(!(S.bio||"").trim()) m.push({t:"A short bio", tab:"you"});
+    if(!S.poems.some(poemHasText)) m.push({t:"At least one poem with text", tab:"poems"});
+    return m;
+  }
+
+  // Removes every invisible or formatting character (zero-width spaces, joiners, direction marks, soft hyphens, BOMs,
+  // variation selectors, Unicode tag characters) and normalises spaces and composed letters, so the packet is plain text.
+  var INVIS = /[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF\u00AD\u180E\u034F\uFE00-\uFE0F]|[\uDB40][\uDC00-\uDC7F]/g;
+  var CF = null; try { CF = new RegExp("\\p{Cf}", "gu"); } catch(e){}
+  function clean(s){
+    var n = 0, t = (s||"");
+    try { t = t.normalize("NFC"); } catch(e){}
+    t = t.replace(INVIS, function(){ n++; return ""; });
+    if(CF) t = t.replace(CF, function(){ n++; return ""; });
+    t = t.replace(/[\u00A0\u2000-\u200A\u202F\u205F\u3000]/g, " ").replace(/\r\n?/g, "\n");
+    return {text:t, n:n};
+  }
+
+  function pickPoems(v){
+    var pt = tagsOf(v.tags), ranked = S.poems.filter(poemHasText).map(function(p){
+      var score = 0, mine = tagsOf(p.tags);
+      pt.forEach(function(t){ if(t === "general" || mine.indexOf(t) > -1) score++; });
+      return {p:p, score:score};
+    }).sort(function(a,b){ return b.score - a.score; });
+    return ranked.slice(0, v.maxPoems || 3).map(function(r){ return r.p.id; });
+  }
+  function noteFor(v, ids){
+    var titles = ids.map(function(i){ return byId(S.poems, i).title; });
+    var list = titles.length === 1 ? titles[0] : titles.slice(0,-1).join(", ") + " and " + titles[titles.length-1];
+    return "Dear editors at " + v.name + ",\n\nPlease consider the enclosed " + (ids.length === 1 ? "poem" : ids.length + " poems") + ": " + list + ". " + (S.pitch||"").trim() + "\n\nThank you for reading.\n\n" + ((S.name||"").trim() || "[your name]");
+  }
+  function rawPacket(q){
+    var parts = [q.note.trim(), "", (S.bio||"").trim(), ""];
+    q.poemIds.forEach(function(id){ var p = byId(S.poems, id); if(p && poemHasText(p)) parts.push(p.title.toUpperCase(), "", p.text.trim(), ""); });
+    return parts.join("\n");
+  }
+  function packetFor(q){ return clean(rawPacket(q)).text; }
+  function packetInvis(q){ return clean(rawPacket(q)).n; }
+  function wordCount(s){ return (s.trim().match(/\S+/g)||[]).length; }
+
+  function checksFor(q){
+    var v = byId(S.venues, q.vid), w = winStatus(v), out = [];
+    var texts = q.poemIds.filter(function(i){ return poemHasText(byId(S.poems,i)); }).length;
+    var need = v.minPoems || 1;
+    out.push([texts >= need, texts >= need ? plural(texts,"poem") + " attached" : "This venue wants at least " + plural(need,"poem") + " (you have " + texts + ")"]);
+    out.push([!!(S.name||"").trim(), (S.name||"").trim() ? "Name set" : "Add your name in the You tab"]);
+    out.push([!!(S.bio||"").trim(), (S.bio||"").trim() ? "Bio filled in" : "Add a bio in the You tab"]);
+    out.push([w.open, w.text]);
+    var fee = feeFor(q);
+    out.push([fee <= left(), q.waiver === "granted" ? "Fee waived (" + money(v.fee) + " saved)" : !fee ? "No reading fee" : fee <= left() ? "Fee " + money(v.fee) + " fits the $" + left().toFixed(2) + " left in your budget" : "Fee " + money(v.fee) + " is over the $" + left().toFixed(2) + " left in your budget"]);
+    var hasRoute = /^https?:\/\//.test(v.url||"") || /@/.test(v.submitEmail||"");
+    out.push([hasRoute, hasRoute ? (v.submitEmail ? "Submits by email to " + v.submitEmail : "Venue page link set") : "Add the venue's submission link or email"]);
+    return out;
+  }
+  function failing(q){ return checksFor(q).filter(function(c){ return !c[0]; }); }
+
+  function costTier(v){ if(!(+v.fee)) return 0; if(v.waiver && (v.waiver.kind === "email" || v.waiver.kind === "option")) return 1; return 2; }
+  function waiverLabel(v){ if(!(+v.fee)) return null; if(!v.waiver) return null; return v.waiver.kind === "email" ? "Waiver by email" : v.waiver.kind === "option" ? "Free option" : "Free windows"; }
+  function runAutopilot(){
+    var miss = setupMissing();
+    if(miss.length){ toast("Finish setup first: " + miss.map(function(m){return m.t.toLowerCase();}).join(", ") + "."); return; }
+    var taken = {}; S.queue.forEach(function(q){ taken[q.vid] = true; });
+    var usable = S.poems.filter(poemHasText).length;
+    var cands = S.venues.filter(function(v){ return !taken[v.id] && usable >= (v.minPoems||1); }).map(function(v){ return {v:v, w:winStatus(v)}; })
+      .filter(function(c){ return c.w.open || c.w.days <= (+S.lead||60); })
+      .sort(function(a,b){ var ca = costTier(a.v), cb = costTier(b.v); if(ca !== cb) return ca - cb; return (a.w.open?0:a.w.days+1) - (b.w.open?0:b.w.days+1); });
+    var room = Math.max(0, (+S.maxQueue||5) - S.queue.filter(function(q){return q.status!=="sent";}).length);
+    var added = 0;
+    cands.slice(0, room).forEach(function(c){
+      var ids = pickPoems(c.v); if(!ids.length) return;
+      S.queue.push({id:uid(), vid:c.v.id, poemIds:ids, note:noteFor(c.v, ids), noteEdited:false, status:"ready", waiver:"none", madeAt:new Date().toISOString()});
+      added++;
+    });
+    save(); render();
+    toast(added ? plural(added,"packet") + " prepared. Nothing is paid or sent until you approve it." : (room ? "No new venues fit right now. Add venues or widen the lead time in You." : "Queue is full. Send or remove a packet first."));
+  }
+
+  // ---------- screens ----------
+  function top(title, metaLines){
+    var m = h("div", {class:"meta"}); (metaLines||[]).forEach(function(l){ m.appendChild(h("div", {text:l})); });
+    return h("div", {class:"top"}, h("h1", {text:title}), m);
+  }
+  function go(tab, screen, id){ S.tab = tab; U.screen = screen || null; U.id = id || null; U.finishing = null; save(); render(); window.scrollTo(0,0); }
+
+  function viewDesk(root){
+    root.appendChild(top("Desk", ["Fees spent " + (spent() ? "$" + spent().toFixed(2) : "$0"), "$" + left().toFixed(2) + " left of $" + (+S.budget).toFixed(2)]));
+    var miss = setupMissing();
+    if(miss.length){
+      var c = h("div", {class:"card"});
+      c.appendChild(h("h2", {text:"Finish setup"}));
+      c.appendChild(h("div", {class:"line", text:"Packets need these before they can go out."}));
+      var ul = h("ul", {class:"steps"});
+      [["Your name","you"],["A short bio","you"],["At least one poem with text","poems"]].forEach(function(s, i){
+        var done = !miss.some(function(m){ return m.t === s[0]; });
+        ul.appendChild(h("li", {class: done ? "done" : ""}, h("span", {class:"n", text: done ? "✓" : String(i+1)}), h("span", {class:"t", text:s[0]})));
+      });
+      c.appendChild(ul);
+      c.appendChild(h("button", {class:"btn primary wide", style:"margin-top:8px", text: miss[0].tab === "you" ? "Add name and bio" : "Add a poem", onclick:function(){ go(miss[0].tab); }}));
+      root.appendChild(c);
+    }
+    var a = h("div", {class:"card"});
+    a.appendChild(h("h2", {text:"Autopilot"}));
+    a.appendChild(h("div", {class:"line", text:"Finds venues that are open or open within " + plural(+S.lead||60,"day") + ", cheapest first (free, then fee-waivable, then paid), picks the best-fitting poems for each, and writes the cover note. It never pays or sends anything."}));
+    a.appendChild(h("button", {class:"btn primary wide", style:"margin-top:12px", text:"Prepare packets", onclick:runAutopilot}));
+    root.appendChild(a);
+
+    var up = calendarEvents().filter(function(e){ return e.kind !== "sent" && e.d >= new Date(new Date().setHours(0,0,0,0)); }).slice(0,3);
+    if(up.length){
+      var cu = h("button", {class:"card tap", onclick:function(){ S.tab = "venues"; U.calView = true; save(); render(); window.scrollTo(0,0); }});
+      cu.appendChild(h("div", {class:"between"}, h("h2", {text:"Coming up"}), h("span", {class:"chip plain", text:"All dates"})));
+      up.forEach(function(e){ var days = Math.round((e.d - new Date().setHours(0,0,0,0))/86400000); cu.appendChild(h("div", {class:"line", text: MON[e.d.getMonth()] + " " + e.d.getDate() + ": " + e.title + (days === 0 ? " (today)" : " (in " + plural(days,"day") + ")")})); });
+      root.appendChild(cu);
+    }
+    var ready = [], waiting = [], sent = [];
+    S.queue.forEach(function(q){ var v = byId(S.venues, q.vid); if(!v) return; if(q.status === "sent") sent.push(q); else if(winStatus(v).open) ready.push(q); else waiting.push(q); });
+    function section(title, list, mode){
+      if(!list.length) return;
+      root.appendChild(h("h3", {text:title + " · " + list.length}));
+      list.forEach(function(q){
+        var v = byId(S.venues, q.vid), w = winStatus(v), fails = failing(q).length;
+        var card = h("button", {class:"card tap", onclick:function(){ U.screen = "review"; U.id = q.id; U.ticks = {}; U.finishing = null; render(); window.scrollTo(0,0); }});
+        var head = h("div", {class:"between"}, h("h2", {text:v.name}), h("span", {class:"chip " + (mode === "sent" ? "ok" : fails ? "bad" : w.chip), text: mode === "sent" ? "Sent" : mode === "wait" ? w.short : fails ? plural(fails,"issue") : w.short}));
+        card.appendChild(head);
+        card.appendChild(h("div", {class:"sub", text: q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? (p.second || p.title) : ""; }).join(" · ")}));
+        card.appendChild(h("div", {class:"line", text: (q.waiver === "granted" ? "Fee waived" : q.waiver === "requested" ? money(v.fee) + " · waiver requested" : money(v.fee) + (waiverLabel(v) ? " · " + waiverLabel(v).toLowerCase() : "")) + (mode === "sent" && q.sentAt ? " · sent " + new Date(q.sentAt).toLocaleDateString(undefined,{month:"short",day:"numeric"}) : "")}));
+        root.appendChild(card);
+      });
+    }
+    section("Ready to review", ready, "ready");
+    section("Waiting for a window", waiting, "wait");
+    section("Sent", sent, "sent");
+    if(!S.queue.length) root.appendChild(h("div", {class:"empty", text: miss.length ? "Finish setup, then prepare packets." : "No packets yet. Tap Prepare packets to start."}));
+  }
+
+  function viewReview(root){
+    var q = byId(S.queue, U.id); if(!q){ U.screen = null; return viewDesk(root); }
+    var v = byId(S.venues, q.vid), w = winStatus(v);
+    root.appendChild(h("button", {class:"back", text:"‹ Desk", onclick:function(){ U.screen = null; render(); }}));
+    root.appendChild(h("div", {class:"between", style:"margin-bottom:6px"}, h("h1", {text:v.name}), h("span", {class:"chip " + (q.status === "sent" ? "ok" : w.chip), text: q.status === "sent" ? "Sent" : w.short})));
+    root.appendChild(h("div", {class:"line", style:"margin:0 0 12px"}, money(v.fee) + " · ", h("a", {href:v.url, target:"_blank", rel:"noopener", text:"Open venue page"}), v.notes ? " · " + v.notes : ""));
+
+    if(q.status === "sent"){
+      var d = h("div", {class:"card"}); d.appendChild(h("h2", {text:"Submitted"})); d.appendChild(h("div", {class:"line", text:"Sent " + new Date(q.sentAt).toLocaleString()}));
+      d.appendChild(h("button", {class:"btn ghost", style:"margin-top:8px", text:"Remove from list", onclick:function(){ S.queue = S.queue.filter(function(x){return x!==q;}); U.screen = null; save(); render(); }}));
+      root.appendChild(d); return;
+    }
+
+    // 1 poems
+    var c1 = h("div", {class:"card"});
+    c1.appendChild(h("div", {class:"between"}, h("h2", {text:"Poems in this packet"}), h("span", {class:"chip plain", text: q.poemIds.length + (v.maxPoems ? " of " + v.maxPoems : "")})));
+    var chips = h("div", {class:"chips"});
+    S.poems.forEach(function(p){
+      var on = q.poemIds.indexOf(p.id) > -1, can = poemHasText(p);
+      var b = h("button", {class:"toggle", "aria-pressed":String(on), text: p.second || p.title, onclick:function(){
+        if(on) q.poemIds = q.poemIds.filter(function(i){return i!==p.id;});
+        else { if(!can){ toast("That poem has no text yet."); return; } if(v.maxPoems && q.poemIds.length >= v.maxPoems){ toast("This venue takes at most " + plural(v.maxPoems,"poem") + "."); return; } q.poemIds.push(p.id); }
+        if(!q.noteEdited) q.note = noteFor(v, q.poemIds);
+        save(); render();
+      }});
+      if(!can) b.style.opacity = ".5";
+      chips.appendChild(b);
+    });
+    c1.appendChild(chips);
+    if(aiReady()) c1.appendChild(h("button", {class:"btn", style:"margin-top:10px", text:"Ask copilot about this fit", onclick:function(){ askCopilot("Is this the right set of poems for " + v.name + "? Packet id " + q.id + ". Argue for or against each poem for this venue and say what you would send instead."); }}));
+    root.appendChild(c1);
+
+    // 1b fee waiver
+    if(+v.fee){
+      var cw = h("div", {class:"card"});
+      var wst = q.waiver === "granted" ? ["ok","Waived"] : q.waiver === "requested" ? ["warn","Requested" + (q.waiverAt ? " " + new Date(q.waiverAt).toLocaleDateString(undefined,{month:"short",day:"numeric"}) : "")] : q.waiver === "denied" ? ["bad","Denied"] : v.waiver ? ["warn", waiverLabel(v)] : ["plain","None known"];
+      cw.appendChild(h("div", {class:"between"}, h("h2", {text:"Reading fee " + money(v.fee)}), h("span", {class:"chip " + wst[0], text:wst[1]})));
+      cw.appendChild(h("div", {class:"line", text: v.waiver && v.waiver.note ? v.waiver.note : "No waiver policy found for this venue. Check their page; many waive on request if you ask by email."}));
+      if(v.waiver && v.waiver.email && q.waiver !== "granted"){
+        var em = waiverEmail(q), href = "mailto:" + em.to + "?subject=" + encodeURIComponent(em.subject) + "&body=" + encodeURIComponent(em.body);
+        var rw = h("div", {class:"row", style:"margin-top:10px"});
+        rw.appendChild(h("a", {class:"btn primary", style:"display:inline-flex;align-items:center;text-decoration:none", href:href, text:"Request a waiver by email", onclick:function(){ if(q.waiver === "none" || !q.waiver){ q.waiver = "requested"; q.waiverAt = new Date().toISOString(); save(); setTimeout(render, 300); } }}));
+        rw.appendChild(h("button", {class:"btn", text:"Copy the email", onclick:function(){ copyText("To: " + em.to + "\nSubject: " + em.subject + "\n\n" + em.body).then(function(ok){ toast(ok ? "Email copied." : "Copy failed."); }); }}));
+        cw.appendChild(rw);
+        cw.appendChild(h("div", {class:"help", text:"Opens your Mail app with the request filled in, to " + em.to + ". Read it, change anything, then send. Write back here when they answer."}));
+      }
+      var rs = h("div", {class:"row", style:"margin-top:10px"});
+      if(q.waiver !== "granted") rs.appendChild(h("button", {class:"btn", text:"They waived it", onclick:function(){ q.waiver = "granted"; save(); render(); toast("Fee marked as waived for " + v.name + "."); }}));
+      if(q.waiver === "requested") rs.appendChild(h("button", {class:"btn ghost", text:"They said no", onclick:function(){ q.waiver = "denied"; save(); render(); }}));
+      if(q.waiver === "granted" || q.waiver === "denied") rs.appendChild(h("button", {class:"btn ghost", text:"Undo", onclick:function(){ q.waiver = "none"; save(); render(); }}));
+      cw.appendChild(rs);
+      root.appendChild(cw);
+    }
+
+    // 2 checks
+    var fails = failing(q), c2 = h("div", {class:"card"});
+    if(fails.length){
+      c2.appendChild(h("h2", {text: plural(fails.length,"thing") + " to fix"}));
+      var ul = h("ul", {class:"checks"}); fails.forEach(function(f){ ul.appendChild(h("li", {class:"bad"}, h("span", {class:"i", text:"!"}), h("span", {text:f[1]}))); }); c2.appendChild(ul);
+    } else {
+      c2.appendChild(h("div", {class:"between"}, h("h2", {text:"Ready to send"}), h("span", {class:"chip ok", text:"6 checks pass"})));
+      var ul2 = h("ul", {class:"checks"}); checksFor(q).forEach(function(f){ ul2.appendChild(h("li", {class:"good"}, h("span", {class:"i", text:"✓"}), h("span", {text:f[1]}))); }); c2.appendChild(ul2);
+    }
+    root.appendChild(c2);
+
+    // 3 note + packet
+    var c3 = h("div", {class:"card"});
+    c3.appendChild(h("h2", {text:"Cover note"}));
+    var ta = h("textarea", {class:"f", style:"margin-top:10px;min-height:170px"}); ta.value = q.note;
+    ta.addEventListener("change", function(){ q.note = ta.value; q.noteEdited = true; save(); render(); });
+    c3.appendChild(ta);
+    var nrow = h("div", {class:"row", style:"margin-top:8px"});
+    if(q.noteEdited) nrow.appendChild(h("button", {class:"btn ghost", text:"Reset to the default note", onclick:function(){ q.note = noteFor(v, q.poemIds); q.noteEdited = false; save(); render(); }}));
+    if(aiReady()) nrow.appendChild(h("button", {class:"btn", text: U.busy ? "Tightening…" : "Tighten note", disabled: U.busy ? "true" : null, onclick:function(){
+      if(U.busy) return; U.busy = true; render();
+      aiSample("Rewrite this cover note for a poetry journal in under 80 words. Plain and specific, no flattery, keep every fact and keep the sign-off. Return only the note.\n\n" + q.note).then(function(r){ if(r && r.text){ q.note = r.text.trim(); q.noteEdited = true; } U.busy = false; save(); render(); }, function(e){ U.busy = false; render(); toast(aiMessage(e && e.code, (aiConf()||{}).provider) + " Your note is unchanged."); });
+    }}));
+    c3.appendChild(nrow);
+    var pk = packetFor(q), inv = packetInvis(q);
+    var det = h("details", {class:"packet"}); if(U.seen[q.id]) det.setAttribute("open","");
+    det.addEventListener("toggle", function(){ if(det.open){ U.seen[q.id] = true; renderPayState(); } });
+    det.appendChild(h("summary", {}, h("span", {text:"Full packet as it will be copied"}), h("span", {class:"chip plain", text: wordCount(pk) + " words"})));
+    det.appendChild(h("pre", {text:pk}));
+    c3.appendChild(det);
+    c3.appendChild(h("div", {class:"help", text: inv ? plural(inv,"hidden character") + " were removed from the text." : "Plain text only: no hidden or formatting characters. Scanned every time the packet is built."}));
+    root.appendChild(c3);
+
+    // 4 approve
+    var c4 = h("div", {class:"card"});
+    c4.appendChild(h("h2", {text:"Your approval"}));
+    var ticks = [["page","I checked the venue's page for the current window, fee, poem limit and format."],["pay", feeFor(q) ? "I approve paying " + money(feeFor(q)) + " and submitting this packet." : "I approve submitting this packet."]];
+    ticks.forEach(function(t){
+      var cb = h("input", {type:"checkbox"}); cb.checked = !!U.ticks[t[0]];
+      cb.addEventListener("change", function(){ U.ticks[t[0]] = cb.checked; renderPayState(); });
+      c4.appendChild(h("label", {class:"approve"}, cb, h("span", {text:t[1]})));
+    });
+    var byEmail = /@/.test(v.submitEmail||"");
+    function emailLinks(){
+      var subj = "Poetry submission: " + q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? p.title : ""; }).filter(Boolean).join(", ") + " (" + ((S.name||"").trim() || "submission") + ")";
+      var body = packetFor(q);
+      return {mail:"mailto:" + v.submitEmail + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body), gmail:"https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(v.submitEmail) + "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body)};
+    }
+    var pay = h("button", {class:"pay", id:"paybtn", text: byEmail ? "Approve and open the email" : (feeFor(q) ? "Approve, pay " + money(feeFor(q)) + " and submit" : "Approve and submit"), onclick:function(){
+      copyText(packetFor(q)).then(function(ok){ toast(ok ? (byEmail ? "Packet copied too, in case the email opens empty." : "Packet copied. Paste it into the venue's form.") : "Copy failed. Open the full packet above and copy it by hand."); });
+      if(byEmail) window.location.href = emailLinks().mail; else window.open(v.url, "_blank", "noopener");
+      U.finishing = q.id; render(); setTimeout(function(){ var f = document.getElementById("finish"); if(f) f.scrollIntoView({behavior:"smooth", block:"start"}); }, 50);
+    }});
+    var hint = h("div", {class:"help", id:"payhint"});
+    c4.appendChild(pay); c4.appendChild(hint);
+    root.appendChild(c4);
+
+    function renderPayState(){
+      var need = [];
+      if(fails.length) need.push("fix the " + plural(fails.length,"issue") + " above");
+      if(!U.seen[q.id]) need.push("open the full packet once");
+      if(!U.ticks.page || !U.ticks.pay) need.push("tick both boxes");
+      var btn = document.getElementById("paybtn"), hp = document.getElementById("payhint");
+      if(!btn) return;
+      btn.disabled = need.length > 0;
+      hp.textContent = need.length ? "To unlock: " + need.join(", ") + "." : (byEmail ? "Opens your mail app with the packet addressed and filled in. You read it and press send." : "Copies the packet and opens the venue's page. You paste, pay and submit there.");
+    }
+    renderPayState();
+
+    if(U.finishing === q.id){
+      var f = h("div", {class:"finish", id:"finish"});
+      f.appendChild(h("h2", {text:"Finish on " + v.name + "'s page"}));
+      var st = h("ol", {class:"steps", style:"list-style:none"});
+      (byEmail ? [["1","Your mail app opened with the packet addressed to " + v.submitEmail + ". Read it once more."],["2","Attach a file if their guidelines ask for one."],["3","Send, then come back here."]] : [["1","Paste the packet into their form (it's on your clipboard)."],["2", feeFor(q) ? "Pay the " + money(feeFor(q)) + " fee there." : (q.waiver === "granted" ? "Use the fee-free route they gave you (a waived link or code)." : "No fee to pay.")],["3","Submit, then come back here."]]).forEach(function(s){ st.appendChild(h("li", {}, h("span", {class:"n", text:s[0]}), h("span", {class:"t", text:s[1]}))); });
+      f.appendChild(st);
+      var r1 = h("div", {class:"row", style:"margin:6px 0 12px"});
+      r1.appendChild(h("button", {class:"btn", text:"Copy packet again", onclick:function(){ copyText(packetFor(q)).then(function(ok){ toast(ok ? "Copied." : "Copy failed. Use the full packet above."); }); }}));
+      if(byEmail){ var el = emailLinks(); r1.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:el.gmail, target:"_blank", rel:"noopener", text:"Open in Gmail instead"})); r1.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:el.mail, text:"Reopen in Mail"})); }
+      else r1.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:v.url, target:"_blank", rel:"noopener", text:"Reopen venue page"}));
+      f.appendChild(r1);
+      var r2 = h("div", {class:"row"});
+      r2.appendChild(h("button", {class:"btn primary", style:"flex:1", text:"I submitted it", onclick:function(){ q.status = "sent"; q.sentAt = new Date().toISOString(); U.finishing = null; U.screen = null; save(); render(); toast("Marked as sent to " + v.name + "."); window.scrollTo(0,0); }}));
+      r2.appendChild(h("button", {class:"btn", style:"flex:1", text:"Not yet", onclick:function(){ U.finishing = null; render(); }}));
+      f.appendChild(r2);
+      root.appendChild(f);
+    }
+    root.appendChild(h("button", {class:"btn ghost", style:"margin-top:4px", text:"Remove this packet", onclick:function(){ S.queue = S.queue.filter(function(x){return x!==q;}); U.screen = null; save(); render(); toast("Packet removed."); }}));
+  }
+
+  function viewPoems(root){
+    var n = weekRevs();
+    root.appendChild(top("Poems", [plural(S.poems.length,"poem"), plural(n,"revision") + " this week of 2"]));
+    var g = h("div", {class:"gauge", style:"margin:-6px 0 14px"}); g.appendChild(h("b", {style:"width:" + Math.min(100, n/2*100) + "%"})); root.appendChild(g);
+    S.poems.forEach(function(p){
+      var inQ = S.queue.filter(function(q){ return q.status !== "sent" && q.poemIds.indexOf(p.id) > -1; }).length;
+      var sentN = S.queue.filter(function(q){ return q.status === "sent" && q.poemIds.indexOf(p.id) > -1; }).length;
+      var card = h("button", {class:"card tap", onclick:function(){ U.screen = "poem"; U.id = p.id; render(); window.scrollTo(0,0); }});
+      card.appendChild(h("div", {class:"between"}, h("h2", {text:p.title}), h("span", {class:"line", style:"margin:0;white-space:nowrap", text: p.author ? "by " + p.author : ""})));
+      card.appendChild(h("div", {class:"sub", text: p.second ? "“" + p.second + "”" : "No second name yet"}));
+      var meta = [];
+      meta.push(poemHasText(p) ? plural(p.text.trim().split("\n").filter(Boolean).length, "line") : "No text yet");
+      if(inQ) meta.push("in " + plural(inQ,"packet")); if(sentN) meta.push("sent " + sentN + "×");
+      card.appendChild(h("div", {class:"line", text:meta.join(" · ")}));
+      root.appendChild(card);
+    });
+    root.appendChild(h("button", {class:"btn wide", text:"Add a poem", onclick:function(){ var id = uid(); S.poems.push({id:id, title:"Untitled", author:"", second:"", text:"", tags:"", revs:[], path:[]}); U.screen = "poem"; U.id = id; save(); render(); }}));
+  }
+
+  function viewPoem(root){
+    var p = byId(S.poems, U.id); if(!p){ U.screen = null; return viewPoems(root); }
+    root.appendChild(h("button", {class:"back", text:"‹ Poems", onclick:function(){ U.screen = null; render(); }}));
+    root.appendChild(h("h1", {text:p.title, style:"margin-bottom:10px"}));
+    var c = h("div", {class:"card"});
+    c.appendChild(field("Title", p.title, function(v){ p.title = v; }, {rerender:false}));
+    c.appendChild(field("Author", p.author, function(v){ p.author = v; }, {rerender:false}));
+    c.appendChild(field("Second name", p.second, function(v){ p.second = v; }, {rerender:false, help:"What a reader would call it. Naming it forces you to be selective."}));
+    c.appendChild(field("Themes", p.tags, function(v){ p.tags = v; }, {rerender:false, help:"Comma separated. Autopilot matches these to venues."}));
+    c.appendChild(field("Text", p.text, function(v){ p.text = v; }, {area:true, poem:true, placeholder:"Paste the poem here"}));
+    var r = h("div", {class:"row", style:"margin-top:12px"});
+    if(aiReady()) r.appendChild(h("button", {class:"btn", text:"Ask copilot about this poem", onclick:function(){ askCopilot("Give me a full, blunt critique of \u201c" + p.title + "\u201d: what works, the weakest lines, and what you would cut or change."); }}));
+    r.appendChild(h("button", {class:"btn primary", text:"Log a revision", onclick:function(){ p.revs.push(new Date().toISOString()); save(); toast("Revision logged. " + weekRevs() + " of 2 this week."); }}));
+    r.appendChild(h("button", {class:"btn ghost", text:"Delete poem", onclick:function(){ if(!confirm("Delete “" + p.title + "”?")) return; S.poems = S.poems.filter(function(x){return x!==p;}); S.queue.forEach(function(q){ q.poemIds = q.poemIds.filter(function(i){return i!==p.id;}); }); U.screen = null; save(); render(); }}));
+    c.appendChild(r);
+    root.appendChild(c);
+    if(p.path && p.path.length){
+      var d = h("details", {class:"packet"}); if(U.pathOpen[p.id]) d.setAttribute("open","");
+      d.addEventListener("toggle", function(){ U.pathOpen[p.id] = d.open; });
+      d.appendChild(h("summary", {}, h("span", {text:"Reading: a path through the brain"}), h("span", {class:"chip plain", text: p.path.length + " stops"})));
+      var inner = h("div", {style:"padding:4px 12px 12px"});
+      var ul = h("ul", {class:"path"}); p.path.forEach(function(s){ ul.appendChild(h("li", {"data-k":s.k}, h("strong", {text: KINDS[s.k] + ": " + s.r}), h("span", {text:s.why}))); }); inner.appendChild(ul);
+      inner.appendChild(h("div", {class:"help", text:"An interpretive reading, not a clinical claim."}));
+      d.appendChild(inner); root.appendChild(d);
+    }
+  }
+
+  function viewVenues(root){
+    var open = S.venues.filter(function(v){ return winStatus(v).open; }).length;
+    root.appendChild(top(U.calView ? "Dates" : "Venues", [plural(S.venues.length,"venue"), open + " open now"]));
+    var seg = h("div", {class:"seg", role:"tablist"});
+    [["Calendar", true],["List", false]].forEach(function(t){ seg.appendChild(h("button", {role:"tab", "aria-selected":String(!!U.calView === t[1]), text:t[0], onclick:function(){ U.calView = t[1]; render(); }})); });
+    root.appendChild(seg);
+    if(U.calView){ viewCalendar(root); return; }
+    root.appendChild(h("div", {class:"help", style:"margin:-6px 0 12px", text:"Each venue shows when it was last checked. VenueFold re-reads each venue's own page weekly and the desk picks up the new list when it opens. Venue data can still be wrong: confirm on their page before you pay."}));
+    var sorted = S.venues.slice().sort(function(a,b){ var wa = winStatus(a), wb = winStatus(b); return (wa.open?0:wa.days+1) - (wb.open?0:wb.days+1); });
+    sorted.forEach(function(v){
+      var w = winStatus(v), c = h("div", {class:"card"});
+      c.appendChild(h("div", {class:"between"}, h("h2", {text:v.name}), h("span", {class:"chip " + w.chip, text:w.short})));
+      if(waiverLabel(v)) c.appendChild(h("div", {class:"chips", style:"margin-top:4px"}, h("span", {class:"chip ok", text:waiverLabel(v)})));
+      c.appendChild(h("div", {class:"line", text: money(v.fee) + (v.start ? " · " + fmtMD(v.start) + " to " + fmtMD(v.end) : " · rolling") + (v.maxPoems ? " · up to " + plural(v.maxPoems,"poem") : "")}));
+      if(v.submitEmail) c.appendChild(h("div", {class:"line", text:"Submits by email: " + v.submitEmail}));
+      if(v.pays) c.appendChild(h("div", {class:"line", text:"Pays " + v.pays}));
+      if(v.notes) c.appendChild(h("div", {class:"line", text:v.notes}));
+      if(v.ai) c.appendChild(h("div", {class:"line", text:"AI policy: " + v.ai}));
+      if(v.checked) c.appendChild(h("div", {class:"help", text:"Checked " + v.checked + " on the venue's page or a dated listing."}));
+      var tg = h("div", {class:"chips"}); tagsOf(v.tags).forEach(function(t){ tg.appendChild(h("span", {class:"chip plain", text:t})); }); c.appendChild(tg);
+      var r = h("div", {class:"row", style:"margin-top:10px"});
+      r.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:v.url, target:"_blank", rel:"noopener", text:"Guidelines"}));
+      r.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ if(!confirm("Remove " + v.name + "?")) return; S.venues = S.venues.filter(function(x){return x!==v;}); S.queue = S.queue.filter(function(q){return q.vid !== v.id;}); save(); render(); }}));
+      c.appendChild(r);
+      root.appendChild(c);
+    });
+    if(!U.addVenue){ root.appendChild(h("button", {class:"btn wide", text:"Add a venue", onclick:function(){ U.addVenue = true; render(); }})); return; }
+    var nv = {name:"", url:"", fee:"", start:"", end:"", tags:"general", max:"3", wemail:"", wnote:"", semail:""};
+    var f = h("div", {class:"card"});
+    f.appendChild(h("h2", {text:"New venue"}));
+    f.appendChild(field("Name", "", function(v){ nv.name = v; }, {rerender:false}));
+    f.appendChild(field("Submission link", "", function(v){ nv.url = v.trim(); }, {type:"url", rerender:false, placeholder:"https://"}));
+    f.appendChild(field("Submission email (if they take poems by email)", "", function(v){ nv.semail = v.trim(); }, {type:"email", rerender:false, help:"Leave blank for Submittable or a web form. With an email here, approving the packet opens Mail or Gmail with everything filled in."}));
+    f.appendChild(field("Reading fee in dollars (0 if free)", "", function(v){ nv.fee = v; }, {type:"number", inputmode:"decimal", rerender:false}));
+    f.appendChild(field("Window opens (MM-DD, blank if rolling)", "", function(v){ nv.start = v.trim(); }, {rerender:false, placeholder:"01-01"}));
+    f.appendChild(field("Window closes (MM-DD)", "", function(v){ nv.end = v.trim(); }, {rerender:false, placeholder:"03-15"}));
+    f.appendChild(field("Poems per submission", "3", function(v){ nv.max = v; }, {type:"number", inputmode:"numeric", rerender:false}));
+    f.appendChild(field("Fee waiver contact email (if any)", "", function(v){ nv.wemail = v.trim(); }, {type:"email", rerender:false, help:"The editor or POC address listed on their site for waiver requests."}));
+    f.appendChild(field("Waiver policy or request dates", "", function(v){ nv.wnote = v; }, {rerender:false, placeholder:"e.g. requests accepted Jan 1 to Jan 15"}));
+    f.appendChild(field("Themes it likes", "general", function(v){ nv.tags = v; }, {rerender:false, help:"Comma separated. 'general' matches every poem."}));
+    var r2 = h("div", {class:"row", style:"margin-top:12px"});
+    r2.appendChild(h("button", {class:"btn primary", text:"Add venue", onclick:function(){
+      if(!nv.name.trim()){ toast("Give the venue a name."); return; }
+      var okDate = function(s){ return /^\d{2}-\d{2}$/.test(s); }, win = okDate(nv.start) && okDate(nv.end);
+      S.venues.push({id:uid(), name:nv.name.trim(), url:nv.url, fee:+nv.fee||0, start: win ? nv.start : "", end: win ? nv.end : "", tags:nv.tags, maxPoems:+nv.max||3, notes:"", userEdited:true, submitEmail:nv.semail, checked:new Date().toISOString().slice(0,10), waiver: nv.wemail ? {kind:"email", email:nv.wemail, note:nv.wnote} : (nv.wnote ? {kind:"window", note:nv.wnote} : null)});
+      U.addVenue = false; save(); render(); toast(nv.name.trim() + " added.");
+    }}));
+    r2.appendChild(h("button", {class:"btn ghost", text:"Cancel", onclick:function(){ U.addVenue = false; render(); }}));
+    f.appendChild(r2);
+    root.appendChild(f);
+  }
+
+  function viewYou(root){
+    root.appendChild(top("You", ["Goes on every packet"]));
+    var c = h("div", {class:"card"});
+    c.appendChild(field("Name on submissions", S.name, function(v){ S.name = v; }, {rerender:false}));
+    c.appendChild(field("Bio", S.bio, function(v){ S.bio = v; }, {area:true, rerender:false, placeholder:"Two or three sentences in your own voice.", help:"Sent with every submission."}));
+    c.appendChild(field("One line about the work", S.pitch, function(v){ S.pitch = v; }, {area:true, rerender:false, help:"Goes into each default cover note."}));
+    root.appendChild(c);
+    root.appendChild(h("h3", {text:"Autopilot settings"}));
+    var s = h("div", {class:"card"});
+    s.appendChild(field("Fee budget in dollars", S.budget, function(v){ S.budget = +v || 0; }, {type:"number", inputmode:"decimal", rerender:false, help:"A packet can't be approved if its fee would pass this."}));
+    s.appendChild(field("Most packets kept queued", S.maxQueue, function(v){ S.maxQueue = +v || 5; }, {type:"number", inputmode:"numeric", rerender:false}));
+    s.appendChild(field("Include windows opening within (days)", S.lead, function(v){ S.lead = +v || 60; }, {type:"number", inputmode:"numeric", rerender:false}));
+    root.appendChild(s);
+    root.appendChild(h("h3", {text:"AI key"}));
+    var ak = h("div", {class:"card", id:"aikey"}), conf = aiConf();
+    ak.appendChild(h("div", {class:"between"}, h("div", {id:"aikeylabel", text:"AI key: " + PROVIDERS[conf.provider].short + ", " + maskKey(conf.key)}), h("span", {class:"chip " + (conf.verifiedAt ? "ok" : "warn"), text: conf.verifiedAt ? "Verified" : "Not verified"})));
+    ak.appendChild(h("div", {class:"help", text:"Stored only on this device and sent only to " + PROVIDERS[conf.provider].short + ". Never included in \"Copy everything\"."}));
+    var akr = h("div", {class:"row", style:"margin-top:10px"});
+    akr.appendChild(h("button", {class:"btn", text:"Change", onclick:function(){ OB.changing = true; OB.provider = conf.provider; OB.key = ""; OB.result = null; render(); window.scrollTo(0,0); }}));
+    akr.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ if(!confirm("Remove the AI key from this device? The copilot stops working until you add one again.")) return; setAiConf(null); OB.provider = null; OB.key = ""; OB.result = null; OB.changing = false; render(); window.scrollTo(0,0); }}));
+    ak.appendChild(akr);
+    var adv = h("details", {class:"packet", style:"margin-top:12px"});
+    adv.appendChild(h("summary", {}, h("span", {text:"Advanced"})));
+    var advIn = h("div", {style:"padding:0 12px 12px"});
+    advIn.appendChild(field("Model", modelOverrides()[conf.provider] || "", function(v){ var m = modelOverrides(); m[conf.provider] = v.trim(); try { localStorage.setItem(MKEY, JSON.stringify(m)); } catch(e){} }, {placeholder:PROVIDERS[conf.provider].defaultModel, help:"Leave blank for " + PROVIDERS[conf.provider].defaultModel + ", the low-cost default. Bigger models cost more per message."}));
+    adv.appendChild(advIn); ak.appendChild(adv);
+    root.appendChild(ak);
+    root.appendChild(h("h3", {text:"Venue data"}));
+    var vd = h("div", {class:"card"});
+    var vfCount = S.venues.filter(function(v){ return v.source === "venuefold"; }).length;
+    vd.appendChild(h("div", {class:"line", style:"margin:0", text: vfCount ? plural(vfCount,"venue") + " came from VenueFold. Import a newer file any time; it updates those and adds new ones, and leaves your poems, queue and hand-added venues alone." : "Import the desk-venues.json file VenueFold writes. It adds and updates venues only; poems, queue and your own venues are left alone."}));
+    var fileIn = h("input", {type:"file", accept:".json,application/json", style:"display:none"});
+    fileIn.addEventListener("change", function(){
+      var f = fileIn.files && fileIn.files[0]; if(!f) return;
+      var r = new FileReader(); r.onload = function(){ importVenues(String(r.result)); fileIn.value = ""; }; r.readAsText(f);
+    });
+    vd.appendChild(fileIn);
+    vd.appendChild(h("button", {class:"btn primary", style:"margin-top:12px", text:"Import venues file", onclick:function(){ fileIn.click(); }}));
+    root.appendChild(vd);
+    root.appendChild(h("h3", {text:"Share this desk"}));
+    var sh = h("div", {class:"card"});
+    sh.appendChild(h("div", {class:"line", style:"margin:0", text:"This desk saves only in this browser. To hand everything (poems, venues, queue) to someone else, copy it as text and send it. They paste it here on their phone."}));
+    var r = h("div", {class:"row", style:"margin-top:12px"});
+    r.appendChild(h("button", {class:"btn primary", text:"Copy everything as text", onclick:function(){ copyText(JSON.stringify(Object.assign({}, S, {chat:[]}))).then(function(ok){ toast(ok ? "Copied. Paste it into a message." : "Copy failed."); }); }}));
+    sh.appendChild(r);
+    var ta = h("textarea", {class:"f", style:"margin-top:12px;min-height:80px", placeholder:"Paste a copy someone sent you"});
+    sh.appendChild(ta);
+    sh.appendChild(h("button", {class:"btn", style:"margin-top:8px", text:"Import and replace mine", onclick:function(){
+      try { var d = JSON.parse(ta.value); if(!d || !d.poems) throw 0; if(!confirm("Replace everything here with the pasted copy?")) return; S = d; migrate(); save(); U.screen = null; render(); toast("Imported."); }
+      catch(e){ toast("That text isn't a desk copy."); }
+    }}));
+    root.appendChild(sh);
+    root.appendChild(h("div", {class:"help", style:"margin-top:14px", text:"Payment always happens on each venue's own checkout. This desk cannot charge you."}));
+  }
+
+  function syncVenues(){
+    if(!/^https?:/.test(location.protocol)) return;
+    fetch("venues/desk-venues.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.text() : null; }).then(function(t){
+      if(!t) return; var d; try { d = JSON.parse(t); } catch(e){ return; }
+      if(!d.exportedOn || d.exportedOn === S.venuesSyncedOn || !Array.isArray(d.venues) || !d.venues.length) return;
+      importVenues(t, true); S.venuesSyncedOn = d.exportedOn; save();
+      toast("Venues refreshed (checked " + d.exportedOn + ").");
+    }, function(){});
+  }
+  function importVenues(text, quiet){
+    var d; try { d = JSON.parse(text); } catch(e){ toast("That file isn't JSON."); return; }
+    var list = d && d.venues; if(!Array.isArray(list)){ toast("No venues in that file."); return; }
+    var norm = function(n){ return String(n||"").toLowerCase().replace(/^the\s+/,"").replace(/[^a-z0-9]+/g,""); };
+    var added = 0, updated = 0, kept = 0;
+    list.forEach(function(nv){
+      if(!nv || !nv.name) return;
+      var i = -1; S.venues.forEach(function(v,k){ if(v.id === nv.id || norm(v.name) === norm(nv.name)) i = k; });
+      var clean = {id: nv.id || uid(), name: String(nv.name), url: String(nv.url||""), submitEmail: nv.submitEmail || "", fee: +nv.fee || 0, start: nv.start || "", end: nv.end || "", tags: nv.tags || "general", minPoems: nv.minPoems || undefined, maxPoems: +nv.maxPoems || 3, pays: nv.pays, ai: nv.ai, checked: nv.checked, notes: nv.notes || "", waiver: nv.waiver || null, source: "venuefold"};
+      if(i < 0){ S.venues.push(clean); added++; }
+      else if(S.venues[i].userEdited){ kept++; }
+      else { clean.id = S.venues[i].id; S.venues[i] = clean; updated++; }
+    });
+    save(); render();
+    if(!quiet) toast(added + " added, " + updated + " updated" + (kept ? ", " + kept + " of yours left alone" : "") + ".");
+  }
+  // ---------- calendar ----------
+  function nextDate(md, after){
+    var p = md.split("-"), now = after || new Date(), y = now.getFullYear();
+    var d = new Date(y, +p[0]-1, +p[1]);
+    if(d < new Date(now.getFullYear(), now.getMonth(), now.getDate())) d = new Date(y+1, +p[0]-1, +p[1]);
+    return d;
+  }
+  function ymd(d){ return d.getFullYear() + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0"); }
+  function gcalLink(title, day, details, loc){
+    var next = new Date(day.getFullYear(), day.getMonth(), day.getDate()+1);
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(title) + "&dates=" + ymd(day) + "/" + ymd(next) + "&details=" + encodeURIComponent(details||"") + (loc ? "&location=" + encodeURIComponent(loc) : "");
+  }
+  function calendarEvents(){
+    var ev = [], today = new Date(); today.setHours(0,0,0,0);
+    var horizon = new Date(today.getFullYear(), today.getMonth()+6, 1);
+    S.venues.forEach(function(v){
+      if(v.start && v.end){
+        var o = nextDate(v.start), c = nextDate(v.end), w = winStatus(v);
+        if(!w.open && o < horizon) ev.push({d:o, kind:"opens", v:v, title:v.name + " opens", sub: money(v.fee) + (v.notes && /cap/i.test(v.notes) ? " · has a cap, submit on day one" : "")});
+        if(c < horizon) ev.push({d:c, kind:"closes", v:v, title:v.name + " closes", sub: w.open ? "Open now" : "Closes " + fmtMD(v.end)});
+      }
+      if(v.waiver && v.waiver.start && v.waiver.end){
+        var ws = nextDate(v.waiver.start); if(ws < horizon) ev.push({d:ws, kind:"free", v:v, title:v.name + " free window opens", sub: v.waiver.note || ""});
+      }
+    });
+    S.queue.forEach(function(q){ if(q.status === "sent" && q.sentAt){ var v = byId(S.venues, q.vid); if(v) ev.push({d:new Date(q.sentAt), kind:"sent", v:v, title:"Sent to " + v.name, sub: q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? p.title : ""; }).join(", ")}); } });
+    var floor = new Date(today.getFullYear(), today.getMonth(), 1);
+    return ev.filter(function(e){ return e.d >= floor; }).sort(function(a,b){ return a.d - b.d; });
+  }
+  function viewCalendar(root){
+    var ev = calendarEvents(), today = new Date(); today.setHours(0,0,0,0);
+    if(!ev.length){ root.appendChild(h("div", {class:"empty", text:"Nothing dated in the next six months."})); return; }
+    var months = {}; ev.forEach(function(e){ var k = e.d.getFullYear() + "-" + e.d.getMonth(); (months[k] = months[k] || {label: MON[e.d.getMonth()] + " " + e.d.getFullYear(), items:[]}).items.push(e); });
+    Object.keys(months).forEach(function(k){
+      var m = months[k];
+      root.appendChild(h("h3", {class:"month", text:m.label}));
+      m.items.forEach(function(e){
+        var past = e.d < today, row = h("div", {class:"ev " + e.kind + (past ? " past" : "")});
+        var badge = h("div", {class:"day"}, h("b", {text:String(e.d.getDate())}), h("span", {text:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][e.d.getDay()]}));
+        var body = h("div", {class:"evb"}, h("div", {class:"evt", text:e.title}), e.sub ? h("div", {class:"line", style:"margin-top:2px", text:e.sub}) : null);
+        var days = Math.round((e.d - today)/86400000);
+        if(!past && e.kind !== "sent") body.appendChild(h("span", {class:"chip " + (days <= 7 ? "warn" : "plain"), style:"margin-top:6px", text: days === 0 ? "Today" : "In " + plural(days,"day")}));
+        if(e.kind !== "sent") body.appendChild(h("a", {class:"addcal", href:gcalLink(e.title + (e.kind === "opens" ? " for submissions" : ""), e.d, e.sub + "\n" + e.v.url, e.v.url), target:"_blank", rel:"noopener", text:"Add to Google Calendar"}));
+        row.appendChild(badge); row.appendChild(body); root.appendChild(row);
+      });
+    });
+    root.appendChild(h("div", {class:"help", style:"margin-top:12px", text:"Apple Calendar: open the Google link on your phone and it offers to add the event, or copy the date from here."}));
+  }
+
+  // ---------- copilot ----------
+  function copilotRules(){
+    var poems = S.poems.map(function(p){ return "### " + p.title + (p.author ? " (by " + p.author + ")" : "") + (p.second ? " [second name: " + p.second + "]" : "") + " id=" + p.id + "\nThemes: " + (p.tags||"none") + "\n" + (poemHasText(p) ? p.text.trim().slice(0, 6000) : "(no text yet)"); }).join("\n\n");
+    var venues = S.venues.map(function(v){ var w = winStatus(v); return "- " + v.name + " id=" + v.id + ": " + money(v.fee) + ", " + w.text + ", likes " + v.tags + (v.maxPoems ? ", up to " + v.maxPoems + " poems" : "") + (v.minPoems ? ", at least " + v.minPoems : "") + (v.waiver ? ", fee waiver: " + v.waiver.kind + (v.waiver.email ? " via " + v.waiver.email : "") + (v.waiver.note ? " (" + v.waiver.note + ")" : "") : "") + (v.pays ? ", pays " + v.pays : "") + (v.ai ? ", AI policy: " + v.ai : "") + (v.notes ? ". " + v.notes : "") + (v.checked ? " [checked " + v.checked + "]" : ""); }).join("\n");
+    var queue = S.queue.map(function(q){ var v = byId(S.venues, q.vid); return "- packet " + q.id + " to " + (v ? v.name : "?") + " (" + q.status + ", waiver " + (q.waiver||"none") + "): " + q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? p.title : i; }).join(", "); }).join("\n") || "(empty)";
+    return [
+      "You are the copilot inside Second Name, a poetry submission desk shared by two poets. Your job is to weigh in heavily on the poems: read closely, say what works and what does not, name the weakest line, propose cuts and alternatives, and argue for or against sending a given poem to a given venue. Be specific and blunt. Quote the exact lines you mean. Do not flatter and do not hedge every sentence. When you disagree with a plan, say so plainly and give a better one.",
+      "The poems are theirs. You critique; you do not write. Never write, rewrite or complete a poem, a stanza or a line unless the person explicitly asks for that exact thing, and when you do, label it clearly as your suggestion, not theirs. Several venues ban AI-written or AI-assisted work, and the person must always be able to say truthfully which words are theirs. Only save poem text the person gave you; never save text you wrote as a poem. A reading practice they use: give each poem a 'second name', the title a reader would choose for it, which forces selectivity.",
+      "Formatting: plain prose, short paragraphs, no markdown headers, no bullet lists unless comparing options. Keep answers under 300 words unless asked for a full critique. Never invent facts about a venue; what you know about each is listed below. Cost matters: prefer free venues and fee waivers, and say when a waiver request is worth sending. If a tool is available and the person asks you to add a poem, change a poem's text, title, second name or themes, or change which poems a packet carries, use it, then confirm in one sentence what changed. Never change a poem's text unless asked, and then only with the exact words the person gave you.",
+      "Writer: " + ((S.name||"").trim() || "(no name set)") + ". Bio: " + ((S.bio||"").trim() || "(none)") + ". Fee budget left: $" + left().toFixed(2) + ". Today: " + new Date().toDateString() + ".",
+      "## Poems\n" + (poems || "(none)"),
+      "## Venues\n" + (venues || "(none)"),
+      "## Packets\n" + queue
+    ].join("\n\n");
+  }
+  function copilotTools(){
+    return [
+      {name:"addPoem", description:"Adds a new poem to the desk. Returns its id. Use only when the person pastes or dictates their own poem and wants it saved; text must be exactly what they gave you.", inputSchema:{type:"object", properties:{title:{type:"string"}, author:{type:"string"}, text:{type:"string"}, tags:{type:"string", description:"comma separated themes"}}, required:["title","text"]},
+        execute:function(i){ var id = uid(); S.poems.push({id:id, title:String(i.title||"Untitled"), author:String(i.author||""), second:"", text:String(i.text||""), tags:String(i.tags||""), revs:[], path:[]}); save(); renderNav(); return {id:id, saved:true}; }},
+      {name:"updatePoem", description:"Changes one or more fields of an existing poem by id: title, second (second name), tags, or text. Only pass the fields to change. Returns what was changed.", inputSchema:{type:"object", properties:{id:{type:"string"}, title:{type:"string"}, second:{type:"string"}, tags:{type:"string"}, text:{type:"string"}}, required:["id"]},
+        execute:function(i){ var p = byId(S.poems, String(i.id)); if(!p) throw new Error("No poem with id " + i.id); var ch = []; ["title","second","tags","text"].forEach(function(k){ if(i[k] != null){ p[k] = String(i[k]); ch.push(k); } }); if(!ch.length) throw new Error("Nothing to change"); save(); return {changed:ch, title:p.title}; }},
+      {name:"setPacketPoems", description:"Sets which poems a queued packet carries, by packet id and a list of poem ids. Returns the new list. Rewrites the default cover note unless the person edited it.", inputSchema:{type:"object", properties:{packetId:{type:"string"}, poemIds:{type:"array", items:{type:"string"}}}, required:["packetId","poemIds"]},
+        execute:function(i){ var q = byId(S.queue, String(i.packetId)); if(!q) throw new Error("No packet " + i.packetId); if(q.status === "sent") throw new Error("That packet was already sent"); var ids = (i.poemIds||[]).map(String).filter(function(x){ return byId(S.poems, x); }); if(!ids.length) throw new Error("No valid poem ids"); var v = byId(S.venues, q.vid); if(v && v.maxPoems && ids.length > v.maxPoems) throw new Error(v.name + " takes at most " + v.maxPoems + " poems"); q.poemIds = ids; if(!q.noteEdited) q.note = noteFor(v, ids); save(); return {poems: ids.map(function(x){ return byId(S.poems,x).title; })}; }}
+    ];
+  }
+  var CH = {ctl:null, draft:"", busy:false, live:""};
+  function sendChat(text){
+    if(!aiReady() || CH.busy) return;
+    text = (text||"").trim(); if(!text) return;
+    S.chat = S.chat || []; S.chat.push({role:"user", content:text, at:Date.now()}); if(S.chat.length > 24) S.chat = S.chat.slice(-24); save();
+    CH.busy = true; CH.live = ""; CH.draft = ""; CH.ctl = new AbortController(); render();
+    var turns = S.chat.map(function(m){ return {role:m.role, content:m.content}; });
+    while(turns.length && turns[0].role !== "user") turns.shift();
+    var opts = {system:copilotRules(), tools:copilotTools(), signal:CH.ctl.signal, onText:function(u){ CH.live = u.text; var el = document.getElementById("live"); if(el){ el.textContent = u.text; el.scrollIntoView({block:"end"}); } }};
+    aiSample(turns, opts).then(function(r){
+      S.chat.push({role:"assistant", content:r.text + (r.truncated ? "\n\n[cut short, ask for less at a time]" : ""), at:Date.now()}); CH.busy = false; CH.live = ""; save(); render(); scrollChat();
+    }, function(e){
+      CH.busy = false;
+      if(e && e.text){ S.chat.push({role:"assistant", content:e.text + "\n\n[interrupted]", at:Date.now()}); save(); }
+      else if(e && e.code === "cancelled"){ S.chat.pop(); save(); }
+      CH.live = ""; render(); scrollChat();
+      if(e && e.code !== "cancelled") toast(aiMessage(e && e.code, (aiConf()||{}).provider));
+    });
+  }
+  function scrollChat(){ setTimeout(function(){ var el = document.getElementById("chatend"); if(el) el.scrollIntoView({block:"end"}); }, 30); }
+  function askCopilot(prompt){ S.tab = "copilot"; U.screen = null; CH.draft = prompt; save(); render(); setTimeout(function(){ var b = document.getElementById("chatbox"); if(b){ b.focus(); } }, 30); }
+
+  function viewCopilot(root){
+    root.appendChild(top("Copilot", ["Reads every poem, venue", "and packet on this desk"]));
+    var chat = S.chat || [];
+    var wrap = h("div", {class:"chat"});
+    if(!chat.length){
+      var e = h("div", {class:"card"});
+      e.appendChild(h("h2", {text:"Try asking"}));
+      var ul = h("div", {class:"chips"});
+      ["Critique my newest poem line by line.","Which poem fits the next open venue best, and why?","Suggest a second name for each poem.","What is the weakest stanza in my newest poem?","Here is a new poem to add: …"].forEach(function(s){ ul.appendChild(h("button", {class:"toggle", text:s, onclick:function(){ CH.draft = s; render(); var b = document.getElementById("chatbox"); if(b) b.focus(); }})); });
+      e.appendChild(ul);
+      e.appendChild(h("div", {class:"help", text:"It critiques; it doesn't write your poems. It can save a poem you paste, rename poems, set second names, and change which poems a packet carries. It never pays or submits."}));
+      wrap.appendChild(e);
+    }
+    chat.forEach(function(m){ wrap.appendChild(h("div", {class:"msg " + m.role, text:m.content})); });
+    if(CH.busy) wrap.appendChild(h("div", {class:"msg assistant", id:"live", text: CH.live || "Thinking…"}));
+    wrap.appendChild(h("div", {id:"chatend"}));
+    root.appendChild(wrap);
+
+    var box = h("div", {class:"composer"});
+    var ta = h("textarea", {id:"chatbox", class:"f", rows:"2", placeholder:"Ask about a poem, a venue, or paste a poem to add"}); ta.value = CH.draft;
+    ta.addEventListener("input", function(){ CH.draft = ta.value; });
+    ta.addEventListener("keydown", function(ev){ if(ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)){ ev.preventDefault(); sendChat(ta.value); } });
+    box.appendChild(ta);
+    var r = h("div", {class:"row", style:"margin-top:8px"});
+    if(CH.busy) r.appendChild(h("button", {class:"btn", text:"Stop", onclick:function(){ if(CH.ctl) CH.ctl.abort(); }}));
+    else r.appendChild(h("button", {class:"btn primary", text:"Send", onclick:function(){ sendChat(ta.value); }}));
+    if(chat.length && !CH.busy) r.appendChild(h("button", {class:"btn ghost", text:"Clear chat", onclick:function(){ if(confirm("Clear the conversation?")){ S.chat = []; save(); render(); } }}));
+    box.appendChild(r);
+    var conf = aiConf();
+    box.appendChild(h("div", {class:"help", text:"Runs on your " + PROVIDERS[conf.provider].short + " key with " + aiModel(conf.provider) + ". Each message is billed to that account. Answers take a little while because it reads the whole desk first."}));
+    root.appendChild(box);
+    scrollChat();
+  }
+
+  // ---------- first run: connect an AI key ----------
+  function viewOnboard(root){
+    var have = aiConf();
+    root.appendChild(h("div", {class:"top"}, h("h1", {text:"Connect your AI key"})));
+    var c = h("div", {class:"card", id:"onboard"});
+    c.appendChild(h("div", {class:"line", style:"margin:0 0 10px", text:"Second Name's copilot runs on your own AI account. Pick a provider, make a key there, paste it here and press Verify. This takes about two minutes."}));
+    c.appendChild(h("label", {class:"f", text:"1. Provider"}));
+    var seg = h("div", {class:"seg", role:"radiogroup", style:"margin:0"});
+    Object.keys(PROVIDERS).forEach(function(k){
+      seg.appendChild(h("button", {role:"radio", "aria-checked":String(OB.provider === k), "aria-selected":String(OB.provider === k), "data-provider":k, text:PROVIDERS[k].label, onclick:function(){ OB.provider = k; OB.result = null; render(); }}));
+    });
+    c.appendChild(seg);
+    if(OB.provider){
+      var P = PROVIDERS[OB.provider];
+      c.appendChild(h("label", {class:"f", text:"2. Create a key"}));
+      c.appendChild(h("a", {class:"btn", id:"keylink", style:"display:inline-flex;align-items:center;text-decoration:none", href:P.keysUrl, target:"_blank", rel:"noopener", text:"Open " + P.short + " API keys page"}));
+      c.appendChild(h("div", {class:"help", text:"Sign in, create a key, and copy it. New accounts need a little prepaid credit before the key works."}));
+      var kid = uid();
+      c.appendChild(h("label", {class:"f", for:kid, text:"3. Paste your key"}));
+      var inp = h("input", {class:"f", id:kid, type:"password", autocomplete:"off", autocapitalize:"off", spellcheck:"false", placeholder:P.keyHint, "aria-describedby":"keynote"});
+      inp.value = OB.key;
+      inp.addEventListener("input", function(){ OB.key = inp.value; OB.result = null; var m = document.getElementById("obresult"); if(m) m.remove(); });
+      c.appendChild(inp);
+      c.appendChild(h("div", {class:"help", id:"keynote", text:"Your key is stored only on this device. It is sent only to " + P.short + ", never to us or anyone else, and it is never included in \"Copy everything\" or in the app's code."}));
+      var vb = h("button", {class:"btn primary wide", id:"verify", style:"margin-top:12px", text: OB.busy ? "Checking…" : "Verify", onclick:function(){
+        var key = OB.key.trim(); if(!key || OB.busy){ if(!key) toast("Paste your key first."); return; }
+        OB.busy = true; OB.result = null; render();
+        verifyKey(OB.provider, key).then(function(res){
+          OB.busy = false; OB.result = res.code;
+          if(res.code === "ok"){ setAiConf({provider:OB.provider, key:key, verifiedAt:new Date().toISOString()}); OB.key = ""; OB.changing = false; OB.result = null; toast("Key verified. You're set."); }
+          render();
+        });
+      }});
+      if(OB.busy) vb.disabled = true;
+      c.appendChild(vb);
+      if(OB.result){
+        var bad = OB.result !== "ok", r = h("div", {class:"chip " + (bad ? "bad" : "ok"), id:"obresult", role:"alert", "data-code":OB.result, style:"white-space:normal;border-radius:12px;padding:10px 12px;margin-top:12px;display:block;font-size:14px"});
+        r.textContent = aiMessage(OB.result, OB.provider);
+        c.appendChild(r);
+        if(OB.result === "no_credit" || OB.result === "rate_limited"){
+          var row = h("div", {class:"row", style:"margin-top:8px"});
+          row.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:P.billingUrl, target:"_blank", rel:"noopener", text:"Open " + P.short + " billing"}));
+          row.appendChild(h("button", {class:"btn ghost", text:"Use this key anyway", onclick:function(){ setAiConf({provider:OB.provider, key:OB.key.trim(), verifiedAt:null}); OB.key = ""; OB.changing = false; OB.result = null; render(); }}));
+          c.appendChild(row);
+        }
+      }
+    }
+    root.appendChild(c);
+    if(have) root.appendChild(h("button", {class:"btn ghost wide", text:"Cancel and keep my current key (" + PROVIDERS[have.provider].short + " " + maskKey(have.key) + ")", onclick:function(){ OB.changing = false; OB.key = ""; OB.result = null; render(); }}));
+    root.appendChild(h("div", {class:"help", style:"margin-top:12px", text:"Every copilot message is billed to your provider account at their per-token price. The app uses each provider's small, low-cost model unless you change it in You > Advanced. Set a monthly spend limit in your provider account so there are no surprises."}));
+  }
+
+  // ---------- nav + render ----------
+  var ICONS = {
+    desk:'<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>',
+    poems:'<svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z M9 12h6M9 16h6"/></svg>',
+    venues:'<svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg>',
+    you:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+    copilot:'<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>'
+  };
+  function renderNav(){
+    var nav = document.getElementById("nav"); nav.innerHTML = "";
+    var readyN = S.queue.filter(function(q){ var v = byId(S.venues,q.vid); return v && q.status !== "sent" && winStatus(v).open; }).length;
+    [["desk","Desk"],["poems","Poems"],["copilot","Copilot"],["venues","Dates"],["you","You"]].forEach(function(t){
+      var b = h("button", {"aria-selected":String(S.tab === t[0]), "aria-label":t[1], onclick:function(){ go(t[0]); }});
+      b.innerHTML = ICONS[t[0]]; b.appendChild(h("span", {text:t[1]}));
+      if(t[0] === "desk" && readyN) b.appendChild(h("span", {class:"dot", "aria-hidden":"true"}));
+      nav.appendChild(b);
+    });
+  }
+  function render(){
+    var root = document.getElementById("main"); root.innerHTML = "";
+    var navEl = document.querySelector("nav");
+    // Nothing else is shown until a key is connected (or while changing it).
+    if(!aiReady() || OB.changing){ navEl.hidden = true; document.getElementById("nav").innerHTML = ""; viewOnboard(root); return; }
+    navEl.hidden = false; renderNav();
+    if(S.tab === "desk") (U.screen === "review" ? viewReview : viewDesk)(root);
+    else if(S.tab === "poems") (U.screen === "poem" ? viewPoem : viewPoems)(root);
+    else if(S.tab === "venues") viewVenues(root);
+    else if(S.tab === "copilot") viewCopilot(root);
+    else viewYou(root);
+  }
+  render();
+  syncVenues();
+  if("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
+})();
+</script>
+</body>
+</html>
