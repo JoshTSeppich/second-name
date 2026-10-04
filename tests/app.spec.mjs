@@ -268,6 +268,36 @@ test("a venue with no stated fee never shows as free", async ({ page }) => {
   await expect(page.locator(".card").filter({ has: page.getByRole("heading", { name: "No Fee Stated Review" }) })).toContainText("Fee not stated · rolling");
 });
 
+// Autopilot picks cheapest first: free, then fee-waivable, then paid. A venue with no stated fee must rank
+// with paid venues. Built-in venues are taken out of the running (marked sent) so only the test venues compete,
+// and the queue has room for one packet. The no-fee venue is listed first, so it would win if it ranked as free.
+for (const [rival, label] of [
+  [{ id: "t-free", name: "Free Rival Review", fee: 0 }, "a free venue"],
+  [{ id: "t-waiver", name: "Waiver Rival Review", fee: 3, waiver: { kind: "email", email: "ed@w.example.org", note: "Waived on request" } }, "a paid venue with an email waiver"],
+]) {
+  test(`autopilot ranks a venue with no stated fee after ${label}`, async ({ page }) => {
+    await mockProvider(page, ANTHROPIC);
+    await page.goto("/");
+    await onboard(page, "anthropic", KEY_A);
+    await nav(page, "You");
+    const seeds = (await desk(page)).venues.map((v) => v.id);
+    const open = { url: "https://example.org/submit", start: "", end: "", tags: "general", maxPoems: 3, checked: "2026-10-04", notes: "" };
+    const testDesk = {
+      tab: "desk", budget: 25, maxQueue: 1, lead: 60, name: "Test Poet", bio: "Writes poems.", pitch: "",
+      poems: [{ id: "p-test", title: "Ranking Test", author: "", second: "", text: "one line\nanother line", tags: "general", revs: [], path: [] }],
+      venues: [...(await desk(page)).venues, { id: "t-nofee", name: "No Fee Stated Review", fee: null, ...open }, { ...open, ...rival }],
+      queue: seeds.map((id, i) => ({ id: "sent-" + i, vid: id, poemIds: [], note: "", status: "sent", waiver: "none", sentAt: "2026-01-01T00:00:00Z" })),
+    };
+    await page.evaluate((d) => localStorage.setItem("second-name-desk-v2", JSON.stringify(d)), testDesk);
+    await page.reload();
+    await page.getByRole("button", { name: "Prepare packets" }).click();
+    await expect(page.locator("#toast")).toContainText("1 packet prepared");
+    const after = await desk(page);
+    const picked = after.queue.filter((q) => q.status !== "sent").map((q) => after.venues.find((v) => v.id === q.vid).name);
+    expect(picked).toEqual([rival.name]);
+  });
+}
+
 test("starts with zero poems and no seeded poem data", async ({ page }) => {
   await mockProvider(page, ANTHROPIC);
   await page.goto("/");
