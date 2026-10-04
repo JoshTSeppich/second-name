@@ -1,6 +1,6 @@
 {
  "venuefold": 1,
- "exportedOn": "2026-10-04T19:12:19.412Z",
+ "exportedOn": "2026-10-04T19:53:53.732Z",
  "venues": [
   {
    "id": "vf-change",
@@ -705,6 +705,22 @@
    "maxPoems": 3,
    "checked": "2026-10-04",
    "notes": "Submissions open each fall (check back in September). Past chapbook contest winners available for purchase, but general submission route focuses on seasonal reading period. Fee not stated on their page; check before paying.",
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-collaborature-opens-in-january",
+   "name": "Collaborature",
+   "url": "https://collaborature.blogspot.com/p/submit.html",
+   "submitEmail": "collaborature@gmail.com",
+   "fee": 0,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "minPoems": 1,
+   "maxPoems": 3,
+   "ai": "No AI generated writing accepted. AI generated images are not preferred.",
+   "checked": "2026-10-04",
+   "notes": "Collaborative poetry required: must be written by more than one author or include a collaboration of two individuals. Submit one submission (up to three poems) at a time, waiting to hear back before sending further submissions. Limit each poem to 100 lines or less. Simultaneous submissions okay; previously published work okay with proper credit noted. Response: 2 to 4 weeks",
    "source": "venuefold"
   },
   {

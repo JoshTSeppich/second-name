@@ -39,8 +39,10 @@ Your poems, queue and any venue you added by hand are left alone.
 
 - A venue that has shut down: set `"closed": "why, and when you checked"` on it in data/venues.json.
   Crawl and export skip it, and discover won't re-add it.
-- Pages built entirely by JavaScript come back empty; they're reported as errors. Add a
-  "guidelinesUrl" for that venue in data/venues.json pointing at a plain page (often the Submittable link).
+- Pages built by JavaScript (Wix, Blogger, Squarespace) come back nearly empty from a plain fetch, so
+  VenueFold renders them in headless Chromium (Playwright; `npx playwright install chromium` once).
+  VENUEFOLD_RENDER=0 turns that off. If a page is still empty, add a "guidelinesUrl" for that venue in
+  data/venues.json pointing at a plain page (often the Submittable link).
 - It reads venues' own public pages and one free community list. It does not scrape Duotrope or
   Chill Subs: their listings are their work and their terms forbid it.
 - Cost: one Claude call per changed page, a few thousand tokens each. The 28-day hash check keeps

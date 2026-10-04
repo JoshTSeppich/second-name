@@ -11,6 +11,7 @@ const fixture = (n) => fs.readFileSync(path.join(HERE, "fixtures", n), "utf8");
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), "venuefold-test-"));
 process.env.VENUEFOLD_STORE = path.join(TMP, "venues.json");
 process.env.VENUEFOLD_DELAY_MS = "0";
+process.env.VENUEFOLD_RENDER = "0";        // never launch a real browser in tests; render tests inject a fake
 
 let vf;
 before(async () => { vf = await import("../venuefold.mjs"); });
@@ -77,9 +78,55 @@ test("crawl reports JavaScript-only pages as errors without calling the API", as
   const url = "https://spa.example.net/";
   vf.save({ venues: { spa: { name: "SPA Journal", url } } });
   vf.setClient(noApi);
+  vf.setRenderer(null);
   fakeFetch({ [url]: fixture("js-shell.html") });
   await vf.crawl({ limit: 0 });
   assert.match(vf.load().venues.spa.lastError, /built by JavaScript/);
+});
+
+const okClient = (calls) => ({ messages: { create: async (req) => { calls.push(req); return { content: [{ type: "tool_use", name: "record_venue", input: { name: "Lantern Street Review", acceptsPoetry: true, confidence: "high", windows: [], yearRound: true, notes: "", evidence: [] } }] }; } } });
+
+test("JavaScript-only pages are rendered in a browser and then extracted", async () => {
+  const url = "https://spa.example.net/";
+  vf.save({ venues: { spa: { name: "SPA Journal", url } } });
+  const calls = [], rendered = [];
+  vf.setClient(okClient(calls));
+  vf.setRenderer(async (u) => { rendered.push(u); return { html: fixture("guidelines.html"), finalUrl: u }; });
+  fakeFetch({ [url]: fixture("js-shell.html") });
+  await vf.crawl({ limit: 0 });
+  vf.setRenderer(null);
+  const v = vf.load().venues.spa;
+  assert.deepEqual(rendered, [url]);
+  assert.equal(calls.length, 1);
+  assert.match(calls[0].messages[0].content, /reads poetry submissions during two reading periods/);
+  assert.equal(v.lastError, null);
+  assert.equal(v.guidelinesUrl, url);
+});
+
+test("a rendered home page leads to its rendered submissions page", async () => {
+  const url = "https://blog.example.net/", submit = "https://blog.example.net/p/submit.html";
+  const home = `<html><body><h1>Blog</h1><p>${"Recent posts about the magazine and its contributors. ".repeat(12)}</p><a href="/p/submit.html">Submit</a></body></html>`;
+  vf.save({ venues: { blog: { name: "Blog Journal", url } } });
+  const calls = [], rendered = [];
+  vf.setClient(okClient(calls));
+  vf.setRenderer(async (u) => { rendered.push(u); return { html: u === submit ? fixture("guidelines.html") : home, finalUrl: u }; });
+  fakeFetch({ [url]: fixture("js-shell.html") });
+  await vf.crawl({ limit: 0 });
+  vf.setRenderer(null);
+  assert.deepEqual(rendered, [url, submit]);
+  assert.equal(calls.length, 1);
+  assert.equal(vf.load().venues.blog.guidelinesUrl, submit);
+});
+
+test("a page that stays empty in the browser is reported, not extracted", async () => {
+  const url = "https://spa.example.net/";
+  vf.save({ venues: { spa: { name: "SPA Journal", url } } });
+  vf.setClient(noApi);
+  vf.setRenderer(async (u) => ({ html: fixture("js-shell.html"), finalUrl: u }));
+  fakeFetch({ [url]: fixture("js-shell.html") });
+  await vf.crawl({ limit: 0 });
+  vf.setRenderer(null);
+  assert.match(vf.load().venues.spa.lastError, /empty even in a browser/);
 });
 
 test("crawl and export skip venues marked closed", async () => {

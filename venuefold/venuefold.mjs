@@ -9,6 +9,7 @@
 //   node venuefold.mjs status              what's stale, what changed, what failed
 //
 // Needs ANTHROPIC_API_KEY for crawl (not for --dry-run). Data lives in data/venues.json.
+// Pages built by JavaScript are rendered in headless Chromium when Playwright is installed (VENUEFOLD_RENDER=0 turns it off).
 // Env overrides: ANTHROPIC_WORKSPACE_ID (multi-workspace keys), VENUEFOLD_MODEL, VENUEFOLD_CONTACT, VENUEFOLD_STORE (data file), VENUEFOLD_DELAY_MS.
 
 import fs from "node:fs";
@@ -65,15 +66,43 @@ async function robotsAllows(u) {
   }
   return !robotsCache.get(origin).some((p) => pathname.startsWith(p));
 }
-async function politeFetch(u) {
+async function waitTurn(u) {
   if (!(await robotsAllows(u))) throw new Error("blocked by robots.txt");
   const host = new URL(u).host, wait = (lastHit.get(host) || 0) + PER_DOMAIN_DELAY_MS - Date.now();
   if (wait > 0) await sleep(wait);
   lastHit.set(host, Date.now());
+}
+async function politeFetch(u) {
+  await waitTurn(u);
   const r = await fetch(u, { headers: { "user-agent": UA, accept: "text/html" }, redirect: "follow", signal: AbortSignal.timeout(20000) });
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return { html: await r.text(), finalUrl: r.url };
 }
+// Pages built by JavaScript (Wix, Blogger, Squarespace...) come back nearly empty from a plain fetch. Those
+// get one more try in headless Chromium, if Playwright and its browser are installed. VENUEFOLD_RENDER=0 turns
+// this off. Returns null when rendering isn't available.
+let renderer = null, browser = null;
+export function setRenderer(fn) { renderer = fn; }
+async function renderPage(u) {
+  if (renderer) return renderer(u);
+  if (process.env.VENUEFOLD_RENDER === "0") return null;
+  if (!browser) {
+    try { const { chromium } = await import("playwright"); browser = await chromium.launch(); }
+    catch { process.env.VENUEFOLD_RENDER = "0"; return null; }
+  }
+  await waitTurn(u);
+  const ctx = await browser.newContext({ userAgent: UA }), p = await ctx.newPage();
+  try {
+    await p.goto(u, { waitUntil: "domcontentloaded", timeout: 30000 });
+    await p.waitForLoadState("networkidle", { timeout: 8000 }).catch(() => {});
+    let body = "";                                   // every frame, so old frameset sites read too
+    for (const f of p.frames()) body += await f.evaluate(() => (document.body ? document.body.innerHTML : "")).catch(() => "");
+    const title = (await p.title()).replace(/[<&]/g, " ");
+    return { html: `<html><head><title>${title}</title></head><body>${body}</body></html>`, finalUrl: p.url() };
+  } finally { await ctx.close(); }
+}
+export async function closeRenderer() { if (browser) { await browser.close(); browser = null; } }
+
 export function pageText(html, base) {
   const $ = cheerio.load(html);
   const links = [];
@@ -224,7 +253,23 @@ export async function crawl(opts) {
           try { const r = await politeFetch(g); const p2 = pageText(r.html, r.finalUrl); if (looksLikeGuidelines(p2.text)) { url = r.finalUrl; page = p2; break; } } catch {}
         }
       } else url = finalUrl;
-      if (page.text.length < 300) throw new Error("page is mostly empty here (built by JavaScript); open it in a browser or add a guidelinesUrl by hand");
+      if (page.text.length < 300) {
+        // Render the page; if it isn't the guidelines, render up to 3 submission links found on it.
+        const first = await renderPage(url);
+        if (first) {
+          const p1 = pageText(first.html, first.finalUrl);
+          if (p1.text.length >= 300) { page = p1; url = first.finalUrl; }
+          if (!looksLikeGuidelines(p1.text)) {
+            for (const g of guidelineLinks(p1.links, first.finalUrl)) {
+              const r = await renderPage(g); const p2 = r && pageText(r.html, r.finalUrl);
+              if (p2 && p2.text.length >= 300 && looksLikeGuidelines(p2.text)) { page = p2; url = r.finalUrl; break; }
+            }
+          }
+        }
+        if (page.text.length < 300) throw new Error(first
+          ? "page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+          : "page is mostly empty here (built by JavaScript) and the browser fallback isn't available; install Playwright or add a guidelinesUrl by hand");
+      }
       const hash = sha(page.text);
       if (hash === v.pageHash && !opts.force) { v.checkedOn = today(); v.lastError = null; same++; console.log("unchanged"); continue; }
       if (opts.dryRun) { console.log(`would extract (${page.text.length} chars from ${url}, emails: ${page.emails.join(", ") || "none"})`); continue; }
@@ -232,9 +277,10 @@ export async function crawl(opts) {
       v.history = [...(v.history || []), ...(v.record ? [{ on: v.checkedOn, record: v.record }] : [])].slice(-3);
       Object.assign(v, { record: rec, guidelinesUrl: url, pageHash: hash, checkedOn: today(), lastError: null, changedOn: today() });
       changed++; console.log(`ok (${rec.confidence}${rec.feeUSD != null ? ", $" + rec.feeUSD : ""}${rec.waiver ? ", waiver: " + rec.waiver.kind : ""})`);
-    } catch (e) { v.lastError = `${today()}: ${e.message}`; failed++; console.log("failed:", e.message); }
+    } catch (e) { v.lastError = `${today()}: ${String(e.message).split("\n")[0]}`; failed++; console.log("failed:", e.message); }
     finally { save(db); }
   }
+  await closeRenderer();
   console.log(`crawl: ${changed} updated, ${same} unchanged, ${failed} failed`);
 }
 

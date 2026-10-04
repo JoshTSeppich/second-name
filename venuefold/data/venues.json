@@ -569,7 +569,25 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "APARTMENT Poetry / Year-Round / Poetry",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: page is mostly empty here (built by JavaScript); open it in a browser or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://www.aptpoetry.com/about.html",
+      "history": [],
+      "record": {
+        "name": "APARTMENT Poetry",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "APARTMENT is currently closed for applications. Future calls for applications will be posted on their website and announced on Instagram. No submission details available.",
+        "evidence": [
+          "APARTMENT is currently closed for applications.",
+          "Future calls for applications will be posted on this page and announced on our Instagram account."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "d858259437cde473",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "apo-press": {
       "name": "*apo-press",
@@ -1845,7 +1863,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "CALAMITY / Year-Round / Poetry, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: page is mostly empty here (built by JavaScript); open it in a browser or add a guidelinesUrl by hand"
+      "lastError": null,
+      "closed": "Domain calamitymag.com expired and is for sale on GoDaddy (checked 2026-10-04)"
     },
     "call-center-collective": {
       "name": "The Call Center Collective",
@@ -2395,7 +2414,39 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Collaborature (Opens in January) / Year-Round / Collaborative Poetry and Fiction Written by Two or More Authors / Monthly Poetry Contest / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: page is mostly empty here (built by JavaScript); open it in a browser or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://collaborature.blogspot.com/p/submit.html",
+      "history": [],
+      "record": {
+        "name": "Collaborature",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "collaborature@gmail.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "Always free",
+        "minPoems": 1,
+        "maxPoems": 3,
+        "maxPages": null,
+        "simultaneous": true,
+        "responseTime": "2 to 4 weeks",
+        "pays": null,
+        "aiPolicy": "No AI generated writing accepted. AI generated images are not preferred.",
+        "waiver": null,
+        "notes": "Collaborative poetry required: must be written by more than one author or include a collaboration of two individuals. Submit one submission (up to three poems) at a time, waiting to hear back before sending further submissions. Limit each poem to 100 lines or less. Simultaneous submissions okay; previously published work okay with proper credit noted.",
+        "evidence": [
+          "Collaborature is always open for submissions and never charges a fee to submit.",
+          "You may submit as often as you like; we ask that you send one submission (up to three poems / one piece of fiction) at a time.",
+          "The key point of every submission is that it must be written by more than one author, or include a collaboration of two individuals.",
+          "No AI generated writing accepted. AI generated images are not preferred.",
+          "Please allow us to work through submissions at a reasonable pace. Please wait two to four weeks before querying."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "54fb69238c4698db",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "colby-review": {
       "name": "The Colby Review",
