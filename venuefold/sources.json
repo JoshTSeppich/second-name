@@ -1,0 +1,55 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "contact": "https://github.com/JoshTSeppich/second-name",
+  "recheckDays": 28,
+  "perDomainDelayMs": 4000,
+  "discovery": [
+    {
+      "url": "https://heavyfeatherreview.org/calls/",
+      "note": "Free community list, updated monthly, links straight to venues",
+      "section": "Journals + Anthologies"
+    }
+  ],
+  "seeds": [
+    {
+      "name": "Rattle",
+      "url": "https://www.rattle.com/submissions/guidelines/"
+    },
+    {
+      "name": "Palette Poetry",
+      "url": "https://palettepoetry.submittable.com/submit"
+    },
+    {
+      "name": "Frontier Poetry",
+      "url": "https://frontierpoetry.com/submit"
+    },
+    {
+      "name": "Waxwing",
+      "url": "https://waxwing.submittable.com/"
+    },
+    {
+      "name": "Beloit Poetry Journal",
+      "url": "https://www.bpj.org/submit/regular-guidelines"
+    },
+    {
+      "name": "Litmosphere",
+      "url": "https://litmosphere.charlottelit.org/submissions"
+    },
+    {
+      "name": "Sugar House Review",
+      "url": "https://sugarhousereview.submittable.com/submit"
+    },
+    {
+      "name": "ANMLY",
+      "url": "https://anmly.submittable.com/submit"
+    },
+    {
+      "name": "Harpur Palate",
+      "url": "https://harpurpalate.submittable.com/submit"
+    },
+    {
+      "name": "Sh\u014d Poetry Journal",
+      "url": "https://shopoetryjournal.com/submissions/"
+    }
+  ]
+}

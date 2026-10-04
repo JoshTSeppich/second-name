@@ -1,0 +1,46 @@
+name: VenueFold weekly refresh
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"     # Mondays 09:00 UTC
+  workflow_dispatch: {}      # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: venuefold
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    defaults:
+      run:
+        working-directory: venuefold
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - name: Find venues
+        run: node venuefold.mjs discover
+      - name: Re-check venues that are due (each one every 28 days)
+        run: node venuefold.mjs crawl --limit 80
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          VENUEFOLD_MODEL: ${{ vars.VENUEFOLD_MODEL }}
+          VENUEFOLD_CONTACT: ${{ vars.VENUEFOLD_CONTACT }}
+      - name: Export for the app
+        run: |
+          node venuefold.mjs status
+          node venuefold.mjs export
+          cp desk-venues.json ../venues/desk-venues.json
+      - name: Commit the refreshed data
+        run: |
+          git config user.name "venuefold-bot"
+          git config user.email "venuefold-bot@users.noreply.github.com"
+          git add data/venues.json ../venues/desk-venues.json
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "VenueFold: weekly venue refresh" && git push; fi

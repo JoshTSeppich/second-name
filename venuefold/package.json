@@ -1,0 +1,21 @@
+{
+  "name": "venuefold",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Keeps poetry venue data current for the Second Name desk",
+  "bin": {
+    "venuefold": "venuefold.mjs"
+  },
+  "scripts": {
+    "discover": "node venuefold.mjs discover",
+    "crawl": "node venuefold.mjs crawl --limit 25",
+    "export": "node venuefold.mjs export",
+    "status": "node venuefold.mjs status",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "cheerio": "^1.2.0"
+  }
+}
