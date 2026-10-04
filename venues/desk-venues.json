@@ -1,6 +1,6 @@
 {
  "venuefold": 1,
- "exportedOn": "2026-10-04T19:07:42.788Z",
+ "exportedOn": "2026-10-04T19:12:19.412Z",
  "venues": [
   {
    "id": "vf-change",
@@ -169,19 +169,6 @@
    "source": "venuefold"
   },
   {
-   "id": "vf-apo-press",
-   "name": "*apo-press",
-   "url": "https://collectiveaporia.weebly.com/apo--press.html#/",
-   "fee": 0,
-   "start": "",
-   "end": "",
-   "tags": "general",
-   "maxPoems": 3,
-   "checked": "2026-10-04",
-   "notes": "Currently not accepting submissions; will open \"in the fall\" with rolling deadline. Multi-genre publication; accepts work from marginalized voices.",
-   "source": "venuefold"
-  },
-  {
    "id": "vf-appalachia-journal",
    "name": "Appalachia Journal",
    "url": "https://www.outdoors.org/resources/appalachia/",
@@ -209,19 +196,6 @@
    "maxPoems": 6,
    "checked": "2026-10-04",
    "notes": "Submit maximum 6 unpublished poems per submission. Preference given to short (under two pages), non-rhyming poetry. Include \"poetry\" in subject line and cover letter with name, mailing address, email, and short third-person biography in body of email message. Only one submission at a time. Response: approximately three weeks, up to two months",
-   "source": "venuefold"
-  },
-  {
-   "id": "vf-aster-ix-journal",
-   "name": "Aster(ix) Journal",
-   "url": "https://asterix.submittable.com/submit",
-   "fee": 0,
-   "start": "",
-   "end": "",
-   "tags": "general",
-   "maxPoems": 3,
-   "checked": "2026-10-04",
-   "notes": "Currently no open calls for submissions. Venue announces open calls intermittently via newsletter and social media (Instagram most active). Responses may take several months; editorial processes typically 3-6 months minimum. Fee not stated on their page; check before paying.",
    "source": "venuefold"
   },
   {
@@ -355,6 +329,20 @@
    "maxPoems": 3,
    "checked": "2026-10-04",
    "notes": "Fee required for most submissions; venue is not a paying market. Simultaneous submissions accepted but must notify immediately upon acceptance elsewhere. Response time within one year. Fee not stated on their page; check before paying.",
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-birdcoat-quarterly",
+   "name": "Birdcoat Quarterly",
+   "url": "https://www.birdcoatquarterly.com/copy-of-submit",
+   "fee": 3,
+   "start": "10-01",
+   "end": "10-31",
+   "tags": "general",
+   "maxPoems": 4,
+   "pays": "$20 per poem",
+   "checked": "2026-10-04",
+   "notes": "Up to four poems or maximum ten pages per submission in single document. Previously unpublished work only; First North American Serial Rights requested.",
    "source": "venuefold"
   },
   {
@@ -631,6 +619,21 @@
    "source": "venuefold"
   },
   {
+   "id": "vf-cincinnati-review-micro",
+   "name": "The Cincinnati Review — miCRo",
+   "url": "https://www.cincinnatireview.com/submissions/",
+   "fee": 0,
+   "start": "09-01",
+   "end": "12-31",
+   "tags": "general",
+   "maxPoems": 5,
+   "pays": "$30/page for poetry in print journal; $25 for miCRo posts",
+   "ai": "The Cincinnati Review does not publish or consider work generated using AI or LLMs unless the use is a dual creative-critical project.",
+   "checked": "2026-10-04",
+   "notes": "One submission per calendar year for each print magazine genre. Current/former UC students, faculty, staff ineligible unless 2+ years removed from affiliation. Contributors must wait one year after appearance before resubmitting. For miCRo: submit up to 3 pieces, poems 32 lines or less. For print journal poetry: up to 5 poems, 10 manuscript pages max. Simultaneous submissions allowed; withdraw elsewhere-accepted poems promptly. Response: Typical response time is six months",
+   "source": "venuefold"
+  },
+  {
    "id": "vf-clade-song",
    "name": "Clade Song",
    "url": "https://cladesong.com/submissions.html",
@@ -642,6 +645,25 @@
    "maxPoems": 5,
    "checked": "2026-10-04",
    "notes": "Submit up to 5 previously unpublished poems as a single Word (.doc) or .rtf file attachment. Poems should be 12-point font; indicate stanza breaks if over one page. .mp3 and compressed video files should not exceed 3 MB per email. Include brief cover letter with biographical note and full contact information (name, address, email, phone with area code). Simultaneous submissions accepted but notify immediately if accepted elsewhere. Response: varies Fee not stated on their page; check before paying.",
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-cleaver-magazine",
+   "name": "Cleaver Magazine",
+   "url": "https://www.cleavermagazine.com/submission/",
+   "fee": 5,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "maxPoems": 3,
+   "ai": "Cleaver welcomes diverse human voices, but we do not consider AI-generated or AI-assisted work.",
+   "checked": "2026-10-04",
+   "notes": "Simultaneous submissions welcomed with immediate notification if accepted elsewhere. Previously published work not considered, though personal blog sharing may be acceptable. Translations welcome with author permission or for public domain works. Submissions reviewed through Subfolio online portal only; postal mail and email submissions not accepted.",
+   "waiver": {
+    "kind": "email",
+    "email": "submissions@cleavermagazine.com",
+    "note": "Those for whom $5 fee presents any kind of hardship. Hardship waiver available; email to request no-fee submission link with genre category."
+   },
    "source": "venuefold"
   },
   {
@@ -686,20 +708,6 @@
    "source": "venuefold"
   },
   {
-   "id": "vf-colby-review",
-   "name": "The Colby Review",
-   "url": "https://colbyreview.org/submit/",
-   "fee": 0,
-   "start": "",
-   "end": "",
-   "tags": "general",
-   "maxPoems": 5,
-   "ai": "Writing that uses or engages with generative AI tools and processes is generally not of interest. AI-generated submissions will not be considered.",
-   "checked": "2026-10-04",
-   "notes": "Submit up to 5 poems, 10-12 pages max. Only one submission per genre per reading period. Include brief bio and identifying information in email body only; omit from attachment. Simultaneous submissions accepted; notify if work accepted elsewhere. Response: within 30 days of closure",
-   "source": "venuefold"
-  },
-  {
    "id": "vf-columbus-review-ouroborealis-poetry-prize",
    "name": "The Columbus Review – Ouroborealis Poetry Prize",
    "url": "https://www.thecolumbusreview.com/contests",
@@ -726,6 +734,20 @@
    "ai": "Absolutely NO AI GENERATED/ASSISTED MATERIAL",
    "checked": "2026-10-04",
    "notes": "Send no more than 5 poems in no more than 7 pages; exceptions for longer poems and sequences. Poems must be previously unpublished. No AI-generated or AI-assisted material. Fee not stated on their page; check before paying.",
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-compassiviste-publishing",
+   "name": "Compassiviste Publishing",
+   "url": "https://www.compassiviste.com/anthologies",
+   "submitEmail": "anthology@compassivistepublishing.com",
+   "fee": 0,
+   "start": "01-01",
+   "end": "08-28",
+   "tags": "general",
+   "maxPoems": 3,
+   "checked": "2026-10-04",
+   "notes": "Poetry accepted for quarterly anthology. Submit work with brief author bio. Submissions close August 28th (stated as 2026, but treating as recurring annual deadline). Multiple content types accepted (stories, essays, poetry, photography, digital artwork).",
    "source": "venuefold"
   },
   {

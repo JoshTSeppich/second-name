@@ -210,6 +210,7 @@ export async function discover() {
 export async function crawl(opts) {
   const db = load(); let n = 0, changed = 0, same = 0, failed = 0;
   const due = Object.entries(db.venues).filter(([, v]) => {
+    if (v.closed) return false;                      // set by hand when a venue has shut down; never re-fetched
     if (opts.only && !v.name.toLowerCase().includes(opts.only.toLowerCase())) return false;
     if (opts.force || !v.checkedOn) return true;
     return (Date.now() - new Date(v.checkedOn)) / 864e5 >= RECHECK_DAYS;
@@ -247,7 +248,10 @@ export function nextWindow(wins, wantFree) {
 export function toDeskVenues(db) {
   const out = [];
   for (const [k, v] of Object.entries(db.venues)) {
-    const r = v.record; if (!r || !r.acceptsPoetry || r.confidence === "low") continue;
+    const r = v.record; if (v.closed || !r || !r.acceptsPoetry || r.confidence === "low") continue;
+    // No windows and not year-round means closed now or dates not stated. The desk reads blank dates as
+    // "open year-round", so leave these out until a later check finds dates.
+    if (!r.yearRound && !(r.windows || []).length) { out.skipped = (out.skipped || 0) + 1; continue; }
     const w = r.yearRound ? null : nextWindow(r.windows || []);
     const freeW = (r.windows || []).length > 1 ? nextWindow(r.windows, true) : null;
     let waiver = null;
@@ -271,11 +275,11 @@ export function exportDesk() {
   const out = toDeskVenues(load());
   const file = path.join(DIR, "desk-venues.json");
   fs.writeFileSync(file, JSON.stringify({ venuefold: 1, exportedOn: new Date().toISOString(), venues: out }, null, 1));
-  console.log(`export: ${out.length} venues -> ${file}\nIn the desk: You tab -> Import venues -> pick this file.`);
+  console.log(`export: ${out.length} venues -> ${file}${out.skipped ? ` (${out.skipped} left out: closed now or no dates stated)` : ""}\nIn the desk: You tab -> Import venues -> pick this file.`);
 }
 function status() {
-  const db = load(), vs = Object.values(db.venues), stale = vs.filter((v) => !v.checkedOn || (Date.now() - new Date(v.checkedOn)) / 864e5 >= RECHECK_DAYS);
-  console.log(`${vs.length} venues | ${vs.filter((v) => v.record).length} extracted | ${stale.length} due for a check | ${vs.filter((v) => v.lastError).length} with errors`);
+  const db = load(), vs = Object.values(db.venues).filter((v) => !v.closed), stale = vs.filter((v) => !v.checkedOn || (Date.now() - new Date(v.checkedOn)) / 864e5 >= RECHECK_DAYS);
+  console.log(`${vs.length} venues (${Object.keys(db.venues).length - vs.length} closed) | ${vs.filter((v) => v.record).length} extracted | ${stale.length} due for a check | ${vs.filter((v) => v.lastError).length} with errors`);
   for (const v of vs.filter((v) => v.changedOn === today())) console.log("  changed today:", v.name);
   for (const v of vs.filter((v) => v.lastError).slice(0, 15)) console.log("  error:", v.name, "-", v.lastError);
 }

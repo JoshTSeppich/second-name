@@ -1198,7 +1198,39 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Birdcoat Quarterly / Now / Poetry, Nonfiction / Fee: $3",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "guidelinesUrl": "https://www.birdcoatquarterly.com/copy-of-submit",
+      "history": [],
+      "record": {
+        "name": "Birdcoat Quarterly",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "10-01",
+            "end": "10-31",
+            "free": false,
+            "label": "Poetry submissions"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 3,
+        "maxPoems": 4,
+        "maxPages": 10,
+        "pays": "$20 per poem",
+        "submitUrl": "https://www.birdcoatquarterly.com/copy-of-submit",
+        "notes": "Up to four poems or maximum ten pages per submission in single document. Previously unpublished work only; First North American Serial Rights requested.",
+        "evidence": [
+          "Birdcoat Quarterly pays its writers and artists. We are currently able to pay $20 per poem",
+          "We are open for poetry submissions from October 1 - October 31",
+          "Our submission fee is a standard $3",
+          "We take submissions of up to four poems (or a maximum of ten pages)"
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "570b256fd78d9f59",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "birmingham-poetry-review": {
       "name": "Birmingham Poetry Review",
@@ -1464,7 +1496,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Bodega Magazine / Now / Poetry, Fiction, Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "closed": "Closed to submissions permanently since March 2025 per Poets & Writers; Submittable page gone (checked 2026-10-04)"
     },
     "boiler": {
       "name": "The Boiler",
@@ -1519,7 +1552,31 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Bone Bouquet / Now / Poetry Reviews from Women and Non-Binary Poets",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "guidelinesUrl": "https://www.bonebouquet.org/submit",
+      "history": [],
+      "record": {
+        "name": "Bone Bouquet",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": false,
+        "feeUSD": null,
+        "freeOption": "Free category and $3 donation category both available during submission windows",
+        "simultaneous": true,
+        "notes": "Currently closed to poetry submissions. Free and $3 donation categories treated identically. Simultaneous submissions allowed if other acceptance is reported. Only unpublished work accepted; first electronic rights requested. Poetry book reviews always open.",
+        "evidence": [
+          "Poetry submissions are currently closed.",
+          "We have both free and \"$3 donation\" submission categories, which will be open for the same duration and treated exactly the same.",
+          "Simultaneous submissions are fine, as long as we are notified when work is accepted elsewhere.",
+          "Bone Bouquet only accepts previously unpublished work; we request first electronic rights.",
+          "Submissions of poetry book reviews are always open!"
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "035095704ac6a36c",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "border-crossing": {
       "name": "Border Crossing",
@@ -1967,7 +2024,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Carve Magazine / Year-Round / Poetry, Fiction, Nonfiction / Fee: $3",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "closed": "No submissions page on carvezine.com; /submit returns 404 (checked 2026-10-04)"
     },
     "cherry-tree": {
       "name": "Cherry Tree",
@@ -2075,7 +2133,70 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Cincinnati Review — miCRo / Year-Round / Poetry, Flash Fiction, Flash Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "guidelinesUrl": "https://www.cincinnatireview.com/submission-guidelines-2021/",
+      "history": [],
+      "record": {
+        "name": "The Cincinnati Review — miCRo",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "09-01",
+            "end": "09-30",
+            "free": false,
+            "label": "September reading period"
+          },
+          {
+            "start": "12-01",
+            "end": "12-31",
+            "free": false,
+            "label": "December reading period"
+          },
+          {
+            "start": "05-01",
+            "end": "05-31",
+            "free": false,
+            "label": "May reading period"
+          },
+          {
+            "start": "01-01",
+            "end": "08-31",
+            "free": true,
+            "label": "miCRo nearly year-round (except early summer Schiff Awards period)"
+          },
+          {
+            "start": "09-01",
+            "end": "12-31",
+            "free": true,
+            "label": "miCRo nearly year-round"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 0,
+        "freeOption": "miCRo submissions are open nearly year-round and appear to be free; print journal submissions during reading periods (September, December, May) require standard submission fee (amount not specified on page).",
+        "maxPoems": 5,
+        "maxPages": 10,
+        "pays": "$30/page for poetry in print journal; $25 for miCRo posts",
+        "responseTime": "Typical response time is six months",
+        "simultaneous": true,
+        "submitUrl": "https://www.cincinnatireview.com/submissions/",
+        "submitEmail": "editors@cincinnatireview.com",
+        "aiPolicy": "The Cincinnati Review does not publish or consider work generated using AI or LLMs unless the use is a dual creative-critical project.",
+        "waiver": null,
+        "notes": "One submission per calendar year for each print magazine genre. Current/former UC students, faculty, staff ineligible unless 2+ years removed from affiliation. Contributors must wait one year after appearance before resubmitting. For miCRo: submit up to 3 pieces, poems 32 lines or less. For print journal poetry: up to 5 poems, 10 manuscript pages max. Simultaneous submissions allowed; withdraw elsewhere-accepted poems promptly.",
+        "evidence": [
+          "We accept submissions for the print journal generally during three time periods: September, December, and May.",
+          "miCRo submissions are open nearly year-round, except while we're accepting entries for the Robert and Adele Schiff Awards.",
+          "Please submit up to five poems at a time, totaling no more than ten manuscript pages.",
+          "We pay $30/page for poetry in the print journal and $25 for miCRo posts.",
+          "We do accept simultaneous submissions (please contact us if individual poems are accepted elsewhere)."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "f1b83bce4df15c88",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "clade-song": {
       "name": "Clade Song",
@@ -2120,7 +2241,40 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Cleaver Magazine / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction, Flash Nonfiction / Fee: $5",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "guidelinesUrl": "https://www.cleavermagazine.com/submission/",
+      "history": [],
+      "record": {
+        "name": "Cleaver Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "other",
+        "submitUrl": "https://www.cleavermagazine.com/submission/",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 5,
+        "freeOption": "Email [email protected] for hardship waiver to receive no-fee submission link; no questions asked, no explanation necessary.",
+        "simultaneous": true,
+        "submitEmail": "submissions@cleavermagazine.com",
+        "aiPolicy": "Cleaver welcomes diverse human voices, but we do not consider AI-generated or AI-assisted work.",
+        "waiver": {
+          "kind": "email",
+          "note": "Hardship waiver available; email to request no-fee submission link with genre category.",
+          "who": "Those for whom $5 fee presents any kind of hardship",
+          "contactEmail": "submissions@cleavermagazine.com"
+        },
+        "notes": "Simultaneous submissions welcomed with immediate notification if accepted elsewhere. Previously published work not considered, though personal blog sharing may be acceptable. Translations welcome with author permission or for public domain works. Submissions reviewed through Subfolio online portal only; postal mail and email submissions not accepted.",
+        "evidence": [
+          "Cleaver reads submissions year round, on a rolling basis, for our quarterly literary magazine.",
+          "We review submissions only through Subfolio, our online portal.",
+          "We are happy to read simultaneous submissions, with immediate notification if work is accepted elsewhere.",
+          "If the $5 submission fee presents any kind of hardship, please email us at submissions@cleavermagazine.com, tell us the genre category you'd like to submit in, and we will send you a no-fee submission link.",
+          "Cleaver welcomes diverse human voices, but we do not consider AI-generated or AI-assisted work."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "ae98f76427f300d0",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "clockhouse-literary-journal": {
       "name": "Clockhouse Literary Journal",
@@ -2362,7 +2516,38 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Compassiviste Publishing / Now / Poetry, Fiction, Nonfiction up to 5k Words",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "guidelinesUrl": "https://www.compassiviste.com/anthologies",
+      "history": [],
+      "record": {
+        "name": "Compassiviste Publishing",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "anthology@compassivistepublishing.com",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "08-28",
+            "free": true
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 0,
+        "freeOption": "No submission fee stated",
+        "notes": "Poetry accepted for quarterly anthology. Submit work with brief author bio. Submissions close August 28th (stated as 2026, but treating as recurring annual deadline). Multiple content types accepted (stories, essays, poetry, photography, digital artwork).",
+        "evidence": [
+          "we are looking for short stories, essays (max 5k words), poetry, photography, and digital artwork",
+          "Submit your work, along with a brief author bio to anthology@compassivistepublishing.com",
+          "Submissions closes August 28th 2026",
+          "How to Save the World highlights crucial issues facing the world today",
+          "A hundred percent of proceeds support the work of Compassiviste Foundation"
+        ],
+        "confidence": "medium",
+        "waiver": null
+      },
+      "pageHash": "58b498b0252b7edc",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "concrete-desert-review": {
       "name": "The Concrete Desert Review",
@@ -2460,7 +2645,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Cosmonauts Avenue / Now / Poetry, Fiction, Nonfiction, Hybrid, Multimedia, Comics",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 404"
+      "lastError": null,
+      "closed": "Site unreachable and listed as inactive (checked 2026-10-04)"
     },
     "cotton-xenomorph": {
       "name": "Cotton Xenomorph",
@@ -3240,7 +3426,29 @@
       "url": "https://metatron.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Metatron – #MicroMeta / Now / Micro-Poetry, Video Poetry",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Metatron Press",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": false,
+        "notes": "No open calls for submissions at this time. When open, submissions are managed through Submittable. The venue publishes poetry and welcomes marginalized voices.",
+        "evidence": [
+          "There are presently no open calls for submissions.",
+          "Metatron has acquired manuscripts, published, and publicized beautifully-designed books from a new generation of writers.",
+          "We are primarily known for our innovative poetry.",
+          "Check out our open submissions below!"
+        ],
+        "confidence": "high",
+        "submitUrl": "https://metatron.submittable.com/submit"
+      },
+      "guidelinesUrl": "https://metatron.submittable.com/submit",
+      "pageHash": "00c8a606a22136d7",
+      "checkedOn": "2026-10-04",
+      "lastError": null,
+      "changedOn": "2026-10-04"
     },
     "midwest-review": {
       "name": "Midwest Review",
