@@ -1909,7 +1909,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Call Me [Brackets] / Due: January 15 – April 1 & August 20 – November 1 / Poetry, Fiction, Nonfiction, Visual Art / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 403"
+      "lastError": null,
+      "manual": "callmebrackets.net answers automated requests with 403 and no other public guidelines page was found (checked 2026-10-04). Keep its desk entry by hand."
     },
     "capilano-review": {
       "name": "The Capilano Review",
@@ -2105,7 +2106,62 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Chestnut Review / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction, Flash Nonfiction, Hybrid, Art, Photography / Fee: $5 (4-6 Poems, Fiction, and Nonfiction)",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: HTTP 403"
+      "lastError": null,
+      "guidelinesUrl": "https://chestnutreview.submittable.com/submit",
+      "history": [],
+      "record": {
+        "name": "Chestnut Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://chestnutreview.submittable.com/submit",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "03-31",
+            "free": true,
+            "label": "Reading for Summer Issue"
+          },
+          {
+            "start": "04-01",
+            "end": "06-30",
+            "free": true,
+            "label": "Reading for Autumn Issue"
+          },
+          {
+            "start": "07-01",
+            "end": "09-30",
+            "free": true,
+            "label": "Reading for Winter Issue"
+          },
+          {
+            "start": "10-01",
+            "end": "12-31",
+            "free": true,
+            "label": "Reading for Spring Issue"
+          }
+        ],
+        "yearRound": true,
+        "feeUSD": 0,
+        "minPoems": 1,
+        "maxPoems": 6,
+        "freeOption": "Free Submissions: 1-3 poems. Paid Submissions (no fee specified): up to 6 poems.",
+        "simultaneous": true,
+        "pays": "US $120 per piece, delivered on publication, via PayPal",
+        "responseTime": "30-day turn-around for magazine submissions; refund submission fee if longer",
+        "aiPolicy": "We do not accept AI-generated work. Staff prohibited from using AI to evaluate work. All paid feedback is human-written.",
+        "notes": "Unpublished work only; no previously published or online-posted work. One active submission per category at a time. Simultaneous submissions encouraged with message notification for withdrawal. No re-submissions of declined pieces. Authors must wait two years after publication before resubmitting. Minimum age 18. Poems should be single-spaced, all in one document, each on new page.",
+        "evidence": [
+          "Free Submissions: Submit 1-3 poems. Paid Submissions: Submit up to 6 poems.",
+          "30-day turn-around. We notify all artists of their status within 30 days for magazine submissions. If it takes longer, we will refund your submission fee.",
+          "Simultaneous submissions are encouraged provided you message us on Submittable if you need to withdraw a piece.",
+          "Payment is US $120 per piece, delivered on publication.",
+          "We do not accept submissions of AI-generated work."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "e3b5c7f1cdb2d4cd",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "chewers-by-masticadores": {
       "name": "Chewers by Masticadores",
@@ -2606,7 +2662,31 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Concrete Desert Review / Year-Round / Poetry, Fiction, Nonfiction, Children’s Poetry and Stories, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: blocked by robots.txt"
+      "lastError": null,
+      "guidelinesUrl": "https://theconcretedesertreview.submittable.com/submit",
+      "history": [],
+      "record": {
+        "name": "The Concrete Desert Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://theconcretedesertreview.submittable.com/submit",
+        "windows": [],
+        "yearRound": false,
+        "feeUSD": null,
+        "simultaneous": true,
+        "notes": "Temporarily closed to submissions. Multiple submissions not accepted; wait for response before sending more work. Only previously unpublished work accepted; no reprints. Response times may be lengthy due to undergraduate editorial staff and production constraints.",
+        "evidence": [
+          "There are presently no open calls for submissions.",
+          "The Concrete Desert Review is temporarily closed to submissions.",
+          "Simultaneous submissions are accepted, but please notify us immediately if the work is been accepted elsewhere.",
+          "Multiple submissions are not accepted. Please wait to hear back from us on a submission before sending us more work.",
+          "We are currently not accepting reprints. Only previously unpublished work, please."
+        ],
+        "confidence": "high"
+      },
+      "pageHash": "7678797c99fba477",
+      "checkedOn": "2026-10-04",
+      "changedOn": "2026-10-04"
     },
     "construction-magazine": {
       "name": "Construction Magazine",

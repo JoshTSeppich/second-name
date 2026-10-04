@@ -129,8 +129,9 @@ test("a page that stays empty in the browser is reported, not extracted", async 
   assert.match(vf.load().venues.spa.lastError, /empty even in a browser/);
 });
 
-test("crawl and export skip venues marked closed", async () => {
-  vf.save({ venues: { gone: { name: "Gone Review", url: "https://gone.example.org/", closed: "Closed permanently (checked 2026-10-04)", record: { name: "Gone Review", acceptsPoetry: true, confidence: "high", windows: [], yearRound: true, notes: "" } } } });
+test("crawl and export skip venues marked closed or check-by-hand", async () => {
+  vf.save({ venues: { manual: { name: "Blocked Review", url: "https://blocked.example.org/", manual: "robots.txt disallows all crawlers" },
+    gone: { name: "Gone Review", url: "https://gone.example.org/", closed: "Closed permanently (checked 2026-10-04)", record: { name: "Gone Review", acceptsPoetry: true, confidence: "high", windows: [], yearRound: true, notes: "" } } } });
   vf.setClient(noApi);
   const calls = fakeFetch({});
   await vf.crawl({ limit: 0 });

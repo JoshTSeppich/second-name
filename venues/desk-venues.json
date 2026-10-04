@@ -1,6 +1,6 @@
 {
  "venuefold": 1,
- "exportedOn": "2026-10-04T19:53:53.732Z",
+ "exportedOn": "2026-10-04T19:57:37.913Z",
  "venues": [
   {
    "id": "vf-change",
@@ -601,6 +601,22 @@
     "email": "lit_house@washcoll.edu",
     "note": "Currently incarcerated writers. No fee waiver mentioned on page; incarcerated writers may submit by mail or email to lit_house@washcoll.edu instead of Submittable"
    },
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-chestnut-review",
+   "name": "Chestnut Review",
+   "url": "https://chestnutreview.submittable.com/submit",
+   "fee": 0,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "minPoems": 1,
+   "maxPoems": 6,
+   "pays": "US $120 per piece, delivered on publication, via PayPal",
+   "ai": "We do not accept AI-generated work. Staff prohibited from using AI to evaluate work. All paid feedback is human-written.",
+   "checked": "2026-10-04",
+   "notes": "Unpublished work only; no previously published or online-posted work. One active submission per category at a time. Simultaneous submissions encouraged with message notification for withdrawal. No re-submissions of declined pieces. Authors must wait two years after publication before resubmitting. Minimum age 18. Poems should be single-spaced, all in one document, each on new page. Response: 30-day turn-around for magazine submissions; refund submission fee if longer",
    "source": "venuefold"
   },
   {
