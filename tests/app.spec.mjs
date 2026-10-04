@@ -248,6 +248,26 @@ test("a waiver limited to certain writers is not shown as a free window", async 
   await expect(card).not.toContainText("Free windows");
 });
 
+test("a venue with no stated fee never shows as free", async ({ page }) => {
+  await mockProvider(page, ANTHROPIC);
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await nav(page, "Dates");
+  await page.getByRole("tab", { name: "List" }).click();
+  const card = page.locator(".card").filter({ has: page.getByRole("heading", { name: "Bagazine", exact: true }) });
+  await expect(card).toContainText("Fee not stated · Sep 2 to Sep 2");
+  await expect(card).not.toContainText("Free");
+  // Imported venues with no fee stay "not stated" too.
+  await nav(page, "You");
+  const file = { venuefold: 1, exportedOn: "2026-10-04T21:00:00Z", venues: [{ id: "vf-nofee", name: "No Fee Stated Review", url: "https://n.example.org", fee: null, maxPoems: 3 }] };
+  await page.locator('input[type="file"]').setInputFiles({ name: "desk-venues.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(file)) });
+  await expect(page.locator("#toast")).toContainText("1 added");
+  expect((await desk(page)).venues.find((v) => v.id === "vf-nofee").fee).toBeNull();
+  await nav(page, "Dates");
+  await page.getByRole("tab", { name: "List" }).click();
+  await expect(page.locator(".card").filter({ has: page.getByRole("heading", { name: "No Fee Stated Review" }) })).toContainText("Fee not stated · rolling");
+});
+
 test("starts with zero poems and no seeded poem data", async ({ page }) => {
   await mockProvider(page, ANTHROPIC);
   await page.goto("/");

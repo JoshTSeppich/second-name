@@ -174,6 +174,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       {id:"v10", name:"Call Me [Brackets]", url:"https://callmebrackets.net/", fee:0, start:"01-15", end:"04-01", tags:"experimental, general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list. Confirm on their page."},
       {id:"v18", name:"Nashville Review", url:"https://as.vanderbilt.edu/nashvillereview/contact/submit", fee:0, start:"01-01", end:"01-31", tags:"general", maxPoems:3, pays:"$25 per poem", checked:"2026-09-30", notes:"Vanderbilt. Opens January and August, pays $25 a poem. Per Heavy Feather Review's list; confirm fee and dates on their page."},
       {id:"v3", name:"december magazine", url:"http://decembermag.org/", fee:2.5, start:"10-01", end:"05-01", tags:"general", maxPoems:3, checked:"2026-09-30", notes:"Per Heavy Feather Review's list. Confirm on their page."},
+      {id:"v19", name:"Bagazine", url:"https://forms.gle/2waEV5KUa2xBeo5B7", fee:null, start:"09-02", end:"09-02", tags:"general", maxPoems:3, checked:"2026-10-04", notes:"Takes poetry, fiction, nonfiction and cross-genre work through a Google Form (sign-in required). Its fee, opening date and poem limit aren't stated anywhere public: Heavy Feather Review's list gives only a September 2 deadline, so this is set as a one-day window to remind you. Confirm everything on the form before submitting."},
       {id:"v4", name:"Poetry International Online", url:"https://poetryinternational.submittable.com/submit", fee:3, start:"", end:"", tags:"general", minPoems:3, maxPoems:5, checked:"2026-10-04", notes:"3 to 5 poems per submission, open until further notice."}
     ],
     queue:[]
@@ -358,6 +359,8 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   function byId(list, id){ return list.filter(function(x){ return x.id === id; })[0]; }
   function tagsOf(s){ return (s||"").toLowerCase().split(",").map(function(t){return t.trim();}).filter(Boolean); }
   function money(n){ n = +n||0; return n === 0 ? "Free" : "$" + n.toFixed(2); }
+  // A venue's fee is null when its page doesn't state one: never shown as free.
+  function feeText(v){ return v.fee == null ? "Fee not stated" : money(v.fee); }
   function fmtMD(md){ var p = md.split("-"); return MON[+p[0]-1] + " " + (+p[1]); }
   function plural(n, s){ return n + " " + s + (n === 1 ? "" : "s"); }
   function field(label, value, onchange, opts){
@@ -462,14 +465,15 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     out.push([!!(S.bio||"").trim(), (S.bio||"").trim() ? "Bio filled in" : "Add a bio in the You tab"]);
     out.push([w.open, w.text]);
     var fee = feeFor(q);
-    out.push([fee <= left(), q.waiver === "granted" ? "Fee waived (" + money(v.fee) + " saved)" : !fee ? "No reading fee" : fee <= left() ? "Fee " + money(v.fee) + " fits the $" + left().toFixed(2) + " left in your budget" : "Fee " + money(v.fee) + " is over the $" + left().toFixed(2) + " left in your budget"]);
+    if(v.fee == null) out.push([true, "Fee not stated: confirm it on their page before paying"]);
+    else out.push([fee <= left(), q.waiver === "granted" ? "Fee waived (" + money(v.fee) + " saved)" : !fee ? "No reading fee" : fee <= left() ? "Fee " + money(v.fee) + " fits the $" + left().toFixed(2) + " left in your budget" : "Fee " + money(v.fee) + " is over the $" + left().toFixed(2) + " left in your budget"]);
     var hasRoute = /^https?:\/\//.test(v.url||"") || /@/.test(v.submitEmail||"");
     out.push([hasRoute, hasRoute ? (v.submitEmail ? "Submits by email to " + v.submitEmail : "Venue page link set") : "Add the venue's submission link or email"]);
     return out;
   }
   function failing(q){ return checksFor(q).filter(function(c){ return !c[0]; }); }
 
-  function costTier(v){ if(!(+v.fee)) return 0; if(v.waiver && (v.waiver.kind === "email" || v.waiver.kind === "option")) return 1; return 2; }
+  function costTier(v){ if(v.fee == null) return 2; if(!(+v.fee)) return 0; if(v.waiver && (v.waiver.kind === "email" || v.waiver.kind === "option")) return 1; return 2; }
   function waiverLabel(v){ if(!(+v.fee)) return null; if(!v.waiver) return null; return v.waiver.kind === "email" ? "Waiver by email" : v.waiver.kind === "option" ? "Free option" : v.waiver.kind === "window" ? "Free windows" : v.waiver.kind === "identity" ? "Waiver for some writers" : "Waiver policy"; }
   function runAutopilot(){
     var miss = setupMissing();
@@ -537,7 +541,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
         var head = h("div", {class:"between"}, h("h2", {text:v.name}), h("span", {class:"chip " + (mode === "sent" ? "ok" : fails ? "bad" : w.chip), text: mode === "sent" ? "Sent" : mode === "wait" ? w.short : fails ? plural(fails,"issue") : w.short}));
         card.appendChild(head);
         card.appendChild(h("div", {class:"sub", text: q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? (p.second || p.title) : ""; }).join(" · ")}));
-        card.appendChild(h("div", {class:"line", text: (q.waiver === "granted" ? "Fee waived" : q.waiver === "requested" ? money(v.fee) + " · waiver requested" : money(v.fee) + (waiverLabel(v) ? " · " + waiverLabel(v).toLowerCase() : "")) + (mode === "sent" && q.sentAt ? " · sent " + new Date(q.sentAt).toLocaleDateString(undefined,{month:"short",day:"numeric"}) : "")}));
+        card.appendChild(h("div", {class:"line", text: (q.waiver === "granted" ? "Fee waived" : q.waiver === "requested" ? feeText(v) + " · waiver requested" : feeText(v) + (waiverLabel(v) ? " · " + waiverLabel(v).toLowerCase() : "")) + (mode === "sent" && q.sentAt ? " · sent " + new Date(q.sentAt).toLocaleDateString(undefined,{month:"short",day:"numeric"}) : "")}));
         root.appendChild(card);
       });
     }
@@ -552,7 +556,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     var v = byId(S.venues, q.vid), w = winStatus(v);
     root.appendChild(h("button", {class:"back", text:"‹ Desk", onclick:function(){ U.screen = null; render(); }}));
     root.appendChild(h("div", {class:"between", style:"margin-bottom:6px"}, h("h1", {text:v.name}), h("span", {class:"chip " + (q.status === "sent" ? "ok" : w.chip), text: q.status === "sent" ? "Sent" : w.short})));
-    root.appendChild(h("div", {class:"line", style:"margin:0 0 12px"}, money(v.fee) + " · ", h("a", {href:v.url, target:"_blank", rel:"noopener", text:"Open venue page"}), v.notes ? " · " + v.notes : ""));
+    root.appendChild(h("div", {class:"line", style:"margin:0 0 12px"}, feeText(v) + " · ", h("a", {href:v.url, target:"_blank", rel:"noopener", text:"Open venue page"}), v.notes ? " · " + v.notes : ""));
 
     if(q.status === "sent"){
       var d = h("div", {class:"card"}); d.appendChild(h("h2", {text:"Submitted"})); d.appendChild(h("div", {class:"line", text:"Sent " + new Date(q.sentAt).toLocaleString()}));
@@ -749,7 +753,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       var w = winStatus(v), c = h("div", {class:"card"});
       c.appendChild(h("div", {class:"between"}, h("h2", {text:v.name}), h("span", {class:"chip " + w.chip, text:w.short})));
       if(waiverLabel(v)) c.appendChild(h("div", {class:"chips", style:"margin-top:4px"}, h("span", {class:"chip " + (v.waiver.kind === "identity" ? "plain" : "ok"), text:waiverLabel(v)})));
-      c.appendChild(h("div", {class:"line", text: money(v.fee) + (v.start ? " · " + fmtMD(v.start) + " to " + fmtMD(v.end) : " · rolling") + (v.maxPoems ? " · up to " + plural(v.maxPoems,"poem") : "")}));
+      c.appendChild(h("div", {class:"line", text: feeText(v) + (v.start ? " · " + fmtMD(v.start) + " to " + fmtMD(v.end) : " · rolling") + (v.maxPoems ? " · up to " + plural(v.maxPoems,"poem") : "")}));
       if(v.submitEmail) c.appendChild(h("div", {class:"line", text:"Submits by email: " + v.submitEmail}));
       if(v.pays) c.appendChild(h("div", {class:"line", text:"Pays " + v.pays}));
       if(v.notes) c.appendChild(h("div", {class:"line", text:v.notes}));
@@ -860,7 +864,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     list.forEach(function(nv){
       if(!nv || !nv.name) return;
       var i = -1; S.venues.forEach(function(v,k){ if(v.id === nv.id || norm(v.name) === norm(nv.name)) i = k; });
-      var clean = {id: nv.id || uid(), name: String(nv.name), url: String(nv.url||""), submitEmail: nv.submitEmail || "", fee: +nv.fee || 0, start: nv.start || "", end: nv.end || "", tags: nv.tags || "general", minPoems: nv.minPoems || undefined, maxPoems: +nv.maxPoems || 3, pays: nv.pays, ai: nv.ai, checked: nv.checked, notes: nv.notes || "", waiver: nv.waiver || null, source: "venuefold"};
+      var clean = {id: nv.id || uid(), name: String(nv.name), url: String(nv.url||""), submitEmail: nv.submitEmail || "", fee: nv.fee == null || nv.fee === "" ? null : +nv.fee || 0, start: nv.start || "", end: nv.end || "", tags: nv.tags || "general", minPoems: nv.minPoems || undefined, maxPoems: +nv.maxPoems || 3, pays: nv.pays, ai: nv.ai, checked: nv.checked, notes: nv.notes || "", waiver: nv.waiver || null, source: "venuefold"};
       if(i < 0){ S.venues.push(clean); added++; }
       else if(S.venues[i].userEdited){ kept++; }
       else { clean.id = S.venues[i].id; S.venues[i] = clean; updated++; }
@@ -886,7 +890,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     S.venues.forEach(function(v){
       if(v.start && v.end){
         var o = nextDate(v.start), c = nextDate(v.end), w = winStatus(v);
-        if(!w.open && o < horizon) ev.push({d:o, kind:"opens", v:v, title:v.name + " opens", sub: money(v.fee) + (v.notes && /cap/i.test(v.notes) ? " · has a cap, submit on day one" : "")});
+        if(!w.open && o < horizon) ev.push({d:o, kind:"opens", v:v, title:v.name + " opens", sub: feeText(v) + (v.notes && /cap/i.test(v.notes) ? " · has a cap, submit on day one" : "")});
         if(c < horizon) ev.push({d:c, kind:"closes", v:v, title:v.name + " closes", sub: w.open ? "Open now" : "Closes " + fmtMD(v.end)});
       }
       if(v.waiver && v.waiver.start && v.waiver.end){
@@ -920,7 +924,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   // ---------- copilot ----------
   function copilotRules(){
     var poems = S.poems.map(function(p){ return "### " + p.title + (p.author ? " (by " + p.author + ")" : "") + (p.second ? " [second name: " + p.second + "]" : "") + " id=" + p.id + "\nThemes: " + (p.tags||"none") + "\n" + (poemHasText(p) ? p.text.trim().slice(0, 6000) : "(no text yet)"); }).join("\n\n");
-    var venues = S.venues.map(function(v){ var w = winStatus(v); return "- " + v.name + " id=" + v.id + ": " + money(v.fee) + ", " + w.text + ", likes " + v.tags + (v.maxPoems ? ", up to " + v.maxPoems + " poems" : "") + (v.minPoems ? ", at least " + v.minPoems : "") + (v.waiver ? ", fee waiver: " + v.waiver.kind + (v.waiver.email ? " via " + v.waiver.email : "") + (v.waiver.note ? " (" + v.waiver.note + ")" : "") : "") + (v.pays ? ", pays " + v.pays : "") + (v.ai ? ", AI policy: " + v.ai : "") + (v.notes ? ". " + v.notes : "") + (v.checked ? " [checked " + v.checked + "]" : ""); }).join("\n");
+    var venues = S.venues.map(function(v){ var w = winStatus(v); return "- " + v.name + " id=" + v.id + ": " + feeText(v) + ", " + w.text + ", likes " + v.tags + (v.maxPoems ? ", up to " + v.maxPoems + " poems" : "") + (v.minPoems ? ", at least " + v.minPoems : "") + (v.waiver ? ", fee waiver: " + v.waiver.kind + (v.waiver.email ? " via " + v.waiver.email : "") + (v.waiver.note ? " (" + v.waiver.note + ")" : "") : "") + (v.pays ? ", pays " + v.pays : "") + (v.ai ? ", AI policy: " + v.ai : "") + (v.notes ? ". " + v.notes : "") + (v.checked ? " [checked " + v.checked + "]" : ""); }).join("\n");
     var queue = S.queue.map(function(q){ var v = byId(S.venues, q.vid); return "- packet " + q.id + " to " + (v ? v.name : "?") + " (" + q.status + ", waiver " + (q.waiver||"none") + "): " + q.poemIds.map(function(i){ var p = byId(S.poems,i); return p ? p.title : i; }).join(", "); }).join("\n") || "(empty)";
     return [
       "You are the copilot inside Second Name, a poetry submission desk shared by two poets. Your job is to weigh in heavily on the poems: read closely, say what works and what does not, name the weakest line, propose cuts and alternatives, and argue for or against sending a given poem to a given venue. Be specific and blunt. Quote the exact lines you mean. Do not flatter and do not hedge every sentence. When you disagree with a plan, say so plainly and give a better one.",

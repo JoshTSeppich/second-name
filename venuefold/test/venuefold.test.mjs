@@ -172,7 +172,7 @@ test("toDeskVenues maps records to the desk format", () => {
   assert.match(s.waiver.note, /Students of the college/);
   const e = out.find((v) => v.id === "vf-email-only");
   assert.equal(e.submitEmail, "poems@e.example.org");
-  assert.equal(e.fee, 0);
+  assert.equal(e.fee, null, "an unstated fee is exported as null, not 0 (free)");
   assert.equal(e.start, "");
   assert.match(e.notes, /Fee not stated/);
 });

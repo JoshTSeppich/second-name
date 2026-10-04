@@ -309,7 +309,7 @@ export function toDeskVenues(db) {
     out.push({
       id: "vf-" + k, name: r.name || v.name, url: r.submitUrl || v.guidelinesUrl || v.url,
       submitEmail: r.submitMethod === "email" ? r.submitEmail || undefined : undefined,
-      fee: r.feeUSD ?? 0, start: w ? w.start : "", end: w ? w.end : "",
+      fee: r.feeUSD ?? null, start: w ? w.start : "", end: w ? w.end : "",
       tags: "general", minPoems: r.minPoems || undefined, maxPoems: r.maxPoems || 3,
       pays: r.pays || undefined, ai: r.aiPolicy || undefined, checked: v.checkedOn,
       notes: [r.notes, r.cap && "Cap: " + r.cap, r.responseTime && "Response: " + r.responseTime, r.feeUSD == null && "Fee not stated on their page; check before paying."].filter(Boolean).join(" "),
