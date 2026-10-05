@@ -2695,7 +2695,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Construction Magazine / Year-Round / Poetry, Fiction, Nonfiction, Border and Architecture Columns / Fee: $3",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-04: fetch failed"
+      "lastError": "2026-10-05: fetch failed"
     },
     "continental-review": {
       "name": "The Continental Review",
@@ -2907,553 +2907,2642 @@
       "url": "https://darkentriesjournal.wixsite.com/home",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Dark Entries / Year-Round / Horror and Dark Speculative Poetry, Flash Fiction, and Experimental Work / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Dark Entries",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Dark Entries ceased operation as of May 2024. The journal is no longer accepting submissions. Editorial operations have been passed to a new journal called Entropies.",
+        "evidence": [
+          "Due to other professional and creative obligations, Dark Entries has become increasingly unsustainable for me. That being said, I'm ceasing operation of the journal.",
+          "This site, and the work on it, will remain available. Feel free to browse."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://darkentriesjournal.wixsite.com/home",
+      "pageHash": "cc40023050963601",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "dead-skunk-mag": {
       "name": "Dead Skunk Mag",
       "url": "https://www.deadskunkmag.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Dead Skunk Mag / Year-Round / Poetry, Fiction, Nonfiction, Flash, Hybrid / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Dead Skunk Mag",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://www.deadskunkmag.com/submissions",
+        "submitEmail": "deadskunkmag@gmail.com",
+        "feeUSD": 0,
+        "windows": [],
+        "yearRound": false,
+        "simultaneous": true,
+        "maxPoems": 3,
+        "pays": null,
+        "responseTime": null,
+        "notes": "Submit via Submittable or email. Max 3 poems per document, each on new page. No identifying info on attachment. Do not submit to multiple genres simultaneously; wait for response before submitting again. If accepted, wait 6+ months before resubmitting.",
+        "evidence": [
+          "Put \"POETRY\" in the title field. No more than 3 poems in a single document.",
+          "Submissions may be sent via Submittable OR by sending an email to deadskunkmag@gmail.com",
+          "Simultaneous submissions are fine but please let us know if your work is accepted elsewhere",
+          "we're not able to pay artists at this time",
+          "SUBMISSIONS ARE CLOSED"
+        ],
+        "confidence": "medium",
+        "waiver": null
+      },
+      "guidelinesUrl": "https://www.deadskunkmag.com/submissions",
+      "pageHash": "05c26fa4f72d28eb",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "decadent-review": {
       "name": "The Decadent Review",
       "url": "https://thedecadentreview.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Decadent Review / Year-Round / Poetry, Nonfiction, Criticism, Theory, Reviews",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 526"
     },
     "december-magazine": {
       "name": "december magazine",
       "url": "http://decembermag.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "december magazine / Due: Oct 1 – May 1 / Prose, Poetry, Art / Fee: $2.50",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 404"
     },
     "diacritics": {
       "name": "diaCRITICS",
       "url": "https://dvan.org/diacritics/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "diaCRITICS / Year-Round / Poetry, Fiction, Nonfiction, Hybrid, Interviews, and Reviews from Writers of the Vietnamese/Southeast Asian Diaspora",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "diaCRITICS",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "submissions@diacritics.org",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "responseTime": "two months",
+        "notes": "Accepts poetry alongside fiction, essays, and hybrid forms. Special issue deadline December 1, 2026 for \"The South\" theme and mini-dispatches. Open submissions year-round via email.",
+        "evidence": [
+          "We publish essays, fiction, poetry, art, comics, and hybrid pieces",
+          "Creative works: fiction, creative nonfiction, poetry, and hybrid forms",
+          "We aim to reply to all submissions within two months",
+          "Please send all submissions and pitches to [email protected]",
+          "Deadline: December 1, 2026"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://diacritics.org/submit/",
+      "pageHash": "bbe9b71a625fcd72",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "diagram": {
       "name": "DIAGRAM",
       "url": "http://thediagram.com/subs.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "DIAGRAM / Year-Round / Poetry, Fiction, Nonfiction, Art, New Media",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "DIAGRAM",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "All submissions are free",
+        "pays": "No payment; contributors receive \"props,\" love, and glory",
+        "simultaneous": true,
+        "responseTime": "Typically 3 months, but can take longer; if no response after 6 months, check submissions manager",
+        "submitUrl": "submissions manager system",
+        "submitEmail": "editor--at--thediagram.com",
+        "aiPolicy": "Totally okay with AI-assisted work, as long as it rules. If it doesn't rule send it somewhere else.",
+        "notes": "Do not submit work titled \"13 ways of looking at X\"; do not mention Hopwoods; students should wait until no longer a student of editors to submit; previously published work not accepted (personal websites excepted); simultaneous submissions allowed if editor is informed immediately if accepted elsewhere.",
+        "evidence": [
+          "We're using [submissions manager system] for everything but REVIEWS",
+          "Simultaneous submissions are fine with us as long as we are informed",
+          "We try to make decisions on all submissions and respond within 3 months, though it can take longer",
+          "we aren't able to pay contributors...We pay you with props. Also love.",
+          "We are totally okay with AI-assisted work, as long is it rules."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://thediagram.com/subs.html",
+      "pageHash": "91e74dbcc8245bf5",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "diode": {
       "name": "diode",
       "url": "http://diodepoetry.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "diode / Year-Round / Poetry (Including but Not Limited to Narrative, Experimental, Visual, Found and Erasure Poetry, Translations, and Collaborations)",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: blocked by robots.txt"
     },
     "dog-throat-journal": {
       "name": "Dog Throat Journal",
       "url": "https://dogthroat.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Dog Throat Journal / Due: July 31 / Flash Fiction / Prose Poetry / Contest $500 Prizes / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Dog Throat Journal",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [
+          {
+            "start": "10-01",
+            "end": "10-21",
+            "free": true,
+            "label": "Current submission window"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": null,
+        "freeOption": "Current window: October 1-21, 2026",
+        "notes": "The page states submissions are open October 1-21, 2026, but does not specify recurring annual dates or whether submissions occur at other times. Submission method details are not provided on this page.",
+        "evidence": [
+          "Submissions are open. October 1, 2026 through October 21, 2026",
+          "See the guidelines"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://dogthroat.com/",
+      "pageHash": "29297a98921d2d92",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "doubleback-review": {
       "name": "Doubleback Review",
       "url": "http://doublebackreview.com/guidelines/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Doubleback Review / Year-Round / Poetry, Fiction, Nonfiction and Hybrid Published in Now-Defunct Journals",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Doubleback Review",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "admin@doublebackreview.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "maxPoems": 5,
+        "minPoems": null,
+        "simultaneous": null,
+        "responseTime": "Around March 15 (for submissions Aug 16-Feb 15) or September 15 (for submissions Feb 16-Aug 15)",
+        "pays": null,
+        "aiPolicy": null,
+        "freeOption": "No submission fees",
+        "cap": null,
+        "maxPages": null,
+        "waiver": null,
+        "notes": "Poets should send up to five poems in one document (Word preferred), each piece on a separate page, with name and email at the top of each page. Cover letter must specify where each piece was previously published; pieces must no longer be available online or in active print circulation. Only submit one packet at a time and wait for a determination before submitting again.",
+        "evidence": [
+          "Doubleback Review does not charge for submissions, and is not a paying market.",
+          "Poets should send up to five poems",
+          "Submissions received between August 16 and February 15 will receive responses on or around March 15; those received between February 16 and August 15 will receive responses on or around September 15.",
+          "Please only submit one packet at a time and wait until you've received a determination before sending again.",
+          "Your pieces must no longer be available online or in active print circulation."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "http://doublebackreview.com/guidelines/",
+      "pageHash": "268d51e1ce68d57d",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "dream-pop-journal": {
       "name": "Dream Pop Journal",
       "url": "https://duotrope.com/duosuma/submit/dream-pop-journal-A1OXx",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Dream Pop Journal / Year-Round / Poetry, Fiction, Nonfiction, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 403"
     },
     "dreginald": {
       "name": "DREGINALD",
       "url": "https://dreginald.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "DREGINALD / Year-Round / Poetry, Prose, Art, Recordings, Formless Blobs, Etc.",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "DREGINALD",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://dreginald.com/index.php/submit/",
+        "submitEmail": "dreginaldmagazine@gmail.com",
+        "yearRound": true,
+        "windows": [],
+        "feeUSD": null,
+        "freeOption": "No fee mentioned",
+        "maxPoems": 5,
+        "minPoems": 3,
+        "simultaneous": true,
+        "responseTime": "10 months",
+        "pays": null,
+        "waiver": null,
+        "notes": "Submit 3–5 poems via Submittable in .doc/.docx with cover letter and bio. No more than 2 submissions per year; hold second submission until receiving response to first. Simultaneous submissions allowed but notify if work is accepted elsewhere. Does not accept previously published work.",
+        "evidence": [
+          "Submit 3 to 5 poems",
+          "Please submit no more than 2 times per year and only 1 submission at a time",
+          "We do accept simultaneous submissions, but please notify us if your work is picked up elsewhere",
+          "DREGINALD aims to respond to submissions within 10 months",
+          "DREGINALD reads year-round"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://dreginald.com/index.php/submit/",
+      "pageHash": "d78ab6c060aee728",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "drift": {
       "name": "The Drift",
       "url": "https://www.thedriftmag.com/about/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Drift / Year-Round / Fiction, Poetry / Payment: $50",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Drift",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "poetry@thedriftmag.com",
+        "feeUSD": null,
+        "pays": "$150 for poems",
+        "maxPoems": 6,
+        "yearRound": true,
+        "windows": [],
+        "simultaneous": null,
+        "notes": "Submit up to 6 poems in a single Word doc or PDF titled \"lastname_firstname.\" Poets may submit no more than twice a year.",
+        "evidence": [
+          "Send poetry to poetry@thedriftmag.com",
+          "Attach up to six poems in a single Word doc or pdf titled \"lastname_firstname.\"",
+          "We ask that you submit no more than twice a year.",
+          "$150 for poems",
+          "Founded in June 2020, The Drift aims to introduce new work and new ideas by young writers"
+        ],
+        "confidence": "high",
+        "aiPolicy": "anything written by A.I."
+      },
+      "guidelinesUrl": "https://www.thedriftmag.com/about/",
+      "pageHash": "2828f24c3667d789",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "drift-dribble-miscellany": {
       "name": "The Drift & Dribble Miscellany",
       "url": "http://www.augustdriftanddribble.com/submit.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Drift & Dribble Miscellany / Year-Round and Themed Calls / Literary Fiction, Short Fiction, Dribbles, Nonfiction, Occasional Poetry, Narrative Photography, and Art / Fee: $2 – $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Drift & Dribble Miscellany",
+        "acceptsPoetry": false,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": false,
+        "feeUSD": null,
+        "notes": "Poetry submissions are currently CLOSED due to being overwhelmed with submissions. The venue does not accept AI-generated or substantially AI-assisted work. Simultaneous submissions allowed but must be withdrawn promptly if accepted elsewhere. One submission per category. Do not resubmit for 6 months.",
+        "evidence": [
+          "Poetry: We've been overwhelmed with poetry submissions, sorry. Please check back.",
+          "Click the above Submittable button (There is a small reading fee).",
+          "The Drift & Dribble Miscellany does not accept work generated or substantially assisted by artificial intelligence tools.",
+          "Simultaneous submissions allowed--but please promptly withdraw if accepted elsewhere.",
+          "One submission per category."
+        ],
+        "confidence": "high",
+        "aiPolicy": "Does not accept work that has been generated or substantially assisted by artificial intelligence tools, including large language models and AI writing assistants. Work drafted, outlined, or substantively revised using AI tools will be declined.",
+        "simultaneous": true,
+        "submitUrl": "https://www.augustdriftanddribble.com/submit",
+        "responseTime": "Within a few weeks, often within a week or so, sometimes slower",
+        "pays": "No payment offered at this time",
+        "submitEmail": "raimerrugh@gmail.com"
+      },
+      "guidelinesUrl": "https://www.augustdriftanddribble.com/submit",
+      "pageHash": "1446cbdcef992c90",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "driftwood-press": {
       "name": "Driftwood Press",
       "url": "https://driftwoodpress.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Driftwood Press / Now / Poetry, Fiction, Visual Arts, Hybrid, Interviews, Comics, Art / Fees: $2.99 (Poetry), $3.99 (Fiction)",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Driftwood Press",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "09-01",
+            "end": "01-15",
+            "free": false,
+            "label": "Poetry In-House Poem Contest"
+          },
+          {
+            "start": "01-01",
+            "end": "12-31",
+            "free": false,
+            "label": "Poetry Full Collection"
+          }
+        ],
+        "yearRound": true,
+        "feeUSD": 25,
+        "freeOption": "Each submitter receives free copy of chosen Driftwood Press poetry collection in mail",
+        "maxPoems": 5,
+        "minPoems": null,
+        "maxPages": null,
+        "pays": "Contest: $300 USD (winner), $50 USD (up to 5 finalists). Full Collection: $500 USD plus 20% royalties",
+        "simultaneous": true,
+        "responseTime": "Full Collection: three to six months target; Premium Single Poems: roughly one week",
+        "submitUrl": "https://driftwoodpress.submittable.com/submit",
+        "submitEmail": "editor@driftwoodpress.net",
+        "aiPolicy": "While AI may be useful tool for research, we do not accept AI generated works",
+        "notes": "Poetry In-House Contest: up to 5 poems, max 60 lines each, Sept 1–Jan 15 reading period, $25 fee. Full Collection submissions: year-round, 45–100 pages, $19.99 fee, simultaneous submissions allowed but update to withdrawn if accepted elsewhere. Single Poems Premium option available with ~1-week response.",
+        "evidence": [
+          "Submitters may send up to five poems in a single document",
+          "Each poem must not exceed sixty lines",
+          "Submission fee is $25.00 USD",
+          "Submissions will be open from September 1st to January 15th",
+          "While AI may be a useful tool for research, we do not accept AI generated works",
+          "45 – 100 pages of poetry. If you are a few pages under or over, no problem",
+          "Submissions are open year-round, but may close temporarily if our editors need to catch up",
+          "Simultaneous submissions are accepted, but please update your submission to withdrawn within Submittable if your work is accepted elsewhere"
+        ],
+        "waiver": null,
+        "cap": null,
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://driftwoodpress.submittable.com/submit",
+      "pageHash": "e8cd38fd7f9651aa",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "ecotheo-review": {
       "name": "EcoTheo Review",
       "url": "https://www.ecotheo.org/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "EcoTheo Review / Year-Round / Poetry, Prose, Interviews, Reviews, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "EcoTheo Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "03-01",
+            "end": "03-15",
+            "free": true,
+            "label": "Spring/Summer"
+          },
+          {
+            "start": "05-01",
+            "end": "05-31",
+            "free": true,
+            "label": "Autumn"
+          },
+          {
+            "start": "07-01",
+            "end": "07-31",
+            "free": true,
+            "label": "Winter"
+          },
+          {
+            "start": "10-01",
+            "end": "10-31",
+            "free": true,
+            "label": "Spring 27"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 0,
+        "maxPoems": 3,
+        "maxPages": 10,
+        "submitUrl": "https://www.submittable.com/submit/",
+        "simultaneous": true,
+        "responseTime": "3 months",
+        "aiPolicy": "Work that has been created, in any part, with the assistance of AI tools is not eligible for submission or publication.",
+        "submitEmail": "etr@ecotheo.org",
+        "notes": "Poets must limit submissions to two per calendar year. Each submission may include no more than 3 poems and no more than 10 pages total. Submit poems as a single file. Previously published work is not accepted, but simultaneous submissions are allowed—notify promptly if accepted elsewhere.",
+        "waiver": null,
+        "evidence": [
+          "For 2026, we will be open March 1-15 (Spring/Summer), May 1-31 (Autumn), July 1-31 (Winter), and October 1-31 (Spring 27).",
+          "Poets must limit submissions to two per calendar year.",
+          "Each submission may not include more than 3 poems and may not exceed 10 pages total.",
+          "We do not accept previously published work, but we do accept simultaneous submissions.",
+          "Work that has been created, in any part, with the assistance of AI tools is not eligible for submission or publication."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.ecotheo.org/submit",
+      "pageHash": "1ff3048093d15384",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "el-portal": {
       "name": "El Portal",
       "url": "https://elportaljournal.com/submissions/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "El Portal / Now / Poetry, Fiction, CNF, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "El Portal",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://elportal.submittable.com/submit",
+        "windows": [
+          {
+            "start": "06-01",
+            "end": "09-30",
+            "free": true,
+            "label": "Reading period"
+          }
+        ],
+        "yearRound": false,
+        "maxPoems": 5,
+        "feeUSD": null,
+        "freeOption": "Open June 1 to September 30 only",
+        "submitEmail": "el.portal@enmu.edu",
+        "notes": "Accepts up to 5 poems per submission. Does not accept previously published work. Submit via Submittable in .doc, .docx, or .rtf formats.",
+        "evidence": [
+          "We will be open to submissions between June 1st and September 30th.",
+          "Poetry (up to 5 poems)",
+          "El Portal now accepts submissions via our Submittable page.",
+          "We do not accept any previously published work.",
+          "Submit all written work in .doc, .docx, or .rtf formats."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://elportaljournal.com/submissions/",
+      "pageHash": "b26bca17d3241dd0",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "elsewhere": {
       "name": "elsewhere",
       "url": "https://elsewheremag.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "elsewhere / Now / Prose Poetry, Flash Fiction, Nonfiction, Photography",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "elsewhere",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://elsewheremag.submittable.com/submit",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "General submission route is free; optional $3.00 tip jar donations available",
+        "maxPoems": 3,
+        "simultaneous": true,
+        "notes": "Submit up to 3 pieces of unlineated work, less than 1,000 words each. Simultaneous submissions accepted. Venue focuses on prose poetry and genre-blurring short prose works.",
+        "evidence": [
+          "submit up to 3 pieces of unlineated work, less than 1,000 words each",
+          "we accept simultaneous submissions",
+          "tip jar donations will not affect the order in which submissions are read",
+          "general submission",
+          "Give us your homeless, your animals, your lunch money"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://elsewheremag.submittable.com/submit",
+      "pageHash": "57893cbfd6defcea",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "emergent-literary": {
       "name": "Emergent Literary",
       "url": "https://emergentliterary.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Emergent Literary / Year-Round / Poetry, Prose (Including Reviews, Fiction, and Nonfiction), Visual Art, Music/Audio, and Hybrid Works from Black and Brown Writers / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Emergent Literary",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "editors@emergentliterary.com",
+        "windows": [],
+        "yearRound": true,
+        "minPoems": 3,
+        "maxPoems": 5,
+        "feeUSD": 0,
+        "simultaneous": true,
+        "responseTime": "6 months",
+        "notes": "Submit 3-5 poems in a single document with page breaks between poems and clearly delineated titles. Simultaneous submissions allowed; notify by replying to original email if work is accepted elsewhere.",
+        "evidence": [
+          "Submissions are now open on a rolling basis!",
+          "Poetry: Please submit three to five poems in a single document",
+          "We're cool with simultaneous submissions, just let us know",
+          "We will try our best to get back to you within 6 months"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://emergentliterary.com/submissions",
+      "pageHash": "84f75745cdf8599b",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "empty-house-press": {
       "name": "Empty House Press",
       "url": "https://www.emptyhousepress.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Empty House Press / Year-Round / Poetry, Fiction, Nonfiction",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Empty House Press",
+        "acceptsPoetry": true,
+        "submitMethod": "web_form",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "01-31",
+            "free": true,
+            "label": "Reading Period 1"
+          },
+          {
+            "start": "07-01",
+            "end": "07-31",
+            "free": true,
+            "label": "Reading Period 2"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 0,
+        "minPoems": 1,
+        "maxPoems": 3,
+        "simultaneous": true,
+        "pays": null,
+        "responseTime": "three months",
+        "notes": "One submission per author per reading period. Submit 1-3 poems in a single document. Submissions currently closed for extended hiatus; will reopen on stated reading periods.",
+        "evidence": [
+          "Reading Periods: Submissions will be open January 1–31 and July 1–31 with a limit of 500 submissions per cycle",
+          "Please submit one submission per author per reading period",
+          "Poetry: Feel free to send us 1-3 poems per submission in a single document",
+          "We welcome simultaneous submissions, but please contact us immediately if your work is accepted elsewhere",
+          "While we are unable to offer payment at this time"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.emptyhousepress.com/submit",
+      "pageHash": "7b989a2dba5affda",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "empty-mirror": {
       "name": "Empty Mirror",
       "url": "https://www.emptymirrorbooks.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Empty Mirror / Year-Round / Poetry, Nonfiction, Visual Art, Reviews, Interviews, Criticism",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Empty Mirror",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Empty Mirror is currently on hiatus and not accepting submissions. Normally accepts submissions year-round, publishes new work every Friday.",
+        "evidence": [
+          "Empty Mirror is on hiatus and not currently accepting submissions.",
+          "Empty Mirror is an online literary magazine publishing nonfiction, poetry, and art.",
+          "We publish new work every Friday and accept submissions year-round."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.emptymirrorbooks.com/submissions",
+      "pageHash": "08bfbbcbb36c39a1",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "epiphany": {
       "name": "Epiphany",
       "url": "https://epiphanymagazine.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Epiphany / Now / Poetry, Fiction, Nonfiction / Fee: $5",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Epiphany",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "05-01",
+            "end": "06-15",
+            "free": false,
+            "label": "Fall/Winter print issue"
+          },
+          {
+            "start": "11-01",
+            "end": "12-15",
+            "free": false,
+            "label": "Spring/Summer print issue"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": null,
+        "freeOption": "Fresh Voices Fellowship (open Sep 15–Oct 15) has no submission fee for poetry applicants.",
+        "pays": "$75 per poem (print); $50 per poem (online only).",
+        "waiver": {
+          "kind": "form",
+          "note": "Those facing financial hardship may request a fee waiver via the contact form on the website.",
+          "who": "Those facing financial hardship",
+          "contactEmail": null,
+          "requestWindow": null
+        },
+        "submitUrl": "https://epiphanymagazine.submittable.com/submit",
+        "notes": "General submissions are for print issues only (May 1–June 15 for Fall/Winter; Nov 1–Dec 15 for Spring/Summer). All print submissions considered for online-only publication. A separate Fresh Voices Fellowship exists with different eligibility (early-career, BIPOC/writers of color, no advanced degree in writing/English, unpublished book, Sep 15–Oct 15, no fee). AI-generated work not accepted.",
+        "evidence": [
+          "Submissions for our Fall/Winter print issue are open May 1–June 15.",
+          "Submissions for our Spring/Summer print issue are open Nov 1–Dec 15.",
+          "In print, we pay $75 per poem and $175 per essay or story.",
+          "Those facing financial hardship may request a fee waver via the contact form.",
+          "There is no fee for applications to the Fresh Voices Fellowship."
+        ],
+        "confidence": "medium"
+      },
+      "guidelinesUrl": "https://epiphanymagazine.submittable.com/submit",
+      "pageHash": "deb63adc78a66264",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "exacting-clam": {
       "name": "Exacting Clam",
       "url": "https://exactingclam.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Exacting Clam / Now / Short Fiction, Poetry, Book, Art and Music Reviews, Essays, Interviews, and Visual Art/Illustrations",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Exacting Clam",
+        "acceptsPoetry": true,
+        "submitMethod": "other",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": null,
+        "maxPoems": null,
+        "minPoems": null,
+        "maxPages": null,
+        "simultaneous": null,
+        "responseTime": null,
+        "pays": null,
+        "submitUrl": "https://exactingclam.com/submit/",
+        "submitEmail": null,
+        "cap": null,
+        "aiPolicy": null,
+        "waiver": null,
+        "notes": "Submissions handled through Ola submission manager; email submissions will be ignored. For poetry submission guidelines, refer to Ola platform.",
+        "evidence": [
+          "Exacting Clam accepts submissions through the Ola submission manager.",
+          "Please refer there for submission guidelines for fiction, poetry, essays, reviews, and art.",
+          "submissions sent by email will be ignored."
+        ],
+        "confidence": "medium"
+      },
+      "guidelinesUrl": "https://exactingclam.com/submit/",
+      "pageHash": "2cf42a8a2002a329",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "fecund": {
       "name": "Fecund",
       "url": "https://fecundmag.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Fecund / Now / Poetry, Fiction, Nonfiction, Hybrid, Interviews, Reviews, Fashion Writing and Photography, Photography, Criticism, Art, Digital Media",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Fecund",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "fecund.mag@gmail.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "maxPoems": 10,
+        "notes": "Submit up to 10 previously unpublished poems per email to fecund.mag@gmail.com with subject line \"Submission — [NAME]\". Editorial staff unable to respond to all submissions or provide feedback on rejected pieces.",
+        "evidence": [
+          "Poetry: up to 10 poems of previously unpublished work",
+          "send an email to fecund.mag@gmail.com with the subject line \"Submission — [NAME]\"",
+          "our editorial staff is unable to respond to all submissions"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://fecundmag.com/submit",
+      "pageHash": "4c867e62b71effa8",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "feed-the-holy": {
       "name": "FEED THE HOLY",
       "url": "https://feedthehol.blogspot.com/2024/11/submission-guidelines-feed-holy.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "FEED THE HOLY / Year-Round / Poetry, Fiction, Memoir / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "FEED THE HOLY",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "meelosmom@gmail.com",
+        "feeUSD": 0,
+        "yearRound": true,
+        "windows": [],
+        "maxPoems": 3,
+        "simultaneous": true,
+        "pays": null,
+        "responseTime": null,
+        "freeOption": "All submissions free, year-round",
+        "cap": null,
+        "aiPolicy": "NO AI-generated images accepted. NO AI-composed writing, only human writing.",
+        "waiver": null,
+        "notes": "Submit up to 3 poems at a time; poems left-aligned; include JPEG photo and third-person bio (50 words or fewer); reprints acceptable with original publication noted; proofread before submitting; email to meelosmom@gmail.com with subject line \"FEED THE HOLY SUBMISSION\"; submit as Word document (Times New Roman 12, no PDFs); pace submissions and do not resubmit until your piece is published; all rights revert to author after publication.",
+        "evidence": [
+          "Submissions are free and open year round.",
+          "Submit up to 3 poems, 1 personal essay (your memoir), or 1 flash fiction piece at a time. Simultaneous submissions are acceptable.",
+          "Email submissions to meelosmom@gmail.com. In the Subject line, state 'FEED THE HOLY SUBMISSION'.",
+          "NO AI-generated images will be accepted.",
+          "NO AI-composed writing, only human writing."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://feedthehol.blogspot.com/2024/11/submission-guidelines-feed-holy.html",
+      "pageHash": "28a4f4d10969d0e7",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "figure-1": {
       "name": "Figure 1",
       "url": "https://thefigureone.com/about/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Figure 1 / Year-Round / Poetry",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Figure 1",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Does not accept previously published material including online publication. Simultaneous submissions accepted; notify if work is accepted elsewhere. Contributors retain all rights but asked to acknowledge Figure 1 as first publisher.",
+        "evidence": [
+          "Send us poems, send us sharp-edged word-objects you can't quite call poems.",
+          "We do not accept previously published material, including works that have already appeared online.",
+          "We do, however, accept simultaneous submissions, as long as you notify us if you work gets accepted elsewhere.",
+          "Contributors retain all rights but are asked to acknowledge Figure 1 as first publisher.",
+          "For all other inquiries, contact us at editor@thefigureone.com."
+        ],
+        "confidence": "medium",
+        "submitEmail": "editor@thefigureone.com",
+        "feeUSD": null,
+        "simultaneous": true
+      },
+      "guidelinesUrl": "https://thefigureone.com/about/",
+      "pageHash": "bbc615cd4792b7db",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "florida-review": {
       "name": "The Florida Review",
       "url": "https://floridareview.submittable.com/Submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Florida Review / Now / Poetry, Fiction, Nonfiction Graphic Narrative, Reviews, Art / Fee: $2 (for Aquifer Online) $3 (for Print)",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Florida Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://floridareview.submittable.com/Submit",
+        "submitEmail": "flreview@ucf.edu",
+        "feeUSD": 3,
+        "maxPoems": 5,
+        "yearRound": true,
+        "responseTime": "three months (sometimes longer)",
+        "simultaneous": true,
+        "windows": [],
+        "freeOption": "Chapbook contest (2027 Jeanne Leiby Memorial): all entrants receive free one-year subscription",
+        "pays": null,
+        "waiver": null,
+        "notes": "Poets may submit up to five poems per submission. Fee applies to print edition; Aquifer (online) accepts poetry for $2.00. Simultaneous submissions allowed if withdrawn immediately upon acceptance elsewhere.",
+        "evidence": [
+          "Poets and visual artists may submit up to five poems or artworks as a single submission.",
+          "Poetry (print Florida Review) $3.00",
+          "Poetry (Aquifer: The Florida Review Online) $2.00",
+          "We strive to respond within three months, though sometimes our review takes longer.",
+          "Simultaneous submissions are fine as long as they are withdrawn immediately upon acceptance elsewhere."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://floridareview.submittable.com/Submit",
+      "pageHash": "b76d231d53540c0b",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "floyd-county-moonshine": {
       "name": "Floyd County Moonshine",
       "url": "http://www.floydshine.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Floyd County Moonshine / Year-Round / Short Stories, Poetry, Self-Contained Novel Excerpts, Creative Nonfiction, Interviews, Book Reviews, Artwork, Photography",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Floyd County Moonshine",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Page does not specify submission guidelines, fees, simultaneous submission policy, or response times. Visit Submissions page for complete details.",
+        "evidence": [
+          "Each issue features regional authors and artists, as well as literary and artistic voices from all over the United States"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://floydshine.com/",
+      "pageHash": "e6016a4334b78663",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "folio-magazine": {
       "name": "Folio Magazine",
       "url": "https://www.foliomagazine.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Folio Magazine / Due: November 1 – March 15 / Fiction and Nonfiction, Poetry, Artwork / Specializing in Undergraduate Writing / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Folio Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Folio is Holy Family University's undergraduate literary magazine. The page indicates they are \"Now accepting submissions FOR Vol. 50\" but does not specify submission windows, fees, caps, or other submission details. Readers must visit the submissions page for specifics.",
+        "evidence": [
+          "Now accepting submissions FOR Vol. 50",
+          "interested in original works of prose, poetry, visual art, and photography by undergraduates currently enrolled",
+          "for more details on how to share your work with us visit our submissions page"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://www.foliomagazine.org/",
+      "pageHash": "666fe93d504bc493",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "fowl-feathered-review": {
       "name": "Fowl Feathered Review",
       "url": "http://fowlpoxpress.ca/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Fowl Feathered Review / Year- Round / Poetry, Artwork / Send as Attachment to fowlpoxpress@mail2poet.com / Editor, Virgil Kay / Pays as e-Magazine Subscription",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: fetch failed"
     },
     "f-r-iction": {
       "name": "F(r)iction",
       "url": "https://frictionlit.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "F(r)iction / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction / Fee: $2.50",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "F(r)iction",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://frictionlit.submittable.com/submit",
+        "feeUSD": 2.5,
+        "freeOption": "Free resubmissions for invited revisions",
+        "maxPages": 3,
+        "maxPoems": 5,
+        "pays": "$25 per final printed page, plus two contributor copies",
+        "responseTime": "usually within one or two months",
+        "simultaneous": true,
+        "yearRound": true,
+        "windows": [],
+        "waiver": null,
+        "notes": "Up to five poems per submission, up to three pages per poem. Remove identifying information from manuscript and filename. Simultaneous submissions allowed; withdraw via Submittable if accepted elsewhere.",
+        "evidence": [
+          "Poetry: (up to five poems in the same document) up the three pages per poem",
+          "There is a small reading fee for general F(r)iction submissions ($2.50)",
+          "F(r)iction pays contributors $25 per final printed page, plus two contributor copies",
+          "We accept, and encourage, simultaneous submissions and only ask that you withdraw your piece(s) using Submittable upon acceptance elsewhere",
+          "We respond to every submission as quickly as possible, usually within one or two months"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://frictionlit.submittable.com/submit",
+      "pageHash": "56b38985345a2975",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "fugue": {
       "name": "Fugue",
       "url": "http://www.fuguejournal.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Fugue / Now / Poetry, Fiction, Nonfiction, Reviews / Fee: $3 (Free for Reviews)",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Fugue",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "09-10",
+            "end": "11-15",
+            "free": false
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 3,
+        "waiver": {
+          "kind": "email",
+          "note": "If the submission fee presents financial hardship, contact the venue to request a fee-free submission option.",
+          "who": "Anyone experiencing financial hardship",
+          "contactEmail": "fugue@uidaho.edu"
+        },
+        "freeOption": "Contact fugue@uidaho.edu to request fee waiver for financial hardship",
+        "minPoems": 1,
+        "maxPoems": 3,
+        "maxPages": 10,
+        "simultaneous": true,
+        "responseTime": "four months, but sometimes longer; do not query before six months",
+        "submitUrl": "https://fuguejournal.com/general-submissions",
+        "aiPolicy": "Do not send anything written by AI, cleaned up by AI, or anything where AI was used in its creation.",
+        "notes": "Submit up to three poems maximum in a single document (.pdf, .doc, or .docx). Submissions in multiple genres require separate submissions and separate fees. Simultaneous submissions allowed if noted in cover letter and immediate notification if accepted elsewhere.",
+        "evidence": [
+          "General submissions open on September 10 and close on November 15.",
+          "General submissions require a submission fee of $3.00 per submission.",
+          "If our fee presents financial hardship, please contact us at fugue@uidaho.edu so that we can offer you a fee-free submission option.",
+          "Please send up to three poems with a maximum submission length of 10 pages.",
+          "We consider simultaneous submissions as long as you let us know in the cover letter."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://fuguejournal.com/general-submissions",
+      "pageHash": "d8e38494538111f2",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "garlic-press": {
       "name": "The Garlic Press",
       "url": "https://www.garlicpresslit.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Garlic Press / Year-Round / Poetry, Fiction, Nonfiction, Short Stories, Hybrid",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Garlic Press",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "garlicpresslit@gmail.com",
+        "feeUSD": 0,
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "03-31",
+            "free": true,
+            "label": "Spring issue (April publication)"
+          },
+          {
+            "start": "04-01",
+            "end": "06-30",
+            "free": true,
+            "label": "Summer issue (July publication)"
+          },
+          {
+            "start": "07-01",
+            "end": "09-30",
+            "free": true,
+            "label": "Fall issue (October publication)"
+          },
+          {
+            "start": "10-01",
+            "end": "12-31",
+            "free": true,
+            "label": "Winter issue (January publication)"
+          }
+        ],
+        "yearRound": true,
+        "maxPoems": 3,
+        "maxPages": 10,
+        "simultaneous": true,
+        "responseTime": "2-4 months",
+        "pays": null,
+        "aiPolicy": "We do not accept work generated by AI.",
+        "notes": "Submit via email attachment with poems anonymized. One submission per genre per reading period; wait six months between submissions if you've submitted before. Poems must be unpublished, proofread, and sent as single document (.doc/.docx or .pdf) with each poem on new page.",
+        "evidence": [
+          "All submissions are FREE.",
+          "Submit up to three poems and no more than ten pages total.",
+          "We welcome simultaneous submissions.",
+          "We aim to respond to submissions within 2-4 months.",
+          "We do not accept work generated by AI."
+        ],
+        "confidence": "high",
+        "waiver": null
+      },
+      "guidelinesUrl": "https://www.garlicpresslit.com/submit/",
+      "pageHash": "bbd4ecbf2a71dfd1",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "georgia-review": {
       "name": "The Georgia Review",
       "url": "https://thegeorgiareview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Georgia Review / Due: August 15 – May 15 / Poetry, Fiction, Essays, Book Reviews / Fee: $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Georgia Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://thegeorgiareview.submittable.com/submit",
+        "feeUSD": 3,
+        "freeOption": "Journal subscribers can submit online for free; general paper submissions by mail are free",
+        "waiver": {
+          "kind": "option",
+          "note": "Journal subscribers may submit online at no cost during the general submissions period (excluding contests)",
+          "who": "Current subscribers to The Georgia Review",
+          "contactEmail": null,
+          "requestWindow": null
+        },
+        "windows": [
+          {
+            "start": "08-15",
+            "end": "05-15",
+            "free": false,
+            "label": "General submissions period"
+          }
+        ],
+        "yearRound": false,
+        "maxPages": 10,
+        "simultaneous": true,
+        "pays": "$4 per line for poetry, up to $800 per poem, plus 2 copies of issue and 50% discount on additional copies",
+        "responseTime": "Aim to respond within ten months",
+        "notes": "Submit up to 10 pages of poetry; only one submission per submission period recommended. Do not submit work written or assisted by generative AI. Current University of Georgia students ineligible.",
+        "evidence": [
+          "The Georgia Review welcomes submissions both online and by post from August 15 to May 15.",
+          "Each submission requires a $3 processing fee, with an exception for current subscribers to The Georgia Review, who may submit online at no cost.",
+          "For consideration, submit up to 10 pages of poetry. We recommend submitting only once per submission period.",
+          "The Georgia Review's current standard pay rate is $4 per line for poetry, up to $800.",
+          "Please do not send us work written or assisted by generative AI."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://thegeorgiareview.submittable.com/submit",
+      "pageHash": "6511f081fe615352",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "gertrude-press": {
       "name": "Gertrude Press",
       "url": "https://gertrudepress.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Gertrude Press / Now / Poetry, Fiction, Nonfiction, and Art from Queer Writers and Artists",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Gertrude Press",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Currently no open calls for submissions. When open, poetry submissions limited to max 3 poems in one PDF file.",
+        "evidence": [
+          "There are presently no open calls for submissions.",
+          "Poetry: Max of 3 poems in one pdf file"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://gertrudepress.submittable.com/submit",
+      "pageHash": "4b76ff50ffe4dc33",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "ghost-proposal": {
       "name": "Ghost Proposal",
       "url": "https://ghostproposal.com/Submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Ghost Proposal / Journal Submissions / Due: September 1 – September 30 / Poetry, Visual Poetry, Intermedia Work, Essay, Translation, Video, Sound, Poetry in the Expanded Field",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
     },
     "glacier": {
       "name": "The Glacier",
       "url": "https://42miles.submittable.com/submit/195512/the-glacier",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Glacier / Now / Poetry, Art, Short Fiction / Fee: $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "42 Miles Press",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "notes": "Page shows only book sales (Poetry Book Sale and Buy One of Our Titles) with no information about general poetry submissions, reading periods, fees, or guidelines. No submission process for unsolicited poetry is documented.",
+        "evidence": [
+          "42 Miles Press lives at Indiana University South Bend.",
+          "Poetry Book Sale! $20.00",
+          "Buy One of Our Titles",
+          "You can reach us with any questions at 42milespress [at] gmail [dot] com"
+        ],
+        "confidence": "low",
+        "submitUrl": "https://42miles.submittable.com/submit",
+        "submitEmail": "42milespress@gmail.com"
+      },
+      "guidelinesUrl": "https://42miles.submittable.com/submit",
+      "pageHash": "a45d241e56934f92",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "good-life-review": {
       "name": "The Good Life Review",
       "url": "https://thegoodlifereview.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Good Life Review / Year-Round / Poetry, Fiction, Creative Nonfiction / Fee: $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Good Life Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "All submissions are free to submit",
+        "pays": "$60 per piece published in a seasonal issue, $25 per piece published in Micro Monday",
+        "notes": "Submit via Submittable. TGLR is a paying market and a 501C3 nonprofit literary journal. Poetry submissions follow standard submission guidelines (see their guidelines page).",
+        "evidence": [
+          "We are currently open for all genres.",
+          "We are a paying market! $60 per piece published in a seasonal issue, $25 per piece published in Micro Monday",
+          "Please read submission guidelines and when you're ready, head over to Submittable to submit your work.",
+          "The Good Life Review is a quarterly online literary journal",
+          "TGLR nominates for Pushcart, Best of the Net, Best Small Fictions, and more!"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://thegoodlifereview.com/",
+      "pageHash": "216d5355ec1a431b",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "good-river-review": {
       "name": "Good River Review",
       "url": "https://www.goodriverreview.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Good River Review / Year-Round / Poetry, Prose, Drama, Writing for Children",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Good River Review",
+        "acceptsPoetry": true,
+        "submitMethod": "web_form",
+        "yearRound": true,
+        "windows": [],
+        "feeUSD": null,
+        "freeOption": null,
+        "maxPoems": 5,
+        "minPoems": null,
+        "maxPages": 10,
+        "simultaneous": true,
+        "responseTime": "up to four months",
+        "submitUrl": "https://www.goodriverreview.com/submissions",
+        "submitEmail": "goodriverreview@spalding.edu",
+        "pays": null,
+        "waiver": null,
+        "notes": "Lyric writers (poets) submit up to five poems or micro pieces, no more than ten pages at a time. Current students at the Naslund-Mann School of Writing at Spalding University are not eligible. Do not submit previously published material or work currently in press elsewhere.",
+        "evidence": [
+          "Lyric writers should submit up to five poems or micro pieces, no more than ten pages at a time.",
+          "Our submission period is open and ongoing.",
+          "We allow simultaneous submissions, but please access your submission and withdraw it if it is accepted elsewhere.",
+          "Response time is up to four months.",
+          "Current students at the Naslund-Mann School of Writing at Spalding University are not eligible to submit."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.goodriverreview.com/submissions",
+      "pageHash": "0b92a088266442e1",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "gorko-gazette": {
       "name": "The Gorko Gazette",
       "url": "http://thegorkogazette.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Gorko Gazette / Year-Round / Fake News, Short Fiction, Poetry, Art, Reviews, Interviews / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Gorko Gazette",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "The page shows regular poetry publications but contains no submission guidelines, fees, or procedures. Contact the venue directly for submission details.",
+        "evidence": [
+          "Menu shows 'Poems' section",
+          "Multiple poems published: 'Robinson Crusoe Maybe', '2 poems by Ryan Quinn Flanagan', '3 poems by Stephen Bales'",
+          "Daily publication pattern evident from archive"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://thegorkogazette.com/",
+      "pageHash": "11002794b7d7052b",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "graviton": {
       "name": "Graviton",
       "url": "https://www.gravitonlit.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Graviton / Now / Science-Inspired Poetry and Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 530"
     },
     "gravity-of-the-thing": {
       "name": "The Gravity of the Thing",
       "url": "https://thegravityofthething.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Gravity of the Thing / Due: October – November and March – April / Defamiliarized Fiction, Nonfiction, and Poetry; Cross-Genre, Hybrid, Multimedia, Experimental, Translated, and Collaborative Writing; Short, Flash, and Micro / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Gravity of the Thing",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [
+          {
+            "start": "10-01",
+            "end": "11-30",
+            "free": true,
+            "label": "Fall reading window"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": null,
+        "freeOption": "Fall reading window (October–November)",
+        "notes": "Fall reading window is October and November. No submission details, fees, or caps are stated on this page. Additional information requires visiting the linked submissions page.",
+        "evidence": [
+          "Our fall reading window is open during October and November.",
+          "Submissions: Our fall reading window is open during October and November. Click here to learn more."
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://thegravityofthething.com/",
+      "pageHash": "3b897f1c17f7d741",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "grimoire-magazine": {
       "name": "Grimoire Magazine",
       "url": "http://www.wearegrimoire.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Grimoire Magazine / Year-Round / Poetry, Fiction, Nonfiction, Art, Interviews, Dreams, Dead Letters, Séances",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Grimoire Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "grimoiremagazine@gmail.com",
+        "windows": [],
+        "yearRound": false,
+        "feeUSD": 0,
+        "pays": "$20 per poem upon publication",
+        "maxPoems": 5,
+        "simultaneous": true,
+        "responseTime": "up to eight months, possibly longer",
+        "notes": "Submit no more than 5 poems. Include \"Poetry\" in the subject line. Currently closed for submissions (status as of page date). Submissions must be .doc, .docx, or .pdf format. No previously published work.",
+        "evidence": [
+          "We are open to all kinds of poetry, from the lyric to the experimental. Please submit no more than 5 poems",
+          "Each writer will receive one shiny $20 bill upon publication",
+          "We DO accept simultaneous submissions (but only when we're open)",
+          "expect a wait of up to eight months, and possibly longer",
+          "WE ARE CURRENTLY CLOSED FOR SUBMISSIONS"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "http://www.wearegrimoire.com/submit",
+      "pageHash": "3f5bb680b0953972",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "guernica": {
       "name": "Guernica",
       "url": "https://www.guernicamag.com/about/submissions/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Guernica / Now / Poetry, Fiction, Nonfiction, Reportage",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Guernica",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": null,
+        "maxPoems": null,
+        "minPoems": null,
+        "maxPages": null,
+        "cap": null,
+        "pays": null,
+        "responseTime": null,
+        "simultaneous": null,
+        "submitUrl": "https://www.submittable.com/submit",
+        "submitEmail": null,
+        "waiver": null,
+        "aiPolicy": null,
+        "notes": "Only completed manuscripts accepted; no pitches. Submissions through Submittable only; see Submittable for current editorial guidelines.",
+        "evidence": [
+          "We only consider completed manuscripts (no pitches), and only through Submittable.",
+          "Please visit us there for our current editorial guidelines, or to submit your work for consideration."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.guernicamag.com/about/submissions/",
+      "pageHash": "d6f5bc33d5aa2e85",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "half-mystic": {
       "name": "Half Mystic",
       "url": "https://www.halfmystic.com/guidelines",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Half Mystic / Now / Poetry, Fiction, Nonfiction, Hybrid and Drama Pertaining to Music",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Half Mystic",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "This page lists published contributors only. No submission guidelines, fees, deadlines, or other details about how to submit are provided on this page.",
+        "evidence": [
+          "Page URL shows /contributors section listing poets and other artists published by Half Mystic",
+          "Extensive poetry contributors list indicates venue publishes poetry",
+          "No submission guidelines, fees, windows, or processes disclosed on this contributors page"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.halfmystic.com/contributors",
+      "pageHash": "09f7812f93082af7",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "hanging-loose-press": {
       "name": "Hanging Loose Press",
       "url": "https://www.hangingloosepress.com/submissions/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Hanging Loose Press / Year-Round / Poetry & Short Stories / Emerging & Established Writers / High School Writers",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Hanging Loose Press",
+        "acceptsPoetry": true,
+        "submitMethod": "post",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": "No submission fee stated",
+        "maxPoems": 6,
+        "simultaneous": false,
+        "responseTime": "up to six months",
+        "submitEmail": "info@hangingloosepress.com (general); HighSchool@hangingloosepress.com (high school writers)",
+        "notes": "Send up to six poems by mail with SASE; do not staple. Do not submit simultaneously or by fax/email (except high school submissions via email). Wait at least six months before resubmitting. High school writers submit via email as Word/PDF attachment with identification. Name and address required on each page.",
+        "evidence": [
+          "Send up to six poems or one story at a time.",
+          "Manuscripts must be legible and be sure that includes your name and address, and please do not staple your work.",
+          "Enclose a stamped, self-addressed envelope of adequate size or we cannot reply.",
+          "We do not accept simultaneous submissions. We also cannot accept submissions by fax or e-mail.",
+          "please wait at least six months before submitting more of your work."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.hangingloosepress.com/submissions/",
+      "pageHash": "249d23586d911994",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "harpur-palate": {
       "name": "Harpur Palate",
       "url": "https://harpurpalate.binghamton.edu/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Harpur Palate / Due: Jan 1 – Mar 15 & Aug 19 – Oct 15 / Fiction, Flash, Nonfiction, Poetry, Art / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Harpur Palate",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://harpurpalate.binghamton.edu/submit/",
+        "submitEmail": "harpur.palate@gmail.com",
+        "feeUSD": 0,
+        "windows": [
+          {
+            "label": "Spring/Summer",
+            "start": "01-01",
+            "end": "03-15",
+            "free": true
+          },
+          {
+            "label": "Fall/Winter",
+            "start": "07-01",
+            "end": "10-15",
+            "free": true
+          }
+        ],
+        "yearRound": false,
+        "minPoems": 1,
+        "maxPoems": 3,
+        "maxPages": 5,
+        "cap": "200 submissions per reading period",
+        "simultaneous": true,
+        "pays": null,
+        "responseTime": null,
+        "waiver": null,
+        "notes": "Submit 1-3 poems per reading period (no more than 5 pages total), one poetry submission per reading period. Cannot accept submissions from current Binghamton University students, faculty, staff, or recent alumni.",
+        "evidence": [
+          "We accept online submissions through Submittable. Simultaneous submissions are permitted",
+          "Poetry: We accept submissions of 1-3 poems per reading period–no more than 5 pages total",
+          "Please send no more than one poetry submission per reading period",
+          "We accept General Submissions from January 1 – March 15 or until we meet our cap",
+          "We accept General Submissions from July 1 – October 15 or until we meet our cap"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://harpurpalate.binghamton.edu/submit/",
+      "pageHash": "09774d3995961acd",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "harvard-review": {
       "name": "Harvard Review",
       "url": "https://harvardreview.org/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Harvard Review / Year-Round / Online and In print / Fiction, Poetry, Nonfiction, Translation, Drama / Pitches Only for Reviews",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Harvard Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": null,
+        "maxPoems": 5,
+        "minPoems": null,
+        "simultaneous": true,
+        "responseTime": "Within 6 months, occasionally longer",
+        "submitUrl": "https://www.harvardreview.org/submit/",
+        "submitEmail": null,
+        "pays": null,
+        "cap": null,
+        "waiver": {
+          "kind": "email",
+          "note": "Financial hardship waiver available by email request",
+          "who": "Writers experiencing financial hardship",
+          "contactEmail": "info@harvardreview.org",
+          "requestWindow": null
+        },
+        "aiPolicy": null,
+        "notes": "Maximum 5 poems per submission. Writers may submit no more than twice a year. Manuscripts must be paginated and clearly labeled with author name on every page. Simultaneous submissions encouraged; notify if accepted elsewhere.",
+        "evidence": [
+          "Submissions to Harvard Review can be made through Submittable.",
+          "Please submit no more than 5 poems or 7,000 words of prose.",
+          "We ask that writers submit no more than twice a year.",
+          "Simultaneous submissions are encouraged, but we ask that you notify us if the work is accepted elsewhere.",
+          "If the reading fee at Submittable presents a financial hardship, please email us at info [at] harvardreview.org."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.harvardreview.org/submit/",
+      "pageHash": "921ab414cf40bd1b",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "heavy-feather-review-online-features": {
       "name": "Heavy Feather Review – Online Features",
       "url": "https://heavyfeatherreview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Heavy Feather Review – Online Features / Year-Round / Poetry, Fiction, Nonfiction, Comics, Hybrid / Topics: l’Hôtel Dauphin, The Last Word, Side A, Haunted Passages, Bad Survivalist, The Future, Flavor Town USA",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Heavy Feather Review – Online Features",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://heavyfeatherreview.submittable.com/submit",
+        "submitEmail": "heavyfeatherreview@gmail.com",
+        "yearRound": true,
+        "windows": [],
+        "feeUSD": 0,
+        "freeOption": "No Fee Submissions category available; Tip-Jar Submissions ($3.00 suggested, optional)",
+        "pays": "Contributor copies for print; online contributors receive no payment",
+        "responseTime": "30 days for response; inquire after 60 days",
+        "simultaneous": true,
+        "maxPoems": null,
+        "minPoems": null,
+        "maxPages": null,
+        "notes": "Save poetry as one document (doc, docx, pdf). Cover letters encouraged but not required. Simultaneous submissions allowed; notify immediately if accepted elsewhere. One standalone piece per \"Side A\" feature. Original work only; HFR takes first serial rights.",
+        "evidence": [
+          "Online features are open year-round",
+          "No Fee Submissions category with no fee assessed",
+          "Tip-Jar Submissions $3.00 suggested fee",
+          "Allow 30 days for a response, inquire after 60",
+          "Simultaneous submissions are allowed; notify us immediately if your submitted work has been accepted for publication elsewhere"
+        ],
+        "confidence": "high",
+        "waiver": null
+      },
+      "guidelinesUrl": "https://heavyfeatherreview.submittable.com/submit",
+      "pageHash": "eea6e6b62314b2aa",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "hex-literary": {
       "name": "hex literary",
       "url": "http://hexliterary.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "hex literary / Sporadically / Flash Fiction, Flash Nonfiction, Prose Poetry, Speculative Literary / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "hex literary",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "No submission guidelines, fees, or submission instructions visible on the provided page content.",
+        "evidence": [],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "http://hexliterary.com/",
+      "pageHash": "c5e9378a4c6699bc",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "hinchas-de-poes-a": {
       "name": "Hinchas de Poesía",
       "url": "https://hinchasdepoesia.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Hinchas de Poesía / Now / Poetry, Prose, Translations, Reviews, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Hinchas de Poesía",
+        "acceptsPoetry": false,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Venue is no longer soliciting submissions. All submission calls have closed.",
+        "evidence": [
+          "Hinchas de Poesía is no longer soliciting submissions of poetry, fiction, and artwork.",
+          "There are presently no open calls for submissions."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://hinchasdepoesia.submittable.com/submit",
+      "pageHash": "b1055fc4f584063d",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "hindsight-magazine": {
       "name": "Hindsight Magazine",
       "url": "https://www.hindsightmag.org/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Hindsight Magazine / Year-Round / Prose Poetry, Fiction, Nonfiction, Graphic / Fee: $2",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Hindsight Magazine",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "The provided page is not a literary venue submission page. The URL claims to be https://www.hindsightmag.org/submissions but the actual content is from MERIAH4D, an online slot gaming platform. No poetry submission information is available on this page.",
+        "evidence": [
+          "Page contains only slot gaming content",
+          "No submission guidelines for poetry found",
+          "No fee information for literary submissions",
+          "Page is primarily about gambling platform operations"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.hindsightmag.org/submissions",
+      "pageHash": "b39284060ba7851f",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "had": {
       "name": "HAD",
       "url": "https://hobartpulp.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "HAD / Sporadically / Poetry, Flash Fiction, Flash Nonfiction",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 404"
     },
     "hoot-review": {
       "name": "HOOT Review",
       "url": "http://www.hootreview.com/submissions/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "HOOT Review / Year-Round / Poetry, Flash Fiction, Flash Nonfiction, Reviews / Fee: $2",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "HOOT Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "03-01",
+            "free": false
+          },
+          {
+            "start": "06-01",
+            "end": "08-01",
+            "free": false
+          },
+          {
+            "start": "10-01",
+            "end": "11-27",
+            "free": false
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 2,
+        "freeOption": "Free submissions by postal mail. Free online submissions to onlinesubmissions@hootreview.com",
+        "maxPoems": 2,
+        "maxPages": null,
+        "minPoems": null,
+        "simultaneous": true,
+        "responseTime": "1-6 months (within a month to six months if on schedule, about 50% of the time)",
+        "submitUrl": "https://www.hootreview.com/submissions/",
+        "submitEmail": "onlinesubmissions@hootreview.com",
+        "pays": "~$25 average (30% of $2 per submission when more established)",
+        "notes": "Poetry must be under 10 lines and under 150 words total to fit on a postcard. Submit up to two pieces per submission. If accepted, wait one year before resubmitting; if rejected, wait six months. Must accept potential \"creative reformatting\" of line breaks for postcard design. Reprints allowed if previously published status is noted.",
+        "evidence": [
+          "Accept work three times a year: January 1st to March 1st, June 1st to August 1st, October 1st to November 27th",
+          "ALL POETRY: <10 lines (if it's more, be open to creative reformatting), but still <150 words",
+          "Only two pieces per submission, please. If your work is accepted, please wait a year until you re-submit",
+          "$2 fee for online submissions; free by postal mail or email to onlinesubmissions@hootreview.com",
+          "Simultaneous submissions are, of course, allowed–but please let us know if your work is placed elsewhere"
+        ],
+        "waiver": null,
+        "confidence": "high",
+        "aiPolicy": null,
+        "cap": null
+      },
+      "guidelinesUrl": "https://www.hootreview.com/submissions/",
+      "pageHash": "596d335e922aae34",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "hotazel-review": {
       "name": "Hotazel Review",
       "url": "https://hotazelreviewlit.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Hotazel Review / Now / Poetry, Prose Poetry, Flash Fiction, Microfiction, Translations / Experimental, Speculative and Literary / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Hotazel Review",
+        "acceptsPoetry": "<UNKNOWN>",
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "No submission information found on this page.",
+        "evidence": [],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://hotazelreviewlit.org/",
+      "pageHash": "636e28631da5eac6",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "ice-queen-magazine": {
       "name": "Ice Queen Magazine",
       "url": "https://www.icequeenmag.com/submissions",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Ice Queen Magazine / Open Year-Round for Nominations / Poetry, Fiction, Creative Nonfiction / Fee: Free / Pay: $50",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Ice Queen Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [
+          {
+            "start": "07-01",
+            "end": "09-15",
+            "free": true,
+            "label": "Trick or Treat Issue"
+          },
+          {
+            "start": "10-01",
+            "end": "11-15",
+            "free": true,
+            "label": "Gift Exchange Issue"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": null,
+        "pays": "$50 per contributor",
+        "maxPoems": 4,
+        "minPoems": 1,
+        "notes": "Community-based nomination process for monthly featured contributor. Poets may submit 1-4 poems. Work must mention or relate to food. Contributors also provide a favorite/family recipe and interview.",
+        "evidence": [
+          "1-4 poems",
+          "Ice Queen is currently able to pay each contributor a $50 payment",
+          "Submissions for this issue will open annually from July 1st to September 15th",
+          "Submissions for this issue will open annually from October 1st to November 15th",
+          "community-based nomination process"
+        ],
+        "confidence": "medium",
+        "submitEmail": "icequeenmagazine@gmail.com"
+      },
+      "guidelinesUrl": "https://www.icequeenmag.com/submissions",
+      "pageHash": "7bbc10da02c77e42",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "identity-theory": {
       "name": "Identity Theory",
       "url": "https://identitytheory.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Identity Theory / Now / Poetry, Fiction, Nonfiction",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Identity Theory",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "01-31",
+            "free": true,
+            "label": "Free Submittable reading period at beginning of each month"
+          }
+        ],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "Free email submission always available; free Submittable reading period at beginning of each month until cap is reached",
+        "submitEmail": "editor@identitytheory.com",
+        "submitUrl": "https://identitytheory.submittable.com/submit",
+        "simultaneous": true,
+        "pays": "No; nominations for Pushcart Prize, Best Small Fictions, Best Microfiction, Best of the Net; social media promotion; occasional gift rewards",
+        "responseTime": "1-3 months for most submissions; 1 day to 1 month for microfiction",
+        "aiPolicy": "Do not submit AI-generated or otherwise plagiarized work.",
+        "notes": "Submissions are always open with free email option year-round. Free Submittable period at beginning of each month runs until cap is reached. Simultaneous submissions welcome; notify immediately if accepted elsewhere. Previously published work unlikely but considered if no longer online.",
+        "evidence": [
+          "We always offer a free Submittable submission period at the beginning of each month",
+          "we always offer a free email submission option in addition to the optional paid tip jar",
+          "Simultaneous submissions are welcome long as you notify us as soon as your work is accepted elsewhere",
+          "Do not submit AI-generated or otherwise plagiarized work",
+          "Submissions are always open"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://identitytheory.submittable.com/submit",
+      "pageHash": "2ea712c9dcbdd7d9",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "impossible-task": {
       "name": "Impossible Task",
       "url": "https://www.anothernewcalligraphy.com/impossibletask.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Impossible Task / Year-Round / Poetry, Nonfiction, Fiction, Artwork, Music, Interviews",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 404"
     },
     "impostor": {
       "name": "Impostor",
       "url": "http://www.impostorlit.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Impostor / Due: October 7 – November 4 / Poetry / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 404"
     },
     "in-conversation": {
       "name": "In Conversation",
       "url": "http://theliteraryunderground.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "In Conversation / Year-Round / Poetry, Fiction, Nonfiction, Hybrid, Essays, Reviews, Art / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "In Conversation",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "General submissions are currently being accepted. No submission guidelines, format requirements, or restrictions are specified on this page.",
+        "evidence": [
+          "In Conversation, a literary arts journal, is now accepting general submissions."
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://theliteraryunderground.org/",
+      "pageHash": "8dd6ec6ec92b00bc",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "ink-ribbon-press-the-lemonlight-prize": {
       "name": "Ink & Ribbon Press — The LemonLight Prize",
       "url": "https://inkandribbon.org/lemonlight-prize",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Ink & Ribbon Press — The LemonLight Prize / March 1 – May 30 / Poetry / Prize: $2,000 Winner + $250 Honorable Mentions (x4)",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Ink & Ribbon Press — The LemonLight Prize",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [
+          {
+            "start": "03-01",
+            "end": "06-30",
+            "free": false,
+            "label": "2027 Prize (expected spring opening)"
+          }
+        ],
+        "yearRound": false,
+        "notes": "The LemonLight Prize is a contest with a $3,000 prize fund, currently closed (2026 winner announced). The 2027 prize returns spring 2027. No submission fee stated for the prize. The venue also accepts full manuscripts and poetry selections year-round through their open reading for $15 reading fee.",
+        "evidence": [
+          "Submissions closed · Returns spring 2027",
+          "The 2027 prize opens in spring",
+          "$15 reading fee · 6–10 week response · Always open",
+          "Every poet we have published came through the open reading"
+        ],
+        "confidence": "medium",
+        "feeUSD": null,
+        "freeOption": null,
+        "pays": "$2000 winner; $250 per honorable mention (4); publication in anthology",
+        "responseTime": "6–10 week response (open reading only)",
+        "submitUrl": "https://inkandribbon.org/lemonlight-prize",
+        "submitEmail": "admin@inkandribbon.org"
+      },
+      "guidelinesUrl": "https://inkandribbon.org/lemonlight-prize",
+      "pageHash": "5812eb9baa742ca7",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "indianapolis-review": {
       "name": "The Indianapolis Review",
       "url": "https://theindianapolisreview.com/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Indianapolis Review / Due: September 1, 2026 – December 1, 2026 / Indiana Themed Poetry & Art ONLY for a Special Issue / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Indianapolis Review",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "theindianapolisreview@gmail.com",
+        "submitUrl": "https://theindianapolisreview.com/submit/",
+        "feeUSD": 0,
+        "maxPoems": 5,
+        "maxPages": 10,
+        "simultaneous": true,
+        "responseTime": "up to 4 months",
+        "pays": null,
+        "aiPolicy": "AI generated art or writing not accepted; work must be your own. Exceptions for collage/cento which should be noted.",
+        "windows": [
+          {
+            "label": "Spring/Summer reading period",
+            "start": "04-01",
+            "end": "07-01",
+            "free": true
+          },
+          {
+            "label": "Fall/Winter reading period (including Indiana-themed submissions for 10-year anniversary issue)",
+            "start": "09-01",
+            "end": "12-01",
+            "free": true
+          }
+        ],
+        "yearRound": false,
+        "waiver": null,
+        "notes": "Submit up to 5 poems or 10 pages of poetry. Include third person bio and optional author photo. Simultaneous submissions encouraged; do not email withdrawals if accepted. Currently accepting Indiana-themed submissions for special 10-year anniversary issue in 2027.",
+        "evidence": [
+          "Submit up to 5 poems or 10 pages of poetry in a document",
+          "Submissions are FREE",
+          "we are not a paying market at this time",
+          "Simultaneous submissions—are allowed and encouraged",
+          "OUR READING PERIODS: April 1 – July 1, Sept 1 – Dec 1"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://theindianapolisreview.com/submit/",
+      "pageHash": "8072af9e6514c0fe",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "indicia": {
       "name": "indicia",
       "url": "https://indicialit.com/submissions/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "indicia / Year-Round / Poetry, Prose, Flash Prose, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: HTTP 404"
     },
     "ink-marrow": {
       "name": "Ink & Marrow",
       "url": "https://inkandmarrow.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Ink & Marrow / Due: April 1 – 30 / Poetry / No Fee / Reading Time 2-4 Weeks",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Ink & Marrow",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Page mentions a Submissions link but provides no details on submission process, fees, reading periods, or guidelines.",
+        "evidence": [
+          "Ink & Marrow includes a 'Submissions' link in navigation",
+          "Issue 13 contains 'ten poems, ten voices' confirming poetry publication"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://inkandmarrow.com/",
+      "pageHash": "8fa025432ca26acd",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "interpret-magazine": {
       "name": "Interpret Magazine",
       "url": "https://www.interpretmagazine.com/submit-contribuer",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Interpret Magazine / Year-Round / Poetry, Fiction, Nonfiction, and Translations in English and/or French",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Interpret Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "Interpretmagazine@outlook.com",
+        "yearRound": true,
+        "windows": [],
+        "feeUSD": null,
+        "freeOption": "Free for all readers who need it; optional £3 or equivalent donation requested if able to pay",
+        "maxPoems": 3,
+        "simultaneous": true,
+        "responseTime": "1 to 3 months; fast-track replies within 5 working days",
+        "aiPolicy": "Please don't send texts written, edited, or translated by AI. This is easily detectable and will result in your submission being deleted.",
+        "waiver": {
+          "kind": "option",
+          "note": "Submission is free for all readers who need it to be; simply send a submission as normal without paying. No questions asked, no proof required.",
+          "who": "All authors",
+          "contactEmail": "Interpretmagazine@outlook.com"
+        },
+        "notes": "Maximum 3 poems per submission. Must be original, unpublished work in magazines worldwide (excluding private social media). Requires 30-word third-person bio. Simultaneous submissions allowed but must notify if accepted elsewhere. Works in French, Portuguese, Spanish, or Italian need not include English translation; all other languages require full English translation.",
+        "evidence": [
+          "Submission to Interpret is free for all readers who need it to be.",
+          "If for whatever reason you would prefer not to pay our editorial fees, simply send a submission to our email as normal.",
+          "Please don't send texts written, edited, or translated by AI.",
+          "Please send no more than three poems or two stories per submission.",
+          "Response times are otherwise between one and three months."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.interpretmagazine.com/submit",
+      "pageHash": "b0507cc2c0309997",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "invisible-city-literary-journal": {
       "name": "Invisible City Literary Journal",
       "url": "https://www.invisiblecitylit.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Invisible City Literary Journal / Year-Round / Fiction / Nonfiction / Poetry / Visual Art / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Invisible City Literary Journal",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": null,
+        "submitEmail": "invisiblecity@usfca.edu",
+        "submitUrl": null,
+        "waiver": null,
+        "maxPoems": null,
+        "minPoems": null,
+        "maxPages": null,
+        "pays": null,
+        "simultaneous": null,
+        "responseTime": null,
+        "cap": null,
+        "aiPolicy": null,
+        "notes": "This page does not provide detailed submission guidelines. Contact the venue at invisiblecity@usfca.edu or visit the full Submissions page for complete information about poetry submission requirements, fees, and reading periods.",
+        "evidence": [
+          "Send us your work (link on page)",
+          "Poetry Editor: Sam Busa",
+          "Contact: invisiblecity@usfca.edu",
+          "University of San Francisco Master of Fine Arts in Writing program"
+        ],
+        "confidence": "low"
+      },
+      "guidelinesUrl": "https://www.invisiblecitylit.com/",
+      "pageHash": "8ede7878701f23ea",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "j-journal": {
       "name": "J Journal",
       "url": "https://www.jjournal.org/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "J Journal / Year-Round / Fiction, Poetry, Personal Narrative with Tangential Connections to Justice",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "J Journal",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "submissionsjjournal@gmail.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "maxPoems": 3,
+        "freeOption": "No fee mentioned; appears to be free.",
+        "notes": "Submit up to three poems via email. Work should relate to justice theme. J Journal seeks new writing on justice across multiple genres.",
+        "evidence": [
+          "Email up to three poems or up to 6000 words of fiction/nonfiction to: submissionsjjournal@gmail.com",
+          "J Journal seeks new writing – fiction, flash, creative nonfiction and poetry – that takes on justice"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.jjournal.org/submission-guidelines",
+      "pageHash": "9bb03eb54adbfe56",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "josephine-quarterly": {
       "name": "Josephine Quarterly",
       "url": "https://www.josephinequarterly.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Josephine Quarterly / Now / Poetry, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Josephine Quarterly",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://www.josephinequarterly.com/submit",
+        "feeUSD": 0,
+        "minPoems": 3,
+        "maxPoems": 5,
+        "pays": "$30 per poem",
+        "responseTime": "7-10 weeks",
+        "simultaneous": true,
+        "cap": "200 per month",
+        "aiPolicy": "Do not consider AI assisted or generated poems.",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Submit 3-5 unpublished poems. One submission at a time. If accepted elsewhere, immediately notify editors or add note via Submittable.",
+        "evidence": [
+          "There is no fee to submit",
+          "we award our contributors $30 per poem",
+          "Submit 3-5 unpublished poems",
+          "we only accept 200 submissions a month",
+          "We do not consider AI assisted or generated poems",
+          "Our response time is 7-10 weeks",
+          "Simultaneous submissions are welcome as long as the editors are immediately notified"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.josephinequarterly.com/submit",
+      "pageHash": "679b690f6d9c4c11",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "journal": {
       "name": "The Journal",
       "url": "http://thejournalmag.org/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Journal / Year-Round / Poetry, Fiction, Nonfiction, Interviews, Reviews, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "The Journal",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "07-15",
+            "end": "09-15",
+            "free": true,
+            "label": "General submissions reading period"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": 0,
+        "freeOption": "General submissions are free during the reading period (July 15 - September 15)",
+        "maxPoems": 3,
+        "simultaneous": true,
+        "pays": null,
+        "responseTime": "at least eight months",
+        "submitUrl": "Submittable",
+        "submitEmail": "thejournal@osu.edu",
+        "aiPolicy": "The Journal does not accept work generated by AI. Submissions including work generated by AI will be rejected. If accepted work is found to be written by generative AI, the publication contract will be terminated immediately.",
+        "waiver": {
+          "kind": "email",
+          "note": "Disability access accommodation: those who cannot access Submittable due to disability may email for alternative submission method.",
+          "who": "Those unable to access Submittable due to disability",
+          "contactEmail": "thejournal@osu.edu"
+        },
+        "notes": "Limit poetry to 3 poems in single .doc, .docx, or .pdf document with 12 pt Garamond font. Multiple submissions not accepted; wait for response before submitting again. Recent contributors must wait at least one year from publication before submitting again. Simultaneous submissions allowed but must notify at time of submission.",
+        "evidence": [
+          "open for all genres from July 15-September 15, 2026",
+          "Submit your writing and artwork on Submittable",
+          "At this time, we are unable to offer monetary payment",
+          "Please allow at least eight months for a decision",
+          "Limit poetry submissions to 3 poems grouped in a single .doc or .pdf document"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "http://thejournalmag.org/submit",
+      "pageHash": "e2a7c2f5608cef0a",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "just-place": {
       "name": "Just Place",
       "url": "https://www.justplace.us/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Just Place / Year-Round / Poetry, Hybrid, Photography about Place",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Just Place",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "This page is a tourism and culture information platform featuring travel destinations in Indonesia. It does not contain literary journal submission guidelines, poetry submission information, or any details about accepting poetry submissions.",
+        "evidence": [
+          "Page title: 'Platform Informasi Tentang Kebudayaan & Wisata' (Information Platform About Culture & Tourism)",
+          "Content covers tourism destinations: beaches, waterfalls, festivals, cultural traditions",
+          "No mention of literary submissions, poetry journals, or submission guidelines anywhere",
+          "All content describes travel recommendations and cultural sites, not literary venues"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.justplace.us/",
+      "pageHash": "ef10860d41dcdb83",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "juxtaprose": {
       "name": "JuxtaProse",
       "url": "http://www.juxtaprosemagazine.org/submit/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "JuxtaProse / Now / Poetry, Fiction, Nonfiction, Art / Fee: $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "JuxtaProse",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "maxPoems": 5,
+        "maxPages": 2,
+        "simultaneous": true,
+        "responseTime": "8-12 weeks",
+        "submitUrl": "https://www.juxtaprosemagazine.org/submit/",
+        "notes": "Submit up to five poems via Submittable, each no more than two pages. Format submission title as number of poems (e.g. \"3 POEMS\"). Include contact info on first page of each poem. Simultaneous submissions welcome; use Note feature to specify which poems are accepted elsewhere.",
+        "evidence": [
+          "Submit up to five poems.",
+          "Individual poems should be no more than two pages.",
+          "Please attach each poem as a separate file and include your contact info on the first page of each one.",
+          "Simultaneous submissions are welcome, but if an individual poem is accepted elsewhere please use the 'Note' function on submittable.",
+          "JuxtaProse currently reaches over 5,000 readers each month and accepts general submissions year round."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.juxtaprosemagazine.org/submit/",
+      "pageHash": "067abebeab018468",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "kartika-review": {
       "name": "Kartika Review",
       "url": "https://kartikareview.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kartika Review / Now / Poetry, Fiction, and Nonfiction from Asian Pacific Islander American Writers",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Kartika Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "minPoems": 4,
+        "maxPoems": 6,
+        "maxPages": null,
+        "submitUrl": "https://kartikareview.submittable.com/submit",
+        "submitEmail": null,
+        "simultaneous": true,
+        "pays": null,
+        "responseTime": null,
+        "freeOption": "No fee for submissions",
+        "cap": null,
+        "aiPolicy": null,
+        "waiver": null,
+        "notes": "Submit only once per calendar year per category unless solicited by editors. Strongly prefer poems under 100 lines. Withdraw if accepted elsewhere; reprints not published except as solicited.",
+        "evidence": [
+          "There is no fee for submissions.",
+          "we strongly prefer poems under 100 lines and would like to receive 4-6 pieces per submission",
+          "Please submit your work for consideration only once each calendar year unless expressly solicited",
+          "Simultaneous submissions are allowed, but please withdraw your submission if it is accepted elsewhere"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://kartikareview.submittable.com/submit",
+      "pageHash": "dea62974ba41f5bf",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "kenyon-review": {
       "name": "Kenyon Review",
       "url": "https://kenyonreview.org/submission/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kenyon Review / Due: September 1 – September 30 / Fiction, Poetry, Nonfiction, Drama / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Kenyon Review",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://thekenyonreview.submittable.com/submit",
+        "submitEmail": "kenyonreview@kenyon.edu",
+        "feeUSD": 0,
+        "windows": [
+          {
+            "start": "09-01",
+            "end": "09-30",
+            "free": true
+          }
+        ],
+        "yearRound": false,
+        "maxPoems": 6,
+        "simultaneous": true,
+        "responseTime": "six months",
+        "pays": "$0.16 per published word of poetry (minimum $40, maximum $200)",
+        "waiver": null,
+        "notes": "Submit up to 6 poems as a single document. No more than one submission per genre. Simultaneous submissions permitted but notify immediately if accepted elsewhere. Do not send emailed submissions; use Submittable. Paper submissions available only to those without internet access, postmarked by deadline, with SASE to: SUBMISSIONS, The Kenyon Review, 102 W. Wiggin St., Gambier, OH 43022.",
+        "evidence": [
+          "Our Submissions portal will be open between September 1 and September 30, 2026.",
+          "We do not charge a reading fee for general submissions.",
+          "poetry (up to 6 poems; please format and submit as a single document)",
+          "Simultaneous Submissions are permitted, but please notify us immediately if the work has been accepted elsewhere.",
+          "We aim to respond to all submissions within six months of receipt."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://kenyonreview.org/submit/",
+      "pageHash": "2c608de42ab4fe38",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "kitchen-table-quarterly": {
       "name": "Kitchen Table Quarterly",
       "url": "https://kitchentablequarterly.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kitchen Table Quarterly / Due: July 1 – August 1 / Poetry, Creative Nonfiction, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Kitchen Table Quarterly",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "submitUrl": "https://kitchentablequarterly.submittable.com/submit",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": null,
+        "simultaneous": true,
+        "notes": "Submit once per reading period to one category only. Only previously unpublished works accepted; personal blogs and social media do not count as publication. Translations require permission from original writer. Notify immediately if work is accepted elsewhere.",
+        "evidence": [
+          "Please only submit to one category, once per reading period.",
+          "We only print previously unpublished works.",
+          "Simultaneous submissions are encouraged! But please let us know as soon as possible if your work is accepted elsewhere.",
+          "If submitting translations, you are responsible for acquiring and providing permission from the original writer.",
+          "Kitchen Table Quarterly amplifies work that breathes fresh life into the past."
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://kitchentablequarterly.submittable.com/submit",
+      "pageHash": "905f8afa29a8a7d1",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "kithe": {
       "name": "Kithe",
       "url": "https://www.kithejournal.com/submissionguidelines",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kithe / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction, Flash Nonfiction, Hybrid, Art / Fee: $3",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "lastError": "2026-10-05: fetch failed"
     },
     "kopi-break": {
       "name": "Kopi Break",
       "url": "https://www.kopibreakpoetry.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kopi Break / Year-Round / Poetry from Singaporean and Singapore-affiliated Writers / Payment: $10 SGD / No Fee",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Kopi Break",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "kopibreakpoetry@gmail.com",
+        "feeUSD": 0,
+        "minPoems": 1,
+        "maxPoems": 3,
+        "pays": "10 SGD per poem",
+        "simultaneous": true,
+        "responseTime": "around one month after submissions close",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Submit 1–3 poems as .doc/.docx attachment. Poets must have affiliation with Singapore or Singaporean diaspora. Cover letter required: name, Singapore affiliation explanation, bio, simultaneous submission note. Poems cannot be previously published in other journals but personal social media posting is acceptable. Simultaneous submissions encouraged; notify immediately if accepted elsewhere. No revisions accepted after acceptance. Quarterly submission windows with closure dates.",
+        "evidence": [
+          "one to three poems in a .doc or .docx file attached to an email",
+          "Kopi Break publishes work written by those affiliated with Singapore and the Singaporean diaspora",
+          "We accept and encourage simultaneous submissions",
+          "We pay $10 SGD per poem",
+          "we close submissions quarterly"
+        ],
+        "confidence": "medium",
+        "waiver": null
+      },
+      "guidelinesUrl": "https://www.kopibreakpoetry.com/submit",
+      "pageHash": "abef3e6031165c84",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "lavender-review": {
       "name": "Lavender Review",
       "url": "https://www.lavrev.net/p/submit.html",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Lavender Review / Year-Round / Poetry and Art by Lesbians",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Lavender Review",
+        "acceptsPoetry": true,
+        "submitMethod": "other",
+        "windows": [
+          {
+            "start": "01-01",
+            "end": "12-31",
+            "free": true,
+            "label": "Year-round"
+          }
+        ],
+        "yearRound": true,
+        "feeUSD": 0,
+        "freeOption": "All submissions free, year-round",
+        "minPoems": 3,
+        "maxPoems": 6,
+        "responseTime": "usually within two months",
+        "simultaneous": true,
+        "aiPolicy": "By submitting poetry, you certify you have not used or reproduced artificial intelligence technologies or systems in any manner",
+        "notes": "Submit 3-6 poems in one file via Submittable. Do not resubmit until receiving a response. Previously published work not accepted. First North American Serial Rights and archival rights required upon acceptance.",
+        "evidence": [
+          "Submissions are open year-round, and there is no fee to submit.",
+          "Writers: Please submit three to six poems. Include all your poems in one file.",
+          "Do not submit again until you have received a response.",
+          "We usually respond within two months. Simultaneous submissions are allowed and encouraged.",
+          "you have not used or reproduced in any manner artificial intelligence technologies or systems"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.lavrev.net/p/submit.html",
+      "pageHash": "f62498d9c88215b2",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "leavings-literary-magazine": {
       "name": "Leavings Literary Magazine",
       "url": "https://www.leavingslitmag.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Leavings Literary Magazine / Year-Round / Poetry, Fiction, Art, Photography",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Leavings Literary Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "leavingslitmag@gmail.com",
+        "yearRound": true,
+        "windows": [],
+        "feeUSD": 0,
+        "pays": "$10 per accepted piece",
+        "minPoems": 3,
+        "maxPoems": 5,
+        "responseTime": "up to one year",
+        "simultaneous": null,
+        "notes": "Submit 3-5 previously unpublished poems, single-spaced unless spacing is integral to formatting, each poem on separate page. Include third-person bio (50-100 words) with submission. Year-round submissions; consider work no longer under consideration if no response within one year.",
+        "waiver": null,
+        "evidence": [
+          "We accept submissions of poetry...sent to our email: leavingslitmag@gmail.com",
+          "We are open to submissions year round",
+          "every contributor is paid ten dollars per accepted piece",
+          "Submit 3-5 previously unpublished poems for consideration",
+          "please consider your work as no longer under consideration if you do not hear back from us within a year"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.leavingslitmag.com/submit",
+      "pageHash": "2af4bad267f478fe",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "lenticular": {
       "name": "Lenticular",
       "url": "https://lenticularlit.com/",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Lenticular / Now / Fiction, Poetry, Essays, Art / Open to Any and All Forms, as Long as the Writing Is Vital / Death Before Dead Language",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "Lenticular",
+        "acceptsPoetry": true,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": true,
+        "notes": "No submission guidelines or process details found on this page. Contributor Guidelines link present but content not provided.",
+        "evidence": [
+          "Poetry: Esther Karin Mngodo, Moumita Roy, William Pagdatoon, David McLoghlin, William Cordeiro, William Doreski, Savannah Manhattan, Dana Ysabel, Steve Oehman, Dylan Emmons, M.F. Charles"
+        ],
+        "confidence": "low",
+        "submitEmail": "lenticularlit.com@lenticularlit.com"
+      },
+      "guidelinesUrl": "https://lenticularlit.com/",
+      "pageHash": "17dd30509a4699d2",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "lit": {
       "name": "LIT",
       "url": "https://litmagazine.submittable.com/submit",
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "LIT / Now / Poetry, Fiction, Nonfiction, Translations, Reviews, Art",
-      "addedOn": "2026-10-04"
+      "addedOn": "2026-10-04",
+      "history": [],
+      "record": {
+        "name": "LIT",
+        "acceptsPoetry": true,
+        "submitMethod": "submittable",
+        "windows": [
+          {
+            "start": "04-01",
+            "end": "06-30",
+            "free": true,
+            "label": "Poetry reading period"
+          },
+          {
+            "start": "09-01",
+            "end": "12-31",
+            "free": true,
+            "label": "Poetry reading period"
+          }
+        ],
+        "yearRound": false,
+        "feeUSD": null,
+        "freeOption": "No submission fees mentioned",
+        "maxPoems": 3,
+        "maxPages": 7,
+        "simultaneous": true,
+        "responseTime": "90 days",
+        "submitUrl": "https://litmagazine.submittable.com/submit",
+        "notes": "Submit no more than 3 poems or 7 pages. Do not submit more than once during any given submission period. Must receive a reply before submitting new work. Submit as single document with cover letter (3rd person bio and social media handles).",
+        "pays": "No monetary compensation; accepted contributors for print receive physical copies",
+        "evidence": [
+          "Poetry submissions should be no more than 3 poems or 7 pages.",
+          "Do not submit more than once during any given submissions period.",
+          "Our reading periods are from approximately April to June, then September to December.",
+          "We accept simultaneous submissions, but let us know as soon as it's accepted elsewhere.",
+          "Please allow 90 days for a response."
+        ],
+        "confidence": "high",
+        "waiver": null
+      },
+      "guidelinesUrl": "https://litmagazine.submittable.com/submit",
+      "pageHash": "2a6cbeb75c1fe516",
+      "checkedOn": "2026-10-05",
+      "lastError": null,
+      "changedOn": "2026-10-05"
     },
     "litbreak": {
       "name": "Litbreak",
