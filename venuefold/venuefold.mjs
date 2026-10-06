@@ -118,6 +118,17 @@ export function pageText(html, base) {
   const junk = /^(user|name|you|email|example)@(domain|example|email)\./;
   return { title, text, links, emails: [...new Set(emails)].filter((e) => !junk.test(e) && !/\.(png|jpg|gif|webp)$/.test(e)) };
 }
+// A page needs MIN_TEXT characters to count as read, unless it is plainly a submissions page: its address
+// names submissions and its text talks about submitting (e.g. a short "no open reading period right now").
+const MIN_TEXT = 300, MIN_SHORT_TEXT = 100;
+const shortButReal = (p, u) => p.text.length >= MIN_SHORT_TEXT && /submi|guideline|contribut/i.test(new URL(u).pathname) && /(submission|submit|reading period|guidelines)/i.test(p.text);
+const readable = (p, u) => p.text.length >= MIN_TEXT || shortButReal(p, u);
+// Says what the browser got, so an empty render can be told apart from a bot check or an error page.
+function describeRender(p) {
+  const snippet = p.text.replace(/\s+/g, " ").trim().slice(0, 80);
+  const botCheck = /just a moment|attention required|access denied|are you a robot|verify you are human|security check|captcha|cloudflare|ddos/i.test(p.title + " " + snippet);
+  return `browser saw title "${p.title.slice(0, 60)}", ${p.text.length} characters${snippet ? `: "${snippet}"` : ""}${botCheck ? "; looks like a bot check, so this site may block automated visits" : ""}`;
+}
 const looksLikeGuidelines = (t) => /(submission|submit|reading period|guidelines)/i.test(t) && /(poem|poetry)/i.test(t);
 function guidelineLinks(links, base) {
   const host = new URL(base).host.replace(/^www\./, "");
@@ -254,21 +265,22 @@ export async function crawl(opts) {
           try { const r = await politeFetch(g); const p2 = pageText(r.html, r.finalUrl); if (looksLikeGuidelines(p2.text)) { url = r.finalUrl; page = p2; break; } } catch {}
         }
       } else url = finalUrl;
-      if (page.text.length < 300) {
+      if (!readable(page, url)) {
         // Render the page; if it isn't the guidelines, render up to 3 submission links found on it.
         const first = await renderPage(url);
+        let seen = null;
         if (first) {
-          const p1 = pageText(first.html, first.finalUrl);
-          if (p1.text.length >= 300) { page = p1; url = first.finalUrl; }
+          const p1 = pageText(first.html, first.finalUrl); seen = p1;
+          if (readable(p1, first.finalUrl)) { page = p1; url = first.finalUrl; }
           if (!looksLikeGuidelines(p1.text)) {
             for (const g of guidelineLinks(p1.links, first.finalUrl)) {
               const r = await renderPage(g); const p2 = r && pageText(r.html, r.finalUrl);
-              if (p2 && p2.text.length >= 300 && looksLikeGuidelines(p2.text)) { page = p2; url = r.finalUrl; break; }
+              if (p2 && readable(p2, r.finalUrl) && looksLikeGuidelines(p2.text)) { page = p2; url = r.finalUrl; break; }
             }
           }
         }
-        if (page.text.length < 300) throw new Error(first
-          ? "page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+        if (!readable(page, url)) throw new Error(first
+          ? `page is mostly empty even in a browser (${describeRender(seen)}); open it yourself or add a guidelinesUrl by hand`
           : "page is mostly empty here (built by JavaScript) and the browser fallback isn't available; install Playwright or add a guidelinesUrl by hand");
       }
       const hash = sha(page.text);

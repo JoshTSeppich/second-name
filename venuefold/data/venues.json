@@ -5918,7 +5918,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Mercury Firs / Now / Poetry, Hybrid, Translation",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://www.mercuryfirs.org/about"
     },
     "metatron-micrometa": {
       "name": "Metatron – #MicroMeta",
@@ -6578,7 +6579,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Peach Fuzz / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction, Art, Comics, Hybrid, Work About Sex & Sensuality / No Fees",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://peachfuzzmag.submittable.com/submit"
     },
     "pigeon-pages": {
       "name": "Pigeon Pages",
@@ -6707,7 +6709,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Pleiades / Due: June 1 – June 30 / Poetry, Fiction, Nonfiction, Translations, Book Reviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://pleiadesmag.com/submissions/"
     },
     "plothound-press": {
       "name": "PlotHound Press",

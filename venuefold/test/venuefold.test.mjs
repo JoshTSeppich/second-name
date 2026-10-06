@@ -126,7 +126,46 @@ test("a page that stays empty in the browser is reported, not extracted", async 
   fakeFetch({ [url]: fixture("js-shell.html") });
   await vf.crawl({ limit: 0 });
   vf.setRenderer(null);
-  assert.match(vf.load().venues.spa.lastError, /empty even in a browser/);
+  assert.match(vf.load().venues.spa.lastError, /empty even in a browser \(browser saw title "Loading", 0 characters\)/);
+});
+
+test("an empty render that is a bot check says so in the error", async () => {
+  const url = "https://guarded.example.net/submit";
+  vf.save({ venues: { guarded: { name: "Guarded Review", url } } });
+  vf.setClient(noApi);
+  vf.setRenderer(async (u) => ({ html: "<html><head><title>Just a moment...</title></head><body><p>Checking your browser before accessing the site.</p></body></html>", finalUrl: u }));
+  fakeFetch({ [url]: fixture("js-shell.html") });
+  await vf.crawl({ limit: 0 });
+  vf.setRenderer(null);
+  const err = vf.load().venues.guarded.lastError;
+  assert.match(err, /browser saw title "Just a moment\.\.\.", \d+ characters: "Checking your browser/);
+  assert.match(err, /looks like a bot check/);
+});
+
+const SHORT_SUBMIT = `<html><head><title>Submit</title></head><body><h1>How to send us work</h1><p>We only accept work through Submittable during our open reading periods. We are not presently holding an open reading period.</p></body></html>`;
+
+test("a short page counts when it is plainly the submissions page", async () => {
+  const url = "https://short.example.org/Submit";
+  vf.save({ venues: { short: { name: "Short Review", url } } });
+  const calls = [];
+  vf.setClient(okClient(calls));
+  vf.setRenderer(async () => { throw new Error("should not need the browser"); });
+  fakeFetch({ [url]: SHORT_SUBMIT });
+  await vf.crawl({ limit: 0 });
+  vf.setRenderer(null);
+  assert.equal(vf.load().venues.short.lastError, null);
+  assert.equal(calls.length, 1);
+  assert.match(calls[0].messages[0].content, /not presently holding an open reading period/);
+});
+
+test("the same short text on a page that isn't a submissions address still needs more", async () => {
+  const url = "https://short.example.org/";
+  vf.save({ venues: { short: { name: "Short Review", url } } });
+  vf.setClient(noApi);
+  vf.setRenderer(null);
+  fakeFetch({ [url]: SHORT_SUBMIT });
+  await vf.crawl({ limit: 0 });
+  assert.match(vf.load().venues.short.lastError, /mostly empty/);
 });
 
 test("crawl and export skip venues marked closed or check-by-hand", async () => {
