@@ -5840,7 +5840,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Marrow Magazine / Year-Round / Fiction, Poetry, Nonfiction, Hybrid, Artwork, Flash, Essay, Multimedia, Video, Art / No Fee / Annual Contests",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://marrowmagazine.com/submit/"
     },
     "matter-monthly": {
       "name": "Matter Monthly",
