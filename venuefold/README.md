@@ -40,6 +40,9 @@ Your poems, queue and any venue you added by hand are left alone.
 - A venue whose site refuses automated reading (robots.txt disallows it, or it answers 403) and has no other
   public guidelines page: set `"manual": "why"` on it in data/venues.json. VenueFold stops fetching it, and
   you keep that venue's entry in the desk by hand. VenueFold never works around a robots.txt or a block.
+  If the venue is only unreachable (site down), also set `"retryWhenReachable": true`: each run tries it
+  once, and when it answers VenueFold drops the marker and reads it again. In the app, give its built-in
+  entry `autopilot:false` (and a `paused` note) so it's listed but never queued until then.
 - A venue that has shut down: set `"closed": "why, and when you checked"` on it in data/venues.json.
   Crawl and export skip it, and discover won't re-add it.
 - Pages built by JavaScript (Wix, Blogger, Squarespace) come back nearly empty from a plain fetch, so
