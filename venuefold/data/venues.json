@@ -5587,7 +5587,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Literary Mama / Year-Round / Poetry, Nonfiction, Fiction, Reviews, Profiles, Literary Reflections / From Anyone Who Identifies as a Mother / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: page is mostly empty even in a browser; open it yourself or add a guidelinesUrl by hand"
+      "lastError": null,
+      "guidelinesUrl": "https://literarymama.submittable.com/submit"
     },
     "lonesome-press": {
       "name": "LONESOME PRESS",
