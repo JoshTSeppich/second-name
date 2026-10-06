@@ -257,6 +257,9 @@ test("a venue with no stated fee never shows as free", async ({ page }) => {
   const card = page.locator(".card").filter({ has: page.getByRole("heading", { name: "Bagazine", exact: true }) });
   await expect(card).toContainText("Fee not stated · Sep 2 to Sep 2");
   await expect(card).not.toContainText("Free");
+  // Built-in venues that VenueFold can't read are listed too.
+  await expect(page.locator(".card").filter({ has: page.getByRole("heading", { name: "Construction Magazine", exact: true }) })).toContainText("$3.00 · rolling");
+  await expect(page.locator(".card").filter({ has: page.getByRole("heading", { name: "Call Me [Brackets]", exact: true }) })).toContainText("Jan 15 to Apr 1");
   // Imported venues with no fee stay "not stated" too.
   await nav(page, "You");
   const file = { venuefold: 1, exportedOn: "2026-10-04T21:00:00Z", venues: [{ id: "vf-nofee", name: "No Fee Stated Review", url: "https://n.example.org", fee: null, maxPoems: 3 }] };
