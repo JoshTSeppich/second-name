@@ -2695,7 +2695,8 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Construction Magazine / Year-Round / Poetry, Fiction, Nonfiction, Border and Architecture Columns / Fee: $3",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-06: fetch failed"
+      "lastError": null,
+      "manual": "constructionlitmag.com has been unreachable on every check since 2026-10-04 (connection fails, no page served). Check by hand whether it still exists."
     },
     "continental-review": {
       "name": "The Continental Review",
