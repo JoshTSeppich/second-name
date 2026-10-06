@@ -301,6 +301,29 @@ for (const [rival, label] of [
   });
 }
 
+test("a venue marked not-in-autopilot is listed but never queued", async ({ page }) => {
+  await mockProvider(page, ANTHROPIC);
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await nav(page, "You");
+  const d = await desk(page);
+  // Every built-in venue except Construction Magazine is taken out of the running.
+  const others = d.venues.filter((v) => v.name !== "Construction Magazine").map((v) => v.id);
+  Object.assign(d, { tab: "desk", name: "Test Poet", bio: "Writes poems.", maxQueue: 5,
+    poems: [{ id: "p-test", title: "Pause Test", author: "", second: "", text: "one line", tags: "general", revs: [], path: [] }],
+    queue: others.map((id, i) => ({ id: "sent-" + i, vid: id, poemIds: [], note: "", status: "sent", waiver: "none", sentAt: "2026-01-01T00:00:00Z" })) });
+  await page.evaluate((x) => localStorage.setItem("second-name-desk-v2", JSON.stringify(x)), d);
+  await page.reload();
+  await page.getByRole("button", { name: "Prepare packets" }).click();
+  await expect(page.locator("#toast")).toContainText("No new venues fit right now");
+  expect((await desk(page)).queue.filter((q) => q.status !== "sent")).toHaveLength(0);
+  await nav(page, "Dates");
+  await page.getByRole("tab", { name: "List" }).click();
+  const card = page.locator(".card").filter({ has: page.getByRole("heading", { name: "Construction Magazine", exact: true }) });
+  await expect(card).toContainText("Not in autopilot");
+  await expect(card).toContainText("site has been unreachable");
+});
+
 test("starts with zero poems and no seeded poem data", async ({ page }) => {
   await mockProvider(page, ANTHROPIC);
   await page.goto("/");

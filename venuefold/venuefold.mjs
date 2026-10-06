@@ -249,6 +249,13 @@ export async function discover() {
 
 export async function crawl(opts) {
   const db = load(); let n = 0, changed = 0, same = 0, failed = 0;
+  // Check-by-hand venues marked "retryWhenReachable" (their site was down) get one quick try each run.
+  // Once the site answers, the marker is dropped and the venue is crawled like any other below.
+  for (const v of Object.values(db.venues).filter((v) => v.manual && v.retryWhenReachable)) {
+    try { await politeFetch(v.guidelinesUrl || v.url); console.log(`back online: ${v.name}`); delete v.manual; delete v.retryWhenReachable; v.checkedOn = null; }
+    catch (e) { console.log(`still unreachable: ${v.name} (${String(e.message).split("\n")[0]})`); }
+  }
+  save(db);
   const due = Object.entries(db.venues).filter(([, v]) => {
     if (v.closed) return false;                      // set by hand when a venue has shut down; never re-fetched
     if (v.manual) return false;                      // site refuses automated reading; its desk entry is kept by hand

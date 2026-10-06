@@ -1,5 +1,5 @@
 // Offline support. The app shell is cached; venue data is fetched fresh when online and falls back to cache.
-const CACHE = "second-name-v5";
+const CACHE = "second-name-v6";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener("activate", (e) => {

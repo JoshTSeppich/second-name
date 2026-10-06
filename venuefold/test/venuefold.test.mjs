@@ -168,6 +168,31 @@ test("the same short text on a page that isn't a submissions address still needs
   assert.match(vf.load().venues.short.lastError, /mostly empty/);
 });
 
+test("a check-by-hand venue whose site was down is crawled again once it answers", async () => {
+  const url = "https://lanternstreet.org/submit";
+  vf.save({ venues: { back: { name: "Back Review", url, manual: "site unreachable", retryWhenReachable: true } } });
+  const calls = [];
+  vf.setClient(okClient(calls));
+  fakeFetch({ [url]: fixture("guidelines.html") });
+  await vf.crawl({ limit: 0 });
+  const v = vf.load().venues.back;
+  assert.equal(v.manual, undefined);
+  assert.equal(v.retryWhenReachable, undefined);
+  assert.equal(calls.length, 1, "extracted in the same run");
+  assert.equal(v.record.name, "Lantern Street Review");
+});
+
+test("a check-by-hand venue whose site is still down stays out, with no API call", async () => {
+  vf.save({ venues: { down: { name: "Down Review", url: "https://down.example.org/submit", manual: "site unreachable", retryWhenReachable: true } } });
+  vf.setClient(noApi);
+  fakeFetch({});
+  await vf.crawl({ limit: 0 });
+  const v = vf.load().venues.down;
+  assert.equal(v.manual, "site unreachable");
+  assert.equal(v.retryWhenReachable, true);
+  assert.equal(v.record, undefined);
+});
+
 test("crawl and export skip venues marked closed or check-by-hand", async () => {
   vf.save({ venues: { manual: { name: "Blocked Review", url: "https://blocked.example.org/", manual: "robots.txt disallows all crawlers" },
     gone: { name: "Gone Review", url: "https://gone.example.org/", closed: "Closed permanently (checked 2026-10-04)", record: { name: "Gone Review", acceptsPoetry: true, confidence: "high", windows: [], yearRound: true, notes: "" } } } });
