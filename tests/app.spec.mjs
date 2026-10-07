@@ -41,8 +41,11 @@ test.beforeEach(async ({ page }) => {
     window.__copied = [];
     Object.defineProperty(navigator, "clipboard", { value: { writeText: (t) => { window.__copied.push(t); return Promise.resolve(); } }, configurable: true });
   });
-  page.on("dialog", (d) => d.accept());
+  // The desktop app's web view ignores native dialogs, so the app must never rely on one.
+  page.__nativeDialogs = [];
+  page.on("dialog", (d) => { page.__nativeDialogs.push(d.message()); d.dismiss(); });
 });
+test.afterEach(async ({ page }) => { expect(page.__nativeDialogs, "native confirm/alert dialogs").toEqual([]); });
 
 test("onboarding is the first screen and blocks the app until a key is verified", async ({ page }) => {
   await page.goto("/");
@@ -127,6 +130,8 @@ test("removing the key returns to onboarding", async ({ page }) => {
   await onboard(page, "anthropic", KEY_A);
   await nav(page, "You");
   await page.locator("#aikey").getByRole("button", { name: "Remove" }).click();
+  await expect(page.getByRole("alertdialog")).toContainText("Remove the AI key from this device?");
+  await page.getByRole("alertdialog").getByRole("button", { name: "Remove key" }).click();
   await expect(page.getByRole("heading", { name: "Connect your AI key" })).toBeVisible();
   await expect(page.locator("nav")).toBeHidden();
   expect(await page.evaluate(() => localStorage.getItem("second-name-ai-key"))).toBeNull();
@@ -350,5 +355,72 @@ test.describe("offline", () => {
     await expect(page.getByRole("heading", { name: "Desk" })).toBeVisible();
     await expect(page.locator("nav")).toBeVisible();
     await context.setOffline(false);
+  });
+});
+
+test("in-app confirmation: Cancel and Escape keep the poem, Delete removes it", async ({ page }) => {
+  await mockProvider(page, ANTHROPIC);
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await nav(page, "Poems");
+  await page.getByRole("button", { name: "Add a poem" }).click();
+  await page.getByLabel("Title").fill("Keep Or Delete");
+  await page.getByLabel("Title").press("Tab");
+  const del = page.getByRole("button", { name: "Delete poem" });
+  await del.click();
+  const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText("Delete “Keep Or Delete”?");
+  await dialog.getByRole("button", { name: "Cancel" }).click();
+  await expect(dialog).toHaveCount(0);
+  await del.click();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+  expect((await desk(page)).poems).toHaveLength(1);
+  await del.click();
+  await dialog.getByRole("button", { name: "Delete" }).click();
+  await expect.poll(async () => (await desk(page)).poems.length).toBe(0);
+});
+
+// The desktop shell (Tauri) is simulated by giving the page a window.__TAURI__ bridge that records calls.
+test.describe("inside the desktop app", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      window.__opened = []; window.__clip = [];
+      window.__TAURI__ = {
+        opener: { openUrl: (u) => { window.__opened.push(u); return Promise.resolve(); } },
+        clipboardManager: { writeText: (t) => { window.__clip.push(t); return Promise.resolve(); } },
+      };
+    });
+  });
+
+  test("links open in the system browser, copying uses the desktop clipboard, no service worker", async ({ page, context }) => {
+    const popups = []; context.on("page", (p) => popups.push(p));
+    await mockProvider(page, ANTHROPIC);
+    await page.goto("/");
+    await onboard(page, "anthropic", KEY_A);
+    await nav(page, "Dates");
+    await page.getByRole("tab", { name: "List" }).click();
+    const rattle = page.locator(".card").filter({ has: page.getByRole("heading", { name: "Rattle", exact: true }) });
+    await rattle.getByRole("link", { name: "Guidelines" }).click();
+    await expect.poll(() => page.evaluate(() => window.__opened)).toEqual(["https://rattle.submittable.com/submit"]);
+    expect(popups).toHaveLength(0);
+    expect(page.url()).toMatch(/localhost:4173\/$/);
+    await nav(page, "You");
+    await page.getByRole("button", { name: "Copy everything as text" }).click();
+    await expect.poll(() => page.evaluate(() => window.__clip.length)).toBe(1);
+    expect(await page.evaluate(() => window.__copied.length)).toBe(0);
+    expect(await page.evaluate(() => navigator.serviceWorker.getRegistrations().then((r) => r.length))).toBe(0);
+  });
+
+  test("venues refresh from the live site", async ({ page }) => {
+    let asked = null;
+    await page.route("https://joshtseppich.github.io/second-name/venues/desk-venues.json", (route) => {
+      asked = route.request().url();
+      route.fulfill({ status: 200, headers: { "access-control-allow-origin": "*", "content-type": "application/json" },
+        body: JSON.stringify({ venuefold: 1, exportedOn: "2026-10-07T00:00:00Z", venues: [{ id: "vf-live", name: "Live Site Review", url: "https://live.example.org", fee: 0, maxPoems: 3 }] }) });
+    });
+    await page.goto("/");
+    await expect.poll(() => asked).toBe("https://joshtseppich.github.io/second-name/venues/desk-venues.json");
+    await expect.poll(async () => ((await desk(page)) || { venues: [] }).venues.some((v) => v.name === "Live Site Review")).toBe(true);
   });
 });

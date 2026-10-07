@@ -139,6 +139,9 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
 .addcal{font-size:13px;margin-top:8px;min-height:32px;display:inline-flex;align-items:center}
 #toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);font-size:14px;padding:10px 14px;border-radius:12px;max-width:min(92vw,560px);opacity:0;pointer-events:none;transition:opacity .2s;z-index:6}
 #toast.show{opacity:1}
+.modal{position:fixed;inset:0;background:rgba(10,14,22,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+.modal-box{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:18px;width:100%;max-width:420px;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.modal-msg{font-size:16px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -376,10 +379,39 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     if(opts.help) wrap.appendChild(h("div", {class:"help", text:opts.help}));
     return wrap;
   }
+  // The desktop app (Tauri) exposes window.__TAURI__. Its web view ignores window.confirm() and opens links
+  // inside the app window, so confirmations use ask() and links go to the system browser or mail app.
+  var TAURI = window.__TAURI__ || null;
+  function ask(msg, okText){
+    return new Promise(function(resolve){
+      var prev = document.activeElement;
+      var wrap = h("div", {class:"modal", role:"presentation"});
+      var box = h("div", {class:"modal-box", role:"alertdialog", "aria-modal":"true", "aria-labelledby":"askmsg"});
+      box.appendChild(h("div", {id:"askmsg", class:"modal-msg", text:msg}));
+      var row = h("div", {class:"row", style:"justify-content:flex-end;margin-top:16px"});
+      function done(v){ document.removeEventListener("keydown", onKey, true); wrap.remove(); if(prev && prev.focus) prev.focus(); resolve(v); }
+      function onKey(e){ if(e.key === "Escape"){ e.preventDefault(); done(false); } }
+      row.appendChild(h("button", {class:"btn", text:"Cancel", onclick:function(){ done(false); }}));
+      var ok = h("button", {class:"btn primary", text:okText || "OK", onclick:function(){ done(true); }});
+      row.appendChild(ok); box.appendChild(row); wrap.appendChild(box);
+      wrap.addEventListener("click", function(e){ if(e.target === wrap) done(false); });
+      document.addEventListener("keydown", onKey, true);
+      document.body.appendChild(wrap); ok.focus();
+    });
+  }
+  function openExternal(url){
+    if(TAURI && TAURI.opener){ TAURI.opener.openUrl(url).catch(function(){ toast("Couldn't open that link."); }); return; }
+    if(/^mailto:/i.test(url)) window.location.href = url; else window.open(url, "_blank", "noopener");
+  }
+  if(TAURI) document.addEventListener("click", function(e){
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+    if(a && /^(https?:|mailto:)/i.test(a.getAttribute("href"))){ e.preventDefault(); openExternal(a.href); }
+  }, true);
   var toastT;
   function toast(msg){ var t = document.getElementById("toast"); t.textContent = msg; t.className = "show"; clearTimeout(toastT); toastT = setTimeout(function(){ t.className = ""; }, 3200); }
   function copyText(text){
     return new Promise(function(res){
+      if(TAURI && TAURI.clipboardManager){ TAURI.clipboardManager.writeText(text).then(function(){ res(true); }, function(){ res(fallback()); }); return; }
       try { navigator.clipboard.writeText(text).then(function(){ res(true); }, function(){ res(fallback()); }); } catch(e){ res(fallback()); }
       function fallback(){
         try { var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly",""); ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); var ok = document.execCommand("copy"); document.body.removeChild(ta); return !!ok; } catch(e){ return false; }
@@ -657,7 +689,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     }
     var pay = h("button", {class:"pay", id:"paybtn", text: byEmail ? "Approve and open the email" : (feeFor(q) ? "Approve, pay " + money(feeFor(q)) + " and submit" : "Approve and submit"), onclick:function(){
       copyText(packetFor(q)).then(function(ok){ toast(ok ? (byEmail ? "Packet copied too, in case the email opens empty." : "Packet copied. Paste it into the venue's form.") : "Copy failed. Open the full packet above and copy it by hand."); });
-      if(byEmail) window.location.href = emailLinks().mail; else window.open(v.url, "_blank", "noopener");
+      openExternal(byEmail ? emailLinks().mail : v.url);
       U.finishing = q.id; render(); setTimeout(function(){ var f = document.getElementById("finish"); if(f) f.scrollIntoView({behavior:"smooth", block:"start"}); }, 50);
     }});
     var hint = h("div", {class:"help", id:"payhint"});
@@ -728,7 +760,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     var r = h("div", {class:"row", style:"margin-top:12px"});
     if(aiReady()) r.appendChild(h("button", {class:"btn", text:"Ask copilot about this poem", onclick:function(){ askCopilot("Give me a full, blunt critique of \u201c" + p.title + "\u201d: what works, the weakest lines, and what you would cut or change."); }}));
     r.appendChild(h("button", {class:"btn primary", text:"Log a revision", onclick:function(){ p.revs.push(new Date().toISOString()); save(); toast("Revision logged. " + weekRevs() + " of 2 this week."); }}));
-    r.appendChild(h("button", {class:"btn ghost", text:"Delete poem", onclick:function(){ if(!confirm("Delete “" + p.title + "”?")) return; S.poems = S.poems.filter(function(x){return x!==p;}); S.queue.forEach(function(q){ q.poemIds = q.poemIds.filter(function(i){return i!==p.id;}); }); U.screen = null; save(); render(); }}));
+    r.appendChild(h("button", {class:"btn ghost", text:"Delete poem", onclick:function(){ ask("Delete “" + p.title + "”?", "Delete").then(function(ok){ if(!ok) return; S.poems = S.poems.filter(function(x){return x!==p;}); S.queue.forEach(function(q){ q.poemIds = q.poemIds.filter(function(i){return i!==p.id;}); }); U.screen = null; save(); render(); }); }}));
     c.appendChild(r);
     root.appendChild(c);
     if(p.path && p.path.length){
@@ -765,7 +797,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       var tg = h("div", {class:"chips"}); tagsOf(v.tags).forEach(function(t){ tg.appendChild(h("span", {class:"chip plain", text:t})); }); c.appendChild(tg);
       var r = h("div", {class:"row", style:"margin-top:10px"});
       r.appendChild(h("a", {class:"btn", style:"display:inline-flex;align-items:center;text-decoration:none", href:v.url, target:"_blank", rel:"noopener", text:"Guidelines"}));
-      r.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ if(!confirm("Remove " + v.name + "?")) return; S.venues = S.venues.filter(function(x){return x!==v;}); S.queue = S.queue.filter(function(q){return q.vid !== v.id;}); save(); render(); }}));
+      r.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ ask("Remove " + v.name + "?", "Remove").then(function(ok){ if(!ok) return; S.venues = S.venues.filter(function(x){return x!==v;}); S.queue = S.queue.filter(function(q){return q.vid !== v.id;}); save(); render(); }); }}));
       c.appendChild(r);
       root.appendChild(c);
     });
@@ -814,7 +846,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     ak.appendChild(h("div", {class:"help", text:"Stored only on this device and sent only to " + PROVIDERS[conf.provider].short + ". Never included in \"Copy everything\"."}));
     var akr = h("div", {class:"row", style:"margin-top:10px"});
     akr.appendChild(h("button", {class:"btn", text:"Change", onclick:function(){ OB.changing = true; OB.provider = conf.provider; OB.key = ""; OB.result = null; render(); window.scrollTo(0,0); }}));
-    akr.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ if(!confirm("Remove the AI key from this device? The copilot stops working until you add one again.")) return; setAiConf(null); OB.provider = null; OB.key = ""; OB.result = null; OB.changing = false; render(); window.scrollTo(0,0); }}));
+    akr.appendChild(h("button", {class:"btn ghost", text:"Remove", onclick:function(){ ask("Remove the AI key from this device? The copilot stops working until you add one again.", "Remove key").then(function(ok){ if(!ok) return; setAiConf(null); OB.provider = null; OB.key = ""; OB.result = null; OB.changing = false; render(); window.scrollTo(0,0); }); }}));
     ak.appendChild(akr);
     var adv = h("details", {class:"packet", style:"margin-top:12px"});
     adv.appendChild(h("summary", {}, h("span", {text:"Advanced"})));
@@ -843,16 +875,18 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     var ta = h("textarea", {class:"f", style:"margin-top:12px;min-height:80px", placeholder:"Paste a copy someone sent you"});
     sh.appendChild(ta);
     sh.appendChild(h("button", {class:"btn", style:"margin-top:8px", text:"Import and replace mine", onclick:function(){
-      try { var d = JSON.parse(ta.value); if(!d || !d.poems) throw 0; if(!confirm("Replace everything here with the pasted copy?")) return; S = d; migrate(); save(); U.screen = null; render(); toast("Imported."); }
+      try { var d = JSON.parse(ta.value); if(!d || !d.poems) throw 0; ask("Replace everything here with the pasted copy?", "Replace").then(function(ok){ if(!ok) return; S = d; migrate(); save(); U.screen = null; render(); toast("Imported."); }); }
       catch(e){ toast("That text isn't a desk copy."); }
     }}));
     root.appendChild(sh);
     root.appendChild(h("div", {class:"help", style:"margin-top:14px", text:"Payment always happens on each venue's own checkout. This desk cannot charge you."}));
   }
 
+  // The desktop app bundles an old copy of the venue list, so it reads the current one from the live site.
+  var VENUES_URL = TAURI ? "https://joshtseppich.github.io/second-name/venues/desk-venues.json" : "venues/desk-venues.json";
   function syncVenues(){
-    if(!/^https?:/.test(location.protocol)) return;
-    fetch("venues/desk-venues.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.text() : null; }).then(function(t){
+    if(!TAURI && !/^https?:/.test(location.protocol)) return;
+    fetch(VENUES_URL, {cache:"no-store"}).then(function(r){ return r.ok ? r.text() : null; }).then(function(t){
       if(!t) return; var d; try { d = JSON.parse(t); } catch(e){ return; }
       if(!d.exportedOn || d.exportedOn === S.venuesSyncedOn || !Array.isArray(d.venues) || !d.venues.length) return;
       importVenues(t, true); S.venuesSyncedOn = d.exportedOn; save();
@@ -997,7 +1031,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     var r = h("div", {class:"row", style:"margin-top:8px"});
     if(CH.busy) r.appendChild(h("button", {class:"btn", text:"Stop", onclick:function(){ if(CH.ctl) CH.ctl.abort(); }}));
     else r.appendChild(h("button", {class:"btn primary", text:"Send", onclick:function(){ sendChat(ta.value); }}));
-    if(chat.length && !CH.busy) r.appendChild(h("button", {class:"btn ghost", text:"Clear chat", onclick:function(){ if(confirm("Clear the conversation?")){ S.chat = []; save(); render(); } }}));
+    if(chat.length && !CH.busy) r.appendChild(h("button", {class:"btn ghost", text:"Clear chat", onclick:function(){ ask("Clear the conversation?", "Clear").then(function(ok){ if(ok){ S.chat = []; save(); render(); } }); }}));
     box.appendChild(r);
     var conf = aiConf();
     box.appendChild(h("div", {class:"help", text:"Runs on your " + PROVIDERS[conf.provider].short + " key with " + aiModel(conf.provider) + ". Each message is billed to that account. Answers take a little while because it reads the whole desk first."}));
@@ -1089,7 +1123,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   }
   render();
   syncVenues();
-  if("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
+  if(!TAURI && "serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
 })();
 </script>
 </body>
