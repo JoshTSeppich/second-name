@@ -6,9 +6,13 @@
     "serve": "node tests/server.mjs",
     "test": "npm run test:venuefold && npm run test:app",
     "test:app": "playwright test",
-    "test:venuefold": "npm --prefix venuefold test"
+    "test:venuefold": "npm --prefix venuefold test",
+    "tauri": "tauri",
+    "app:dev": "tauri dev",
+    "app:build": "tauri build"
   },
   "devDependencies": {
-    "@playwright/test": "1.63.0"
+    "@playwright/test": "1.63.0",
+    "@tauri-apps/cli": "2.12.1"
   }
 }

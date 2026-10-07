@@ -3,3 +3,6 @@ venuefold/desk-venues.json
 .DS_Store
 test-results/
 playwright-report/
+dist/
+src-tauri/target/
+src-tauri/gen/

@@ -67,6 +67,16 @@ autopilot settings, your AI key, venue import, and sharing.
 It opens full screen with its own icon and works offline after the first visit. Note: the home-screen
 app keeps its own storage, separate from Safari, so set it up from the home-screen icon.
 
+## Mac app
+
+There's also a desktop version for macOS, built with Tauri v2. It's the same app in its own window. Links
+open in your browser and mail app, venues refresh from the live site, and your desk and key live in the
+Mac app's own storage, separate from any browser.
+
+Build it yourself (see "For developers"), or download the `second-name-macos` artifact from the latest
+"Desktop app (macOS)" run in the Actions tab. It isn't signed by Apple, so the first time you open it,
+right-click the app and choose **Open**, then **Open** again.
+
 ## Getting an API key
 
 The first screen asks for an AI key. You need an account with one of:
@@ -137,5 +147,12 @@ npm test                    # VenueFold unit tests, then the Playwright tests
 - `venuefold/test/`: Node's built-in test runner against saved HTML fixtures. No network, no API.
 - `.github/workflows/test.yml` runs both on every push. `.github/workflows/venuefold.yml` is the weekly
   crawl and needs the `ANTHROPIC_API_KEY` repository secret.
+
+Mac app (Tauri v2, needs Rust): `npm run app:dev` opens it from source; `npm run app:build` writes
+`Second Name.app` and a `.dmg` under `src-tauri/target/release/bundle/`. `scripts/build-web.mjs` copies the
+web app into `dist/` for it. `src-tauri/capabilities/default.json` limits the window to opening http(s) and
+mailto links and writing the clipboard. The shell's web view ignores `window.confirm()`, so the app uses its
+own in-page dialog (`ask()` in `index.html`) everywhere. The Playwright tests simulate the shell's bridge.
+`.github/workflows/desktop.yml` builds an unsigned app when the shell or the app changes.
 
 See `SETUP.md` to run your own copy.

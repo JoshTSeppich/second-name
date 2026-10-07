@@ -1,0 +1,38 @@
+name: Desktop app (macOS)
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "src-tauri/**"
+      - "index.html"
+      - "scripts/build-web.mjs"
+      - "package.json"
+      - ".github/workflows/desktop.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: npm ci --no-audit --no-fund
+      - name: Build Second Name.app (unsigned)
+        run: npx tauri build --bundles app
+      - name: Zip the app
+        run: ditto -c -k --keepParent "src-tauri/target/release/bundle/macos/Second Name.app" second-name-macos.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: second-name-macos
+          path: second-name-macos.zip
+          retention-days: 14
