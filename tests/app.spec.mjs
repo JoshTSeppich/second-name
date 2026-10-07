@@ -22,7 +22,8 @@ async function mockProvider(page, base, { models = { status: 200, body: { data: 
     }
     log.chat.push({ headers: req.headers(), body: req.postDataJSON() });
     const reply = messages[Math.min(log.chat.length - 1, messages.length - 1)];
-    return route.fulfill({ status: reply.status || 200, headers: { ...CORS, "content-type": "application/json" }, body: JSON.stringify(reply.body) });
+    const body = typeof reply.body === "function" ? await reply.body(log) : reply.body;
+    return route.fulfill({ status: reply.status || 200, headers: { ...CORS, "content-type": "application/json" }, body: JSON.stringify(body) });
   });
   return log;
 }
@@ -152,7 +153,7 @@ test("copilot tool loop adds a poem on Anthropic", async ({ page }) => {
   const [first, second] = log.chat.map((c) => c.body);
   expect(first.model).toBe("claude-haiku-4-5-20251001");
   expect(first.system).toContain("You critique; you do not write");
-  expect(first.tools.map((t) => t.name)).toEqual(["addPoem", "updatePoem", "setPacketPoems"]);
+  expect(first.tools.map((t) => t.name)).toEqual(["addPoem", "updatePoem", "updateProfile", "setPacketPoems"]);
   expect(first.messages[0]).toEqual({ role: "user", content: "Please save my poem Harbor Test: a test line / another" });
   expect(log.chat[0].headers["anthropic-dangerous-direct-browser-access"]).toBe("true");
   expect(second.messages.at(-1).content[0]).toMatchObject({ type: "tool_result", tool_use_id: "toolu_1" });
@@ -423,4 +424,76 @@ test.describe("inside the desktop app", () => {
     await expect.poll(() => asked).toBe("https://joshtseppich.github.io/second-name/venues/desk-venues.json");
     await expect.poll(async () => ((await desk(page)) || { venues: [] }).venues.some((v) => v.name === "Live Site Review")).toBe(true);
   });
+});
+
+// Profile and poem edits by the copilot. The reply that made changes always lists them.
+const toolTurn = (input) => ({ body: { content: [{ type: "tool_use", id: "toolu_p", name: "updateProfile", input }], stop_reason: "tool_use" } });
+const doneTurn = { body: { content: [{ type: "text", text: "Done." }], stop_reason: "end_turn" } };
+async function askCopilot(page, text) {
+  await nav(page, "Copilot");
+  await page.locator("#chatbox").fill(text);
+  await page.getByRole("button", { name: "Send" }).click();
+}
+
+test("copilot edits the profile fields and lists what it changed", async ({ page }) => {
+  const log = await mockProvider(page, ANTHROPIC, { messages: [toolTurn({ name: "Ada Lane", bio: "Ada Lane lives by the sea.", pitch: "Poems about tides.", maxQueue: 3, lead: 90 }), doneTurn] });
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await askCopilot(page, "Set my name to Ada Lane, bio to: Ada Lane lives by the sea. Pitch: Poems about tides. Queue 3, lead 90 days.");
+  await expect(page.locator(".msg.assistant").last()).toContainText("[Changed: your name on submissions, bio, one line about the work, most packets kept queued, lead time]");
+  expect(log.chat[0].body.system).toContain("One line about the work: (not set)");
+  expect(log.chat[1].body.messages.at(-1).content[0]).toMatchObject({ type: "tool_result", tool_use_id: "toolu_p" });
+  const d = await desk(page);
+  expect({ name: d.name, bio: d.bio, pitch: d.pitch, maxQueue: d.maxQueue, lead: d.lead }).toEqual({ name: "Ada Lane", bio: "Ada Lane lives by the sea.", pitch: "Poems about tides.", maxQueue: 3, lead: 90 });
+  await nav(page, "You");
+  await expect(page.getByLabel("Name on submissions")).toHaveValue("Ada Lane");
+  await expect(page.getByLabel("Bio")).toHaveValue("Ada Lane lives by the sea.");
+});
+
+test("raising the fee budget waits for the person: Cancel keeps it and tells the copilot", async ({ page }) => {
+  const log = await mockProvider(page, ANTHROPIC, { messages: [toolTurn({ budget: 100, bio: "should not apply" }), doneTurn] });
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await askCopilot(page, "raise my budget to 100");
+  const dialog = page.getByRole("alertdialog");
+  await expect(dialog).toContainText("raise your fee budget from $25.00 to $100.00");
+  await dialog.getByRole("button", { name: "Cancel" }).click();
+  await expect(page.locator(".msg.assistant").last()).toContainText("Done.");
+  await expect(page.locator(".msg.assistant").last()).not.toContainText("[Changed");
+  const d = await desk(page);
+  expect([d.budget, d.bio]).toEqual([25, ""]);
+  expect(log.chat[1].body.messages.at(-1).content[0]).toMatchObject({ is_error: true, content: expect.stringContaining("declined") });
+});
+
+test("raising the fee budget applies once the person allows it; lowering needs no prompt", async ({ page }) => {
+  await mockProvider(page, ANTHROPIC, { messages: [toolTurn({ budget: 100 }), doneTurn, toolTurn({ budget: 10 }), doneTurn] });
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await askCopilot(page, "raise my budget to 100");
+  await page.getByRole("alertdialog").getByRole("button", { name: "Allow" }).click();
+  await expect(page.locator(".msg.assistant").last()).toContainText("[Changed: your fee budget]");
+  expect((await desk(page)).budget).toBe(100);
+  await page.locator("#chatbox").fill("lower it to 10");
+  await page.getByRole("button", { name: "Send" }).click();
+  await expect(page.locator(".msg.assistant:not(#live)")).toHaveCount(2);
+  await expect(page.getByRole("button", { name: "Send" })).toBeVisible();
+  await expect(page.getByRole("alertdialog")).toHaveCount(0);
+  expect((await desk(page)).budget).toBe(10);
+});
+
+test("copilot changes a poem's author on OpenAI", async ({ page }) => {
+  const log = await mockProvider(page, OPENAI, { messages: [
+    { body: async () => ({ choices: [{ finish_reason: "tool_calls", message: { role: "assistant", content: null, tool_calls: [{ id: "call_a", type: "function", function: { name: "updatePoem", arguments: JSON.stringify({ id: (await desk(page)).poems[0].id, author: "Both of us" }) } }] } }] }) },
+    { body: { choices: [{ finish_reason: "stop", message: { role: "assistant", content: "Author updated." } }] } },
+  ] });
+  await page.goto("/");
+  await onboard(page, "openai", KEY_O);
+  await nav(page, "Poems");
+  await page.getByRole("button", { name: "Add a poem" }).click();
+  await page.getByLabel("Title").fill("Shared Poem");
+  await page.getByLabel("Title").press("Tab");
+  await askCopilot(page, "Make the author of Shared Poem 'Both of us'");
+  await expect(page.locator(".msg.assistant").last()).toContainText("[Changed: “Shared Poem”: author]");
+  expect((await desk(page)).poems[0].author).toBe("Both of us");
+  expect(log.chat[0].body.tools.map((t) => t.function.name)).toContain("updateProfile");
 });

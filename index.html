@@ -966,8 +966,8 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     return [
       "You are the copilot inside Second Name, a poetry submission desk shared by two poets. Your job is to weigh in heavily on the poems: read closely, say what works and what does not, name the weakest line, propose cuts and alternatives, and argue for or against sending a given poem to a given venue. Be specific and blunt. Quote the exact lines you mean. Do not flatter and do not hedge every sentence. When you disagree with a plan, say so plainly and give a better one.",
       "The poems are theirs. You critique; you do not write. Never write, rewrite or complete a poem, a stanza or a line unless the person explicitly asks for that exact thing, and when you do, label it clearly as your suggestion, not theirs. Several venues ban AI-written or AI-assisted work, and the person must always be able to say truthfully which words are theirs. Only save poem text the person gave you; never save text you wrote as a poem. A reading practice they use: give each poem a 'second name', the title a reader would choose for it, which forces selectivity.",
-      "Formatting: plain prose, short paragraphs, no markdown headers, no bullet lists unless comparing options. Keep answers under 300 words unless asked for a full critique. Never invent facts about a venue; what you know about each is listed below. Cost matters: prefer free venues and fee waivers, and say when a waiver request is worth sending. If a tool is available and the person asks you to add a poem, change a poem's text, title, second name or themes, or change which poems a packet carries, use it, then confirm in one sentence what changed. Never change a poem's text unless asked, and then only with the exact words the person gave you.",
-      "Writer: " + ((S.name||"").trim() || "(no name set)") + ". Bio: " + ((S.bio||"").trim() || "(none)") + ". Fee budget left: $" + left().toFixed(2) + ". Today: " + new Date().toDateString() + ".",
+      "Formatting: plain prose, short paragraphs, no markdown headers, no bullet lists unless comparing options. Keep answers under 300 words unless asked for a full critique. Never invent facts about a venue; what you know about each is listed below. Cost matters: prefer free venues and fee waivers, and say when a waiver request is worth sending. When the person asks you to add a poem, change a poem's title, author, second name, themes or text, change which poems a packet carries, or change their profile (name on submissions, bio, one line about the work, fee budget, how many packets to keep queued, or the lead time for upcoming windows), use the matching tool, then confirm in one sentence what changed. Only change what they asked for. Never change a poem's text unless asked, and then only with the exact words the person gave you. You may draft a bio or the one-line pitch when asked, but only from facts the person has given you: never invent publications, prizes, degrees or places. Raising the fee budget needs the person's approval in the app; if they decline, say so and leave it.",
+      "## Profile (You tab)\nName on submissions: " + ((S.name||"").trim() || "(not set)") + "\nBio: " + ((S.bio||"").trim() || "(not set)") + "\nOne line about the work: " + ((S.pitch||"").trim() || "(not set)") + "\nFee budget: $" + (+S.budget||0).toFixed(2) + " ($" + left().toFixed(2) + " left)\nMost packets kept queued: " + (+S.maxQueue||5) + "\nInclude windows opening within: " + (+S.lead||60) + " days\nToday: " + new Date().toDateString(),
       "## Poems\n" + (poems || "(none)"),
       "## Venues\n" + (venues || "(none)"),
       "## Packets\n" + queue
@@ -976,32 +976,56 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   function copilotTools(){
     return [
       {name:"addPoem", description:"Adds a new poem to the desk. Returns its id. Use only when the person pastes or dictates their own poem and wants it saved; text must be exactly what they gave you.", inputSchema:{type:"object", properties:{title:{type:"string"}, author:{type:"string"}, text:{type:"string"}, tags:{type:"string", description:"comma separated themes"}}, required:["title","text"]},
-        execute:function(i){ var id = uid(); S.poems.push({id:id, title:String(i.title||"Untitled"), author:String(i.author||""), second:"", text:String(i.text||""), tags:String(i.tags||""), revs:[], path:[]}); save(); renderNav(); return {id:id, saved:true}; }},
-      {name:"updatePoem", description:"Changes one or more fields of an existing poem by id: title, second (second name), tags, or text. Only pass the fields to change. Returns what was changed.", inputSchema:{type:"object", properties:{id:{type:"string"}, title:{type:"string"}, second:{type:"string"}, tags:{type:"string"}, text:{type:"string"}}, required:["id"]},
-        execute:function(i){ var p = byId(S.poems, String(i.id)); if(!p) throw new Error("No poem with id " + i.id); var ch = []; ["title","second","tags","text"].forEach(function(k){ if(i[k] != null){ p[k] = String(i[k]); ch.push(k); } }); if(!ch.length) throw new Error("Nothing to change"); save(); return {changed:ch, title:p.title}; }},
+        execute:function(i){ var id = uid(); S.poems.push({id:id, title:String(i.title||"Untitled"), author:String(i.author||""), second:"", text:String(i.text||""), tags:String(i.tags||""), revs:[], path:[]}); save(); renderNav(); logChange("added poem “" + String(i.title||"Untitled") + "”"); return {id:id, saved:true}; }},
+      {name:"updatePoem", description:"Changes one or more fields of an existing poem by id: title, author, second (second name), tags (themes), or text. Only pass the fields to change; text must be the exact words the person gave you. Returns what was changed.", inputSchema:{type:"object", properties:{id:{type:"string"}, title:{type:"string"}, author:{type:"string"}, second:{type:"string"}, tags:{type:"string"}, text:{type:"string"}}, required:["id"]},
+        execute:function(i){ var p = byId(S.poems, String(i.id)); if(!p) throw new Error("No poem with id " + i.id); var ch = []; ["title","author","second","tags","text"].forEach(function(k){ if(i[k] != null){ p[k] = String(i[k]); ch.push(k); } }); if(!ch.length) throw new Error("Nothing to change"); save(); var label = {title:"title", author:"author", second:"second name", tags:"themes", text:"text"}; logChange("“" + p.title + "”: " + ch.map(function(k){ return label[k]; }).join(", ")); return {changed:ch, title:p.title}; }},
+      {name:"updateProfile", description:"Changes the person's profile on the You tab: name (name on submissions), bio, pitch (one line about the work, used in cover notes), budget (fee budget in dollars), maxQueue (most packets kept queued, 1-20), lead (include windows opening within this many days, 0-365). Only pass the fields to change. Raising the budget asks the person to approve it first. Returns what was changed.", inputSchema:{type:"object", properties:{name:{type:"string"}, bio:{type:"string"}, pitch:{type:"string"}, budget:{type:"number"}, maxQueue:{type:"integer"}, lead:{type:"integer"}}},
+        execute:function(i){ return updateProfile(i); }},
       {name:"setPacketPoems", description:"Sets which poems a queued packet carries, by packet id and a list of poem ids. Returns the new list. Rewrites the default cover note unless the person edited it.", inputSchema:{type:"object", properties:{packetId:{type:"string"}, poemIds:{type:"array", items:{type:"string"}}}, required:["packetId","poemIds"]},
-        execute:function(i){ var q = byId(S.queue, String(i.packetId)); if(!q) throw new Error("No packet " + i.packetId); if(q.status === "sent") throw new Error("That packet was already sent"); var ids = (i.poemIds||[]).map(String).filter(function(x){ return byId(S.poems, x); }); if(!ids.length) throw new Error("No valid poem ids"); var v = byId(S.venues, q.vid); if(v && v.maxPoems && ids.length > v.maxPoems) throw new Error(v.name + " takes at most " + v.maxPoems + " poems"); q.poemIds = ids; if(!q.noteEdited) q.note = noteFor(v, ids); save(); return {poems: ids.map(function(x){ return byId(S.poems,x).title; })}; }}
+        execute:function(i){ var q = byId(S.queue, String(i.packetId)); if(!q) throw new Error("No packet " + i.packetId); if(q.status === "sent") throw new Error("That packet was already sent"); var ids = (i.poemIds||[]).map(String).filter(function(x){ return byId(S.poems, x); }); if(!ids.length) throw new Error("No valid poem ids"); var v = byId(S.venues, q.vid); if(v && v.maxPoems && ids.length > v.maxPoems) throw new Error(v.name + " takes at most " + v.maxPoems + " poems"); q.poemIds = ids; if(!q.noteEdited) q.note = noteFor(v, ids); save(); logChange("poems in the " + (v ? v.name : "") + " packet"); return {poems: ids.map(function(x){ return byId(S.poems,x).title; })}; }}
     ];
   }
-  var CH = {ctl:null, draft:"", busy:false, live:""};
+  var PROFILE_LABEL = {name:"name on submissions", bio:"bio", pitch:"one line about the work", budget:"fee budget", maxQueue:"most packets kept queued", lead:"lead time"};
+  function updateProfile(i){
+    var next = {};
+    ["name","bio","pitch"].forEach(function(k){ if(i[k] != null) next[k] = String(i[k]); });
+    if(i.budget != null){ var b = +i.budget; if(!isFinite(b) || b < 0) throw new Error("budget must be 0 or more"); next.budget = Math.round(b*100)/100; }
+    if(i.maxQueue != null){ var m = Math.round(+i.maxQueue); if(!(m >= 1 && m <= 20)) throw new Error("maxQueue must be 1 to 20"); next.maxQueue = m; }
+    if(i.lead != null){ var l = Math.round(+i.lead); if(!(l >= 0 && l <= 365)) throw new Error("lead must be 0 to 365 days"); next.lead = l; }
+    var keys = Object.keys(next); if(!keys.length) throw new Error("Nothing to change");
+    // The fee budget is the app's spending guard, so only the person can raise it.
+    var raise = next.budget != null && next.budget > (+S.budget||0);
+    var gate = raise ? ask("The copilot wants to raise your fee budget from $" + (+S.budget||0).toFixed(2) + " to $" + next.budget.toFixed(2) + ". Allow it?", "Allow") : Promise.resolve(true);
+    return gate.then(function(ok){
+      if(!ok) throw new Error("The person declined raising the fee budget. Nothing was changed.");
+      keys.forEach(function(k){ S[k] = next[k]; });
+      save(); logChange("your " + keys.map(function(k){ return PROFILE_LABEL[k]; }).join(", "));
+      return {changed:keys};
+    });
+  }
+  // Everything the copilot changes in one reply, listed under that reply so it is always visible.
+  function logChange(what){ if(CH.changes) CH.changes.push(what); }
+  var CH = {ctl:null, draft:"", busy:false, live:"", changes:null};
   function sendChat(text){
     if(!aiReady() || CH.busy) return;
     text = (text||"").trim(); if(!text) return;
     S.chat = S.chat || []; S.chat.push({role:"user", content:text, at:Date.now()}); if(S.chat.length > 24) S.chat = S.chat.slice(-24); save();
-    CH.busy = true; CH.live = ""; CH.draft = ""; CH.ctl = new AbortController(); render();
+    CH.busy = true; CH.live = ""; CH.draft = ""; CH.changes = []; CH.ctl = new AbortController(); render();
     var turns = S.chat.map(function(m){ return {role:m.role, content:m.content}; });
     while(turns.length && turns[0].role !== "user") turns.shift();
     var opts = {system:copilotRules(), tools:copilotTools(), signal:CH.ctl.signal, onText:function(u){ CH.live = u.text; var el = document.getElementById("live"); if(el){ el.textContent = u.text; el.scrollIntoView({block:"end"}); } }};
     aiSample(turns, opts).then(function(r){
-      S.chat.push({role:"assistant", content:r.text + (r.truncated ? "\n\n[cut short, ask for less at a time]" : ""), at:Date.now()}); CH.busy = false; CH.live = ""; save(); render(); scrollChat();
+      S.chat.push({role:"assistant", content:r.text + (r.truncated ? "\n\n[cut short, ask for less at a time]" : "") + changeNote(), at:Date.now()}); CH.busy = false; CH.live = ""; save(); render(); scrollChat();
     }, function(e){
       CH.busy = false;
-      if(e && e.text){ S.chat.push({role:"assistant", content:e.text + "\n\n[interrupted]", at:Date.now()}); save(); }
+      if(e && e.text){ S.chat.push({role:"assistant", content:e.text + "\n\n[interrupted]" + changeNote(), at:Date.now()}); save(); }
+      else if(CH.changes && CH.changes.length){ S.chat.push({role:"assistant", content:"[interrupted]" + changeNote(), at:Date.now()}); save(); }
       else if(e && e.code === "cancelled"){ S.chat.pop(); save(); }
       CH.live = ""; render(); scrollChat();
       if(e && e.code !== "cancelled") toast(aiMessage(e && e.code, (aiConf()||{}).provider));
     });
   }
+  function changeNote(){ var c = CH.changes || []; CH.changes = null; return c.length ? "\n\n[Changed: " + c.join("; ") + "]" : ""; }
   function scrollChat(){ setTimeout(function(){ var el = document.getElementById("chatend"); if(el) el.scrollIntoView({block:"end"}); }, 30); }
   function askCopilot(prompt){ S.tab = "copilot"; U.screen = null; CH.draft = prompt; save(); render(); setTimeout(function(){ var b = document.getElementById("chatbox"); if(b){ b.focus(); } }, 30); }
 
@@ -1015,7 +1039,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
       var ul = h("div", {class:"chips"});
       ["Critique my newest poem line by line.","Which poem fits the next open venue best, and why?","Suggest a second name for each poem.","What is the weakest stanza in my newest poem?","Here is a new poem to add: …"].forEach(function(s){ ul.appendChild(h("button", {class:"toggle", text:s, onclick:function(){ CH.draft = s; render(); var b = document.getElementById("chatbox"); if(b) b.focus(); }})); });
       e.appendChild(ul);
-      e.appendChild(h("div", {class:"help", text:"It critiques; it doesn't write your poems. It can save a poem you paste, rename poems, set second names, and change which poems a packet carries. It never pays or submits."}));
+      e.appendChild(h("div", {class:"help", text:"It critiques; it doesn't write your poems. Ask it to save a poem you paste, change a poem's title, author, second name or themes, edit your name, bio and pitch or your autopilot settings, or change which poems a packet carries. Raising your fee budget needs your OK. It never pays or submits."}));
       wrap.appendChild(e);
     }
     chat.forEach(function(m){ wrap.appendChild(h("div", {class:"msg " + m.role, text:m.content})); });
