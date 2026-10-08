@@ -307,6 +307,25 @@ for (const [rival, label] of [
   });
 }
 
+test("Tighten note is clickable and replaces the cover note", async ({ page }) => {
+  const log = await mockProvider(page, ANTHROPIC, { messages: [{ body: { content: [{ type: "text", text: "Dear editors, please consider these poems. Thank you." }], stop_reason: "end_turn" } }] });
+  await page.goto("/");
+  await onboard(page, "anthropic", KEY_A);
+  await nav(page, "You");
+  const d = await desk(page);
+  Object.assign(d, { tab: "desk", name: "Test Poet", bio: "Writes poems.",
+    poems: [{ id: "p-t", title: "Tight", author: "", second: "", text: "one line", tags: "general", revs: [], path: [] }],
+    queue: [{ id: "q-t", vid: "v11", poemIds: ["p-t"], note: "A long and rambling original cover note.", noteEdited: false, status: "ready", waiver: "none" }] });
+  await page.evaluate((x) => localStorage.setItem("second-name-desk-v2", JSON.stringify(x)), d);
+  await page.reload();
+  await page.getByRole("button", { name: /^Rattle/ }).click();
+  const btn = page.getByRole("button", { name: "Tighten note" });
+  await expect(btn).toBeEnabled();
+  await btn.click();
+  await expect.poll(async () => (await desk(page)).queue[0].note).toBe("Dear editors, please consider these poems. Thank you.");
+  expect(log.chat[0].body.messages[0].content).toContain("A long and rambling original cover note.");
+});
+
 test("a venue marked not-in-autopilot is listed but never queued", async ({ page }) => {
   await mockProvider(page, ANTHROPIC);
   await page.goto("/");
@@ -386,10 +405,14 @@ test("in-app confirmation: Cancel and Escape keep the poem, Delete removes it", 
 test.describe("inside the desktop app", () => {
   test.beforeEach(async ({ page }) => {
     await page.addInitScript(() => {
-      window.__opened = []; window.__clip = [];
+      window.__opened = []; window.__clip = []; window.__relaunched = 0; window.__installed = [];
+      window.__nextUpdate = null;          // a test sets this to a version string to offer an update
       window.__TAURI__ = {
         opener: { openUrl: (u) => { window.__opened.push(u); return Promise.resolve(); } },
         clipboardManager: { writeText: (t) => { window.__clip.push(t); return Promise.resolve(); } },
+        app: { getVersion: () => Promise.resolve("0.2.1") },
+        updater: { check: () => Promise.resolve(window.__nextUpdate && { version: window.__nextUpdate, downloadAndInstall: () => { window.__installed.push(window.__nextUpdate); return Promise.resolve(); } }) },
+        process: { relaunch: () => { window.__relaunched++; return Promise.resolve(); } },
       };
     });
   });
@@ -423,6 +446,39 @@ test.describe("inside the desktop app", () => {
     await page.goto("/");
     await expect.poll(() => asked).toBe("https://joshtseppich.github.io/second-name/venues/desk-venues.json");
     await expect.poll(async () => ((await desk(page)) || { venues: [] }).venues.some((v) => v.name === "Live Site Review")).toBe(true);
+  });
+
+  test("an update found at launch installs in the background, then Restart relaunches", async ({ page }) => {
+    await page.addInitScript(() => { window.__nextUpdate = "0.2.9"; });
+    await mockProvider(page, ANTHROPIC);
+    await page.goto("/");
+    const dialog = page.getByRole("alertdialog");
+    await expect(dialog).toContainText("Second Name 0.2.9 is installed. Restart now", { timeout: 8000 });
+    expect(await page.evaluate(() => window.__installed)).toEqual(["0.2.9"]);
+    expect(await page.evaluate(() => window.__relaunched)).toBe(0);
+    await dialog.getByRole("button", { name: "Restart" }).click();
+    await expect.poll(() => page.evaluate(() => window.__relaunched)).toBe(1);
+  });
+
+  test("declining the restart leaves the app running; the You tab shows version and update state", async ({ page }) => {
+    await page.addInitScript(() => { window.__nextUpdate = "0.2.9"; });
+    await mockProvider(page, ANTHROPIC);
+    await page.goto("/");
+    await onboard(page, "anthropic", KEY_A);
+    await page.getByRole("alertdialog").getByRole("button", { name: "Cancel" }).click({ timeout: 8000 });
+    expect(await page.evaluate(() => window.__relaunched)).toBe(0);
+    await nav(page, "You");
+    await expect(page.locator("#desktopapp")).toContainText("Version 0.2.1. Version 0.2.9 is installed; restart the app to use it.");
+  });
+
+  test("Check for updates says when you're up to date", async ({ page }) => {
+    await mockProvider(page, ANTHROPIC);
+    await page.goto("/");
+    await onboard(page, "anthropic", KEY_A);
+    await nav(page, "You");
+    await page.locator("#desktopapp").getByRole("button", { name: "Check for updates" }).click();
+    await expect(page.locator("#toast")).toContainText("You have the latest version.");
+    await expect(page.locator("#desktopapp")).toContainText("Version 0.2.1. You have the latest version.");
   });
 });
 

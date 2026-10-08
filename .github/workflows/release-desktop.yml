@@ -1,0 +1,55 @@
+name: Release desktop app (macOS)
+
+# Every push to main that changes the app builds a new version, signs the update with the updater key and
+# publishes it as a GitHub Release with latest.json. Installed copies check that file when they open.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "src-tauri/**"
+      - "index.html"
+      - "scripts/build-web.mjs"
+      - "package.json"
+      - ".github/workflows/release-desktop.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-desktop
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: npm ci --no-audit --no-fund
+      - name: Set the version from the run number
+        run: |
+          node -e '
+            const fs = require("fs"), p = "src-tauri/tauri.conf.json", c = JSON.parse(fs.readFileSync(p, "utf8"));
+            c.version = "0.2." + process.env.GITHUB_RUN_NUMBER;
+            fs.writeFileSync(p, JSON.stringify(c, null, 2));
+            console.log("version", c.version);'
+      - uses: tauri-apps/tauri-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: app-v__VERSION__
+          releaseName: Second Name __VERSION__
+          releaseBody: "Mac app build of ${{ github.sha }}. Installed copies update themselves. First install: download Second.Name.app.tar.gz, double-click to unpack, move Second Name.app to Applications, then right-click it and choose Open (it isn't signed by Apple)."
+          releaseDraft: false
+          prerelease: false
+          args: --bundles app

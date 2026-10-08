@@ -350,6 +350,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
   function h(tag, attrs){
     var e = document.createElement(tag); attrs = attrs || {};
     Object.keys(attrs).forEach(function(k){
+      if(attrs[k] == null || attrs[k] === false) return;   // e.g. disabled: null means "not disabled"
       if(k === "text") e.textContent = attrs[k];
       else if(k === "html") e.innerHTML = attrs[k];
       else if(k.indexOf("on") === 0) e.addEventListener(k.slice(2), attrs[k]);
@@ -854,6 +855,7 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     advIn.appendChild(field("Model", modelOverrides()[conf.provider] || "", function(v){ var m = modelOverrides(); m[conf.provider] = v.trim(); try { localStorage.setItem(MKEY, JSON.stringify(m)); } catch(e){} }, {placeholder:PROVIDERS[conf.provider].defaultModel, help:"Leave blank for " + PROVIDERS[conf.provider].defaultModel + ", the low-cost default. Bigger models cost more per message."}));
     adv.appendChild(advIn); ak.appendChild(adv);
     root.appendChild(ak);
+    viewDesktopCard(root);
     root.appendChild(h("h3", {text:"Venue data"}));
     var vd = h("div", {class:"card"});
     var vfCount = S.venues.filter(function(v){ return v.source === "venuefold"; }).length;
@@ -909,6 +911,34 @@ h3.month{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);p
     save(); render();
     if(!quiet) toast(added + " added, " + updated + " updated" + (kept ? ", " + kept + " of yours left alone" : "") + ".");
   }
+  // ---------- desktop app updates ----------
+  // The Mac app checks GitHub Releases for a newer signed build, installs it in the background, then asks
+  // before restarting. The automatic check never re-renders, so it can't wipe a field someone is typing in.
+  var UPD = {state:"idle", version:null, current:null};
+  function checkForUpdate(manual){
+    if(!TAURI || !TAURI.updater || UPD.state === "checking" || UPD.state === "downloading") return;
+    UPD.state = "checking"; if(manual) render();
+    TAURI.updater.check().then(function(u){
+      if(!u){ UPD.state = "none"; if(manual){ render(); toast("You have the latest version."); } return; }
+      UPD.state = "downloading"; UPD.version = u.version; if(manual) render();
+      return u.downloadAndInstall().then(function(){
+        UPD.state = "ready"; if(manual) render();
+        return ask("Second Name " + u.version + " is installed. Restart now to start using it? Otherwise it starts next time you open the app.", "Restart").then(function(ok){ if(ok) return TAURI.process.relaunch(); });
+      });
+    }).catch(function(){ UPD.state = "error"; if(manual){ render(); toast("Couldn't check for updates. Try again when you're online."); } });
+  }
+  function viewDesktopCard(root){
+    if(!TAURI || !TAURI.updater) return;
+    root.appendChild(h("h3", {text:"Desktop app"}));
+    var c = h("div", {class:"card", id:"desktopapp"});
+    var status = {checking:"Checking for updates…", downloading:"Downloading version " + UPD.version + "…", ready:"Version " + UPD.version + " is installed; restart the app to use it.", none:"You have the latest version.", error:"Couldn't check for updates."}[UPD.state] || "Updates install automatically when the app opens.";
+    c.appendChild(h("div", {class:"line", style:"margin:0", text:"Version " + (UPD.current || "unknown") + ". " + status}));
+    c.appendChild(h("button", {class:"btn", style:"margin-top:10px", text:"Check for updates", disabled: UPD.state === "checking" || UPD.state === "downloading" ? "true" : null, onclick:function(){ checkForUpdate(true); }}));
+    root.appendChild(c);
+  }
+  if(TAURI && TAURI.app && TAURI.app.getVersion) TAURI.app.getVersion().then(function(v){ UPD.current = v; }, function(){});
+  if(TAURI && TAURI.updater) setTimeout(function(){ checkForUpdate(false); }, 3000);
+
   // ---------- calendar ----------
   function nextDate(md, after){
     var p = md.split("-"), now = after || new Date(), y = now.getFullYear();

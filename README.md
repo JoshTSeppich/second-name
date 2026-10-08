@@ -73,9 +73,14 @@ There's also a desktop version for macOS, built with Tauri v2. It's the same app
 open in your browser and mail app, venues refresh from the live site, and your desk and key live in the
 Mac app's own storage, separate from any browser.
 
-Build it yourself (see "For developers"), or download the `second-name-macos` artifact from the latest
-"Desktop app (macOS)" run in the Actions tab. It isn't signed by Apple, so the first time you open it,
-right-click the app and choose **Open**, then **Open** again.
+**Install:** download `Second.Name.app.tar.gz` from the latest
+[release](https://github.com/JoshTSeppich/second-name/releases/latest), double-click it to unpack, and
+move **Second Name** to Applications. It isn't signed by Apple, so the first time you open it, right-click
+the app and choose **Open**, then **Open** again.
+
+**Updates are automatic.** Each time the app opens it checks for a newer version, downloads it in the
+background and asks whether to restart. You > Desktop app shows the version and has a "Check for updates"
+button. Updates are signed, and the app refuses any download that isn't signed with the project's key.
 
 ## Getting an API key
 
@@ -153,6 +158,15 @@ Mac app (Tauri v2, needs Rust): `npm run app:dev` opens it from source; `npm run
 web app into `dist/` for it. `src-tauri/capabilities/default.json` limits the window to opening http(s) and
 mailto links and writing the clipboard. The shell's web view ignores `window.confirm()`, so the app uses its
 own in-page dialog (`ask()` in `index.html`) everywhere. The Playwright tests simulate the shell's bridge.
-`.github/workflows/desktop.yml` builds an unsigned app when the shell or the app changes.
+Releases: `.github/workflows/release-desktop.yml` runs on every push to `main` that changes the app or the
+shell. It sets the version to `0.2.<run number>`, builds, signs the update with the updater key and
+publishes a GitHub Release with `latest.json`, which installed copies read
+(`plugins.updater` in `src-tauri/tauri.conf.json`). `npm run app:build` builds locally and signs too if
+the key is at `~/.tauri/second-name-updater.key`.
+
+**The updater key:** the private key and its password live in `~/.tauri/` and in the repository secrets
+`TAURI_SIGNING_PRIVATE_KEY` and `TAURI_SIGNING_PRIVATE_KEY_PASSWORD`. Back up `~/.tauri/` somewhere safe.
+If the key is lost, installed copies can't be updated any more and everyone has to reinstall a build with
+a new key.
 
 See `SETUP.md` to run your own copy.

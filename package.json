@@ -9,7 +9,7 @@
     "test:venuefold": "npm --prefix venuefold test",
     "tauri": "tauri",
     "app:dev": "tauri dev",
-    "app:build": "tauri build"
+    "app:build": "node scripts/build-app.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
