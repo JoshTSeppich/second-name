@@ -1,6 +1,6 @@
 {
  "venuefold": 1,
- "exportedOn": "2026-10-19T16:17:28.965Z",
+ "exportedOn": "2026-10-26T16:03:24.289Z",
  "venues": [
   {
    "id": "vf-change",
@@ -1976,6 +1976,22 @@
    "source": "venuefold"
   },
   {
+   "id": "vf-punk-monk-magazine",
+   "name": "Punk Monk Magazine",
+   "url": "http://punkmonkmagazine.blogspot.com/p/submissions.html",
+   "submitEmail": "punkmonkmagazine@gmail.com",
+   "fee": 0,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "minPoems": 1,
+   "maxPoems": 1,
+   "ai": "Anti-AI. \"We're OBVIOUSLY anti-AI. (But very pro-human!)\"",
+   "checked": "2026-10-26",
+   "notes": "Submit 1 poem at a time. Non-rhyming/free verse preferred; short poems (1-2 stanzas) strongly preferred. Email title format: \"PUNK POETRY- Submission Title by Name\". Paste in body of email. No multiple submissions per period. Must follow guidelines or submission deleted without reply. Response: seven months",
+   "source": "venuefold"
+  },
+  {
    "id": "vf-uartet",
    "name": "Quartet",
    "url": "https://www.quartetjournal.com/submissions",
@@ -2092,6 +2108,25 @@
    "maxPoems": 5,
    "checked": "2026-10-12",
    "notes": "Submit 3-5 poems in one document, each starting on new page, no more than 10 pages total, single-spaced. One entry per category per reading period. Must belong to southern queer (LGBTQ) community and identify as southern; state this and location in cover letter.",
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-scud",
+   "name": "Scud",
+   "url": "https://scudlit.blogspot.com/p/contact.html",
+   "submitEmail": "scud95035@gmail.com",
+   "fee": null,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "maxPoems": 3,
+   "checked": "2026-10-26",
+   "notes": "Paste work into email body; no attachments. No previously published work, no plagiarism, no AI-generated work. Simultaneous submissions okay; withdraw if accepted elsewhere. No bios, just a link to preferred online presence. Response: a week or two Fee not stated on their page; check before paying.",
+   "waiver": {
+    "kind": "email",
+    "email": "scud95035@gmail.com",
+    "note": "Anyone with financial concerns. If money is an issue, contact the editors via email"
+   },
    "source": "venuefold"
   },
   {
@@ -2690,6 +2725,20 @@
     "email": "editor@arkint.org",
     "note": "Writers identifying as BIPOC or in need of financial assistance. BIPOC or those in financial need may request waivers"
    },
+   "source": "venuefold"
+  },
+  {
+   "id": "vf-midriff",
+   "name": "MIDRIFF",
+   "url": "https://midriffmag.com/",
+   "fee": null,
+   "start": "",
+   "end": "",
+   "tags": "general",
+   "maxPoems": 3,
+   "pays": "Yes, \"We pay contributors. Always.\"",
+   "checked": "2026-10-26",
+   "notes": "Midriff seeks poetry, essays, personal narratives, cultural criticism, photography and visual art. Pitch specific ideas via their pitch form or add info to their list for possible story assignments. Pays all contributors. Fee not stated on their page; check before paying.",
    "source": "venuefold"
   }
  ]

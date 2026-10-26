@@ -2973,7 +2973,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Decadent Review / Year-Round / Poetry, Nonfiction, Criticism, Theory, Reviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: page is mostly empty even in a browser (browser saw title \"Cloudflare Registrar\", 135 characters: \"thedecadentreview.com has expired. If you are the owner, log in to Cloudflare fo\"; looks like a bot check, so this site may block automated visits); open it yourself or add a guidelinesUrl by hand"
+      "lastError": "2026-10-26: page is mostly empty even in a browser (browser saw title \"Cloudflare Registrar\", 135 characters: \"thedecadentreview.com has expired. If you are the owner, log in to Cloudflare fo\"; looks like a bot check, so this site may block automated visits); open it yourself or add a guidelinesUrl by hand"
     },
     "december-magazine": {
       "name": "december magazine",
@@ -2981,7 +2981,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "december magazine / Due: Oct 1 – May 1 / Prose, Poetry, Art / Fee: $2.50",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "diacritics": {
       "name": "diaCRITICS",
@@ -3058,7 +3058,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "diode / Year-Round / Poetry (Including but Not Limited to Narrative, Experimental, Visual, Found and Erasure Poetry, Translations, and Collaborations)",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: blocked by robots.txt"
+      "lastError": "2026-10-26: blocked by robots.txt"
     },
     "dog-throat-journal": {
       "name": "Dog Throat Journal",
@@ -3142,7 +3142,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Dream Pop Journal / Year-Round / Poetry, Fiction, Nonfiction, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 403"
+      "lastError": "2026-10-26: HTTP 403"
     },
     "dreginald": {
       "name": "DREGINALD",
@@ -3849,7 +3849,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Fowl Feathered Review / Year- Round / Poetry, Artwork / Send as Attachment to fowlpoxpress@mail2poet.com / Editor, Virgil Kay / Pays as e-Magazine Subscription",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "f-r-iction": {
       "name": "F(r)iction",
@@ -4240,7 +4240,27 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Graviton / Now / Science-Inspired Poetry and Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 530"
+      "lastError": null,
+      "history": [],
+      "record": {
+        "name": "Graviton",
+        "acceptsPoetry": false,
+        "submitMethod": "unknown",
+        "windows": [],
+        "yearRound": false,
+        "notes": "Page URL references \"GravitonLit\" but content is entirely about sports betting platforms (bet gringa). No poetry submission information, guidelines, fees, or procedures are present. This page does not contain literary journal submission details.",
+        "evidence": [
+          "Page title: 'Bet Gringa com Bonus: Comparativo Completo BR 2026'",
+          "Content focuses on betting operators, odds, payment methods, bonuses",
+          "No mention of poetry, literature, submissions, or literary contests",
+          "Appears to be a sports betting review site, not a literary venue"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://www.gravitonlit.com/submit",
+      "pageHash": "1ff7d11f77f0bcb3",
+      "checkedOn": "2026-10-26",
+      "changedOn": "2026-10-26"
     },
     "gravity-of-the-thing": {
       "name": "The Gravity of the Thing",
@@ -4636,7 +4656,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "HAD / Sporadically / Poetry, Flash Fiction, Flash Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "hoot-review": {
       "name": "HOOT Review",
@@ -4816,7 +4836,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Impossible Task / Year-Round / Poetry, Nonfiction, Fiction, Artwork, Music, Interviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "impostor": {
       "name": "Impostor",
@@ -4824,7 +4844,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Impostor / Due: October 7 – November 4 / Poetry / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "in-conversation": {
       "name": "In Conversation",
@@ -4950,7 +4970,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "indicia / Year-Round / Poetry, Prose, Flash Prose, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "ink-marrow": {
       "name": "Ink & Marrow",
@@ -5368,7 +5388,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Kithe / Year-Round / Poetry, Fiction, Flash Fiction, Nonfiction, Flash Nonfiction, Hybrid, Art / Fee: $3",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "kopi-break": {
       "name": "Kopi Break",
@@ -5667,7 +5687,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Long Long Journal / Year-Round / Poetry, Prose",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "los-angeles-review": {
       "name": "Los Angeles Review",
@@ -6292,7 +6312,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Mortar / Now / Poetry, Fiction, Flash Fiction, Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "nashville-review": {
       "name": "Nashville Review",
@@ -6300,7 +6320,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Nashville Review / Open: January and August / Fiction, Poetry, Nonfiction, and Translation / Paid: $25 for Poem and $100 for Prose and Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "nassau-review": {
       "name": "The Nassau Review",
@@ -6335,7 +6355,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Nelligan Review / Year-Round / Fiction, Poetry, Essays, Reviews, Art, Photography",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: The operation was aborted due to timeout"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "new-delta-review": {
       "name": "New Delta Review",
@@ -6343,7 +6363,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "New Delta Review / Now / Poetry, Fiction, Nonfiction, Digital Media, Art, Reviews/Interviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "new-orleans-review": {
       "name": "New Orleans Review",
@@ -6391,7 +6411,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "New Poetry in Translation / Year-Round / Poetry in Translation",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "new-sinews": {
       "name": "new sinews",
@@ -6480,7 +6500,31 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Other Rooms / Year-Round / Poetry / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 429"
+      "lastError": null,
+      "history": [],
+      "record": {
+        "name": "Other Rooms Press",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "windows": [],
+        "yearRound": true,
+        "notes": "Page indicates open call for poetry submissions. No specific submission limits, format requirements, or fee information are stated on this page.",
+        "evidence": [
+          "otherroomspress@gmail.com",
+          "OPEN CALL / submission guidelines",
+          "ORP",
+          "submission guidelines"
+        ],
+        "confidence": "low",
+        "submitEmail": "otherroomspress@gmail.com",
+        "feeUSD": null,
+        "freeOption": null,
+        "waiver": null
+      },
+      "guidelinesUrl": "https://otherroomspress.blogspot.com/",
+      "pageHash": "1fadb97ed2a13111",
+      "checkedOn": "2026-10-26",
+      "changedOn": "2026-10-26"
     },
     "oxbow-magazine": {
       "name": "Oxbow Magazine",
@@ -6488,7 +6532,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Oxbow Magazine / Year-Round / Poetry, Fiction, Nonfiction, Hybrid, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "p-queue": {
       "name": "P-QUEUE",
@@ -6496,7 +6540,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "P-QUEUE / Due: September 1 – February 1 / Online and Print / Poetry and Prose, Interdisciplinary and Cross-Genre, Essays, Articles, Criticism, Hybrid, Philosophy, Theory, Experimental and Visual Poetry / No Fee / Pays: One Contributor Copy (Print)",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "pacifica-literary-review": {
       "name": "Pacifica Literary Review",
@@ -6723,7 +6767,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Pigeon Pages / Now / Poetry, Fiction, Nonfiction / Fee: $5",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "pinch": {
       "name": "The Pinch",
@@ -6794,7 +6838,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Pirene’s Fountain / Due: May 15 – June 30 / Poetry",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "pithead-chapel": {
       "name": "Pithead Chapel",
@@ -6891,7 +6935,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "PlotHound Press / Year-Round / Flash, Short stories, Poetry, Nonfiction, Photography, Artwork, Fiber Arts",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "plumas-revista": {
       "name": "Plumas Revista",
@@ -7439,7 +7483,36 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Punk Monk Magazine / Year-Round / Fiction, Nonfiction, Poetry, Music / No Fee / LGBTQ + Femme + #OwnVoices Preferred",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 429"
+      "lastError": null,
+      "history": [],
+      "record": {
+        "name": "Punk Monk Magazine",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "punkmonkmagazine@gmail.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": 0,
+        "minPoems": 1,
+        "maxPoems": 1,
+        "simultaneous": true,
+        "notes": "Submit 1 poem at a time. Non-rhyming/free verse preferred; short poems (1-2 stanzas) strongly preferred. Email title format: \"PUNK POETRY- Submission Title by Name\". Paste in body of email. No multiple submissions per period. Must follow guidelines or submission deleted without reply.",
+        "evidence": [
+          "OBVIOUSLY, we're anti-AI.",
+          "1 poem at a time, please.",
+          "Non-rhyming/free verse preferred. Short poems (1-2 stanzas) strongly preferred.",
+          "Email to punkmonkmagazine(at)gmail(dot)com",
+          "Simultaneous subs welcome."
+        ],
+        "confidence": "high",
+        "aiPolicy": "Anti-AI. \"We're OBVIOUSLY anti-AI. (But very pro-human!)\"",
+        "pays": null,
+        "responseTime": "seven months"
+      },
+      "guidelinesUrl": "http://punkmonkmagazine.blogspot.com/p/submissions.html",
+      "pageHash": "86e9f51e04f83227",
+      "checkedOn": "2026-10-26",
+      "changedOn": "2026-10-26"
     },
     "q-a-poetry": {
       "name": "Q/A Poetry",
@@ -7447,7 +7520,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Q/A Poetry / Year-Round / Poetry by Poets of Marginalized Genders and Sexes",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "queer-southeast-asia": {
       "name": "Queer Southeast Asia",
@@ -7455,7 +7528,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Queer Southeast Asia / Year-Round / Poetry, Prose, Hybrid, Interviews, Reviews, Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: blocked by robots.txt"
+      "lastError": "2026-10-26: blocked by robots.txt"
     },
     "uartet": {
       "name": "൪uartet",
@@ -7520,7 +7593,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Rabid Oak / Year-Round / Poetry, Flash Fiction, Flash Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "raconteur": {
       "name": "Raconteur",
@@ -7528,7 +7601,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Raconteur / Now / Poetry, Fiction, Nonfiction, Illustrations",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: blocked by robots.txt"
+      "lastError": "2026-10-26: blocked by robots.txt"
     },
     "radar-poetry": {
       "name": "Radar Poetry",
@@ -7748,7 +7821,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Revolution John / Year-Round / Prose Poetry, Short Stories",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: page is mostly empty even in a browser (browser saw title \"Oleada - A Submission Platform\", 87 characters: \"Login...Create AccountAboutAbout UsProjectsThis publisher has no active projects\"); open it yourself or add a guidelinesUrl by hand"
+      "lastError": "2026-10-26: page is mostly empty even in a browser (browser saw title \"Oleada - A Submission Platform\", 87 characters: \"Login...Create AccountAboutAbout UsProjectsThis publisher has no active projects\"); open it yourself or add a guidelinesUrl by hand"
     },
     "rhino-poetry": {
       "name": "RHINO Poetry",
@@ -7802,7 +7875,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Rise Up Review / Now / Poetry, Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "sacramento-review": {
       "name": "Sacramento Review",
@@ -7810,7 +7883,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Sacramento Review / Year-Round / Poetry, Fiction, Visual Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: page is mostly empty even in a browser (browser saw title \"sacreview.org\", 134 characters: \"sacreview.org Something amazing will be constructed here... To change this page,\"); open it yourself or add a guidelinesUrl by hand"
     },
     "salt-hill-journal": {
       "name": "Salt Hill Journal",
@@ -7952,7 +8025,40 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Scud / Year-Round / Poetry, Nonfiction, Interviews, Reviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 429"
+      "lastError": null,
+      "history": [],
+      "record": {
+        "name": "Scud",
+        "acceptsPoetry": true,
+        "submitMethod": "email",
+        "submitEmail": "scud95035@gmail.com",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": "No fee stated; contact editors if money is an issue",
+        "waiver": {
+          "kind": "email",
+          "note": "If money is an issue, contact the editors via email",
+          "who": "Anyone with financial concerns",
+          "contactEmail": "scud95035@gmail.com"
+        },
+        "responseTime": "a week or two",
+        "simultaneous": true,
+        "notes": "Paste work into email body; no attachments. No previously published work, no plagiarism, no AI-generated work. Simultaneous submissions okay; withdraw if accepted elsewhere. No bios, just a link to preferred online presence.",
+        "evidence": [
+          "Simultaneously submissions are okay; withdraw if accepted elsewhere",
+          "Everyone receives the courtesy of a response in a week or two",
+          "If money is an issue, please contact the editors via email",
+          "Please paste your work into the body of the email",
+          "No previously published work, no plagiarism",
+          "no AI"
+        ],
+        "confidence": "high"
+      },
+      "guidelinesUrl": "https://scudlit.blogspot.com/p/contact.html",
+      "pageHash": "7f71e7f4b2850a8b",
+      "checkedOn": "2026-10-26",
+      "changedOn": "2026-10-26"
     },
     "seventh-wave": {
       "name": "Seventh Wave",
@@ -8058,7 +8164,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Shō Poetry Journal / Open: July 1 – September 30 & January 1 – March 31 / Poetry / Fee: $3 (Free for Native American Poets; 1 Free Pop-up Window for BIPOC Writers During Every Submission Period / Pays: 1 Contributor Copy (Print)",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "sinister-wisdom": {
       "name": "Sinister Wisdom",
@@ -8106,7 +8212,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Sixth Finch / Now / Poetry, Visual Art",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: page is mostly empty even in a browser (browser saw title \"Sixth Finch - Submission Guidelines\", 0 characters); open it yourself or add a guidelinesUrl by hand"
+      "lastError": "2026-10-26: page is mostly empty even in a browser (browser saw title \"Sixth Finch - Submission Guidelines\", 0 characters); open it yourself or add a guidelinesUrl by hand"
     },
     "slouching-beast-journal": {
       "name": "Slouching Beast Journal",
@@ -8250,7 +8356,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Sorority Mansion / Now / Poetry, Fiction, Nonfiction and Art by Women",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "southern-indiana-review": {
       "name": "Southern Indiana Review",
@@ -8473,7 +8579,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "SPORAZINE / Now / Experimental and Visual Poetry by Trans People",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "srprs-editors-prize-contest": {
       "name": "SRPRs Editors’ Prize Contest",
@@ -9021,7 +9127,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Thrush / Year-Round / Poetry",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "tilted-house": {
       "name": "Tilted House",
@@ -9264,7 +9370,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Twisted Tongue / Due: August 31 / Poetry, Art, Nonfiction, Fiction, Hybrids",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "two-lines": {
       "name": "Two Lines",
@@ -9272,7 +9378,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Two Lines / Now / Translations of Poetry, Fiction, and Nonfiction",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "twyckenham-notes": {
       "name": "Twyckenham Notes",
@@ -9520,7 +9626,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "VIDA: Women in the Literary Arts — The VIDA Review / Year-Round / Poetry, Fiction, Nonfiction, Interviews and Reviews",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "virgo-venus-press": {
       "name": "virgo venus press",
@@ -9650,7 +9756,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Wax Nine / Now / Poetry, Illustrations, Guest-Edited Issues / Free to Submit / Paid: $50/Issue",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: page is mostly empty even in a browser (browser saw title \"Home - Wax Nine Records : Wax Nine Records\", 0 characters); open it yourself or add a guidelinesUrl by hand"
+      "lastError": "2026-10-26: page is mostly empty even in a browser (browser saw title \"Home - Wax Nine Records : Wax Nine Records\", 0 characters); open it yourself or add a guidelinesUrl by hand"
     },
     "waxwing": {
       "name": "Waxwing",
@@ -9944,7 +10050,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "The Woodside Review / Year-Round / Poetry, Haiku & Haibun, Short Fiction (1,500 Words Max.) / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 403"
+      "lastError": "2026-10-26: HTTP 403"
     },
     "yellow-thread-library": {
       "name": "Yellow Thread Library",
@@ -9952,7 +10058,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "Yellow Thread Library / Now / Poetry, Fiction, Nonfiction, Prose, Embracing the Weird / No Fee",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: blocked by robots.txt"
+      "lastError": "2026-10-26: blocked by robots.txt"
     },
     "ythm": {
       "name": "ythm",
@@ -9960,7 +10066,7 @@
       "discoveredFrom": "https://heavyfeatherreview.org/calls/",
       "listing": "ythm / Year-Round / Audio Poetry",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: fetch failed"
+      "lastError": "2026-10-26: fetch failed"
     },
     "zin-daily": {
       "name": "ZiN Daily",
@@ -10001,7 +10107,7 @@
       "name": "Rattle",
       "url": "https://www.rattle.com/submissions/guidelines/",
       "addedOn": "2026-10-04",
-      "lastError": "2026-10-19: HTTP 404"
+      "lastError": "2026-10-26: HTTP 404"
     },
     "frontier-poetry": {
       "name": "Frontier Poetry",
@@ -10324,6 +10430,47 @@
       "checkedOn": "2026-10-19",
       "lastError": null,
       "changedOn": "2026-10-19"
+    },
+    "midriff": {
+      "name": "MIDRIFF",
+      "url": "https://midriffmag.com/",
+      "discoveredFrom": "https://heavyfeatherreview.org/calls/",
+      "listing": "MIDRIFF / Due: Nov 30, 2026 / Issue 1: Touch / Essays, Criticism, Poetry, Photography, and Art by Women 40+ / Pays $50–$200 / No Fee",
+      "addedOn": "2026-10-26",
+      "history": [],
+      "record": {
+        "name": "MIDRIFF",
+        "acceptsPoetry": true,
+        "submitMethod": "web_form",
+        "windows": [],
+        "yearRound": true,
+        "feeUSD": null,
+        "freeOption": "No fee mentioned",
+        "submitUrl": "https://midriffmag.com/",
+        "submitEmail": "hello@midriffmag.com",
+        "pays": "Yes, \"We pay contributors. Always.\"",
+        "responseTime": null,
+        "simultaneous": null,
+        "maxPoems": null,
+        "minPoems": null,
+        "maxPages": null,
+        "cap": null,
+        "aiPolicy": null,
+        "waiver": null,
+        "notes": "Midriff seeks poetry, essays, personal narratives, cultural criticism, photography and visual art. Pitch specific ideas via their pitch form or add info to their list for possible story assignments. Pays all contributors.",
+        "evidence": [
+          "Midriff is looking for essays, personal narratives, cultural criticism, poetry, photography and visual art.",
+          "Pitch us something specific or add your info to our list for possible story assignments.",
+          "We pay contributors. Always.",
+          "Issue No. 1 theme: Touch."
+        ],
+        "confidence": "medium"
+      },
+      "guidelinesUrl": "https://midriffmag.com/",
+      "pageHash": "5accceec0dfa2461",
+      "checkedOn": "2026-10-26",
+      "lastError": null,
+      "changedOn": "2026-10-26"
     }
   }
 }
